@@ -1,0 +1,70 @@
+<header>
+  <div class="background">
+    <h1>ZAHAB store</h1>
+    <p>Best place for gold deals</p>
+
+    <div class="container">
+      <form #searchProductAndPlaceForm="ngForm"
+            (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndPlace(searchProductAndPlaceForm.value)"
+            class="serching-form" novalidate>
+        <div class="form-group label-floating col-md-4">
+          <label class="control-label">Product name</label>
+          <input [(ngModel)]="productName" name="productName" type="text" class="form-control">
+        </div>
+
+        <div class="form-group label-floating col-md-4">
+          <label class="control-label">Seller name</label>
+          <input [(ngModel)]="sellerName" name="sellerName" type="text" class="form-control">
+        </div>
+
+        <div class="form-group label-floating col-md-4">
+          <label class="control-label">Place</label>
+          <input [(ngModel)]="place" name="place" type="text" class="form-control">
+        </div>
+
+        <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
+          <!--enter product name you are-->
+          <!--searching for...</em>-->
+
+        <button [disabled]="!productName && !sellerName && !place" type="submit" class="btn btn-primary btn-raised">
+          search
+        </button>
+      </form>
+
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav nav-list">
+        <li><a href="#">Sellers</a></li>
+        <li><a href="#">Ideas</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Rings</a></li>
+            <li><a href="#">Bracelets</a></li>
+            <li><a href="#">Bands</a></li>
+            <!--<li class="divider"></li>-->
+            <!--<li><a href="#">Separated link</a></li>-->
+            <!--<li class="divider"></li>-->
+            <!--<li><a href="#">One more separated link</a></li>-->
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
