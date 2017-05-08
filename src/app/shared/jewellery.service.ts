@@ -1,35 +1,41 @@
 const tempJewellery: JeweleryProduct[] = [
   {
+    id: 1,
     productName: "ring 1",
     price: "500$",
     sellerName: "sss",
     place: "aaa"
   },
   {
+    id: 2,
     productName: "ring 1",
     price: "500$",
     sellerName: "sss",
     place: "aaa"
   },
   {
+    id: 3,
     productName: "ring 1",
     price: "500$",
     place: "aaa",
     sellerName: "sss"
   },
   {
+    id: 4,
     productName: "ring",
     price: "500$",
     sellerName: "bbb",
     place: "aaa"
   },
   {
+    id: 5,
     productName: "ring",
     price: "600$",
     sellerName: "aaa",
     place: "aaa"
   },
   {
+    id: 6,
     productName: "ring",
     price: "200",
     sellerName: "aaa",

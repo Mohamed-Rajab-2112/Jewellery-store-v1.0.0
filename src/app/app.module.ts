@@ -9,6 +9,7 @@ import {
   JewelleryListComponent,
   JewelleryThumbnailComponent,
   JewellerySearchResultsComponent,
+  JewelleryDetailsComponent,
   appRoutes
 }  from "./jewellery/index";
 
@@ -28,6 +29,7 @@ import {
     JewelleryListComponent,
     JewelleryThumbnailComponent,
     JewellerySearchResultsComponent,
+    JewelleryDetailsComponent,
     NavComponent,
     FooterComponent
   ],

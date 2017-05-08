@@ -1,4 +1,4 @@
-<div class="product-thumbnail">
+<div class="product-thumbnail" [routerLink]="['/jewellery-list', product.id]">
   <h4>{{product?.productName}}</h4>
   <h5>{{product?.price}}</h5>
 </div>
