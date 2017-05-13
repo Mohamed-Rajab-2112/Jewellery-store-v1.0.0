@@ -20,19 +20,25 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(index_1.appRoutes),
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            index_2.SharedModule
         ],
-        declarations: [index_1.JewelleryStoreAppComponent,
+        declarations: [
+            index_1.JewelleryStoreAppComponent,
             index_1.JewelleryHomeComponent,
             index_1.JewelleryListComponent,
-            index_1.JewelleryThumbnailComponent,
             index_1.JewellerySearchResultsComponent,
             index_1.JewelleryDetailsComponent,
             index_2.NavComponent,
             index_2.FooterComponent
         ],
         bootstrap: [index_1.JewelleryStoreAppComponent],
-        providers: [index_2.JewelleryService]
+        providers: [
+            index_2.JewelleryService,
+            index_2.SellerService,
+            index_2.AuthService,
+            index_2.UserProfileActivator
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

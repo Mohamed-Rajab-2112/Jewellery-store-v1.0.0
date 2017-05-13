@@ -1,2 +1,2 @@
-export {CustomerProfileComponent} from './customer.profile.component';
+export {CustomerProfile} from './customer-profile/customer.profile.component';
 export {customerRoutes} from './customer.routes';

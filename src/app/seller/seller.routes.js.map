@@ -1,1 +1,1 @@
-{"version":3,"file":"seller.routes.js","sourceRoot":"","sources":["seller.routes.ts"],"names":[],"mappings":";AAEA,iCAA6C;AAEhC,QAAA,YAAY,GAAW;IAClC,EAAC,IAAI,EAAE,cAAc,EAAE,SAAS,EAAE,4BAAoB,EAAC;CACxD,CAAC"}
+{"version":3,"file":"seller.routes.js","sourceRoot":"","sources":["seller.routes.ts"],"names":[],"mappings":";AAEA,iCAIiB;AAEJ,QAAA,YAAY,GAAW;IAClC,EAAC,IAAI,EAAE,cAAc,EAAE,SAAS,EAAE,4BAAoB,EAAC;IACvD,EAAC,IAAI,EAAE,gBAAgB,EAAE,SAAS,EAAE,8BAAsB,EAAC;IAC3D,EAAC,IAAI,EAAE,kBAAkB,EAAE,SAAS,EAAE,8BAAsB,EAAC;CAC9D,CAAC"}

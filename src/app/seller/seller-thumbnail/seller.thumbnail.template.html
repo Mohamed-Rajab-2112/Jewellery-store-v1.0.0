@@ -1,0 +1,8 @@
+<div [routerLink]="['/seller/sellers-list', sellerDetails.id]">
+  <h2>{{sellerDetails.name}}</h2>
+  <img [src]="sellerDetails?.imageUrl">
+  <h3>{{sellerDetails.telNumber1}}</h3>
+  <h3>{{sellerDetails?.telNumber2}}</h3>
+  <h3>{{sellerDetails?.address}}</h3>
+  <h3>{{sellerDetails?.area}}</h3>
+</div>

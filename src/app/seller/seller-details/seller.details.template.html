@@ -1,0 +1,9 @@
+<img [src]="sellerDetails.imageUrl">
+<h2>{{sellerDetails.name}}</h2>
+
+<jewellery-thumbnail [product]="item" *ngFor="let item of sellingList"></jewellery-thumbnail>
+
+<p>{{sellerDetails.telNumber1}}</p>
+<p>{{sellerDetails?.telNumber2}}</p>
+<p>{{sellerDetails?.address}}</p>
+<p>{{sellerDetails?.area}}</p>

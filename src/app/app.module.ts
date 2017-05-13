@@ -7,7 +7,6 @@ import {
   JewelleryStoreAppComponent,
   JewelleryHomeComponent,
   JewelleryListComponent,
-  JewelleryThumbnailComponent,
   JewellerySearchResultsComponent,
   JewelleryDetailsComponent,
   appRoutes
@@ -16,25 +15,34 @@ import {
 import {
   JewelleryService,
   NavComponent,
-  FooterComponent
+  FooterComponent,
+  SharedModule,
+  SellerService,
+  AuthService,
+  UserProfileActivator
 } from "./shared/index";
 
 @NgModule({
   imports: [BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
-  declarations: [JewelleryStoreAppComponent,
+  declarations: [
+    JewelleryStoreAppComponent,
     JewelleryHomeComponent,
     JewelleryListComponent,
-    JewelleryThumbnailComponent,
     JewellerySearchResultsComponent,
     JewelleryDetailsComponent,
     NavComponent,
     FooterComponent
   ],
   bootstrap: [JewelleryStoreAppComponent],
-  providers: [JewelleryService]
+  providers: [
+    JewelleryService,
+    SellerService,
+    AuthService,
+    UserProfileActivator]
 })
 
 export class AppModule {

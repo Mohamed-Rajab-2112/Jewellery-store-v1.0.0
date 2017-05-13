@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
 var index_1 = require("./index");
+var index_2 = require("../shared/index");
 var SellerModule = (function () {
     function SellerModule() {
     }
@@ -18,9 +19,15 @@ SellerModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            router_1.RouterModule.forChild(index_1.sellerRoutes)
+            router_1.RouterModule.forChild(index_1.sellerRoutes),
+            index_2.SharedModule
         ],
-        declarations: [index_1.SellersListComponent]
+        declarations: [
+            index_1.SellersListComponent,
+            index_1.SellerThumbnail,
+            index_1.SellerDetailsComponent,
+            index_1.SellerProfileComponent
+        ]
     })
 ], SellerModule);
 exports.SellerModule = SellerModule;

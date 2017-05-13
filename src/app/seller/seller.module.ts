@@ -2,14 +2,30 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
-import {SellersListComponent, sellerRoutes} from './index';
+import {
+  SellersListComponent,
+  sellerRoutes,
+  SellerThumbnail,
+  SellerDetailsComponent,
+  SellerProfileComponent
+} from './index';
+
+import {
+  SharedModule
+} from '../shared/index';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(sellerRoutes)
+    RouterModule.forChild(sellerRoutes),
+    SharedModule
   ],
-  declarations: [SellersListComponent]
+  declarations: [
+    SellersListComponent,
+    SellerThumbnail,
+    SellerDetailsComponent,
+    SellerProfileComponent
+  ]
 })
 
 export class SellerModule {
