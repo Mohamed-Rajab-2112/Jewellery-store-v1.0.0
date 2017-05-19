@@ -21,7 +21,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(index_1.appRoutes),
             forms_1.FormsModule,
-            index_2.SharedModule
+            index_2.SharedModule,
         ],
         declarations: [
             index_1.JewelleryStoreAppComponent,
@@ -30,14 +30,19 @@ AppModule = __decorate([
             index_1.JewellerySearchResultsComponent,
             index_1.JewelleryDetailsComponent,
             index_2.NavComponent,
-            index_2.FooterComponent
+            index_2.FooterComponent,
         ],
         bootstrap: [index_1.JewelleryStoreAppComponent],
         providers: [
+            index_2.CustomerService,
             index_2.JewelleryService,
             index_2.SellerService,
             index_2.AuthService,
-            index_2.UserProfileActivator
+            index_2.CustomerProfileActivator,
+            index_2.VendorProfileActivator,
+            index_2.JewelleryAndSellerDetailsActivator,
+            index_2.DefaultRedirectActivator,
+            index_2.JewelleryListActivator
         ]
     })
 ], AppModule);

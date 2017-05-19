@@ -1,19 +1,19 @@
 "use strict";
-var jewellery_service_1 = require("./services/jewellery.service");
-exports.JewelleryService = jewellery_service_1.JewelleryService;
-var nav_component_1 = require("./nav.component/nav.component");
-exports.NavComponent = nav_component_1.NavComponent;
-var footer_component_1 = require("./footer.component/footer.component");
-exports.FooterComponent = footer_component_1.FooterComponent;
-var seller_service_1 = require("./services/seller.service");
-exports.SellerService = seller_service_1.SellerService;
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require("./services/auth.service"));
+__export(require("./services/jewellery.service"));
+__export(require("./nav.component/nav.component"));
+__export(require("./footer.component/footer.component"));
+__export(require("./services/seller.service"));
+__export(require("./services/jewellery.details.and.seller.details.activator"));
+__export(require("./services/default.redirect.activator"));
+__export(require("./services/jewellery.list.activator"));
+__export(require("./signin.signup.component/signin.signup.component"));
 /*Service exports*/
-var auth_service_1 = require("./services/auth.service");
-exports.AuthService = auth_service_1.AuthService;
-var customer_service_1 = require("./services/customer.service");
-exports.CustomerService = customer_service_1.CustomerService;
-var user_profile_activator_service_1 = require("./services/user.profile.activator.service");
-exports.UserProfileActivator = user_profile_activator_service_1.UserProfileActivator;
-var shared_module_1 = require("../shared/shared.module");
-exports.SharedModule = shared_module_1.SharedModule;
+__export(require("./services/customer.service"));
+__export(require("./services/customer.auth.activator.service"));
+__export(require("./services/vendor.auth.activator.service"));
+__export(require("./../shared/shared.module"));
 //# sourceMappingURL=index.js.map

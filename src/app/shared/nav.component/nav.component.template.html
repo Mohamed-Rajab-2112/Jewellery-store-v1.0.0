@@ -1,65 +1,5 @@
 <div class="sign-in" [ngClass]="toggleSignInFormClass()">
-  <h3>Log In</h3>
-  <form name="logInForm" #logInForm="ngForm" autocomplete="off" (ngSubmit)="logInForm.valid && logIn(logInForm.value)"
-        novalidate>
-    <fieldset>
-      <input type="text" (ngModel)="userName" name="userName" placeholder="user name..." required>
-      <em *ngIf="logInForm.submitted && logInForm.controls.userName.invalid">this field required</em>
-    </fieldset>
-    <fieldset>
-      <input type="password" (ngModel)="password" name="password" placeholder="password ..." required>
-      <em *ngIf="logInForm.submitted && logInForm.controls.password.invalid">this field required</em>
-    </fieldset>
-    <button type="submit">Submit</button>
-    <button type="button" (click)="toggleSignInFlag()">Close</button>
-  </form>
-
-  <h3>Sign Up</h3>
-  <form name="signUpForm" #signUpForm="ngForm" autocomplete="off"
-        (ngSubmit)="signUpForm.valid && signUpForm.value.password === signUpForm.value.password_2 && signUp(signUpForm.value)" novalidate>
-    <fieldset>
-      <label>I'm a</label>
-      <button type="button"
-              [ngClass]="choosedUserType === 'Vendor' && setChoosedTypeButtonClass() || ['typeButtonNotSelected']"
-              (click)="toggleTypeButton('Vendor')">
-        <span>Vendor</span></button>
-      <button type="button"
-              [ngClass]="choosedUserType === 'Customer' && setChoosedTypeButtonClass() || ['typeButtonNotSelected']"
-              (click)="toggleTypeButton('Customer')"><span>Customer</span></button>
-    </fieldset>
-
-    <fieldset [ngSwitch]="choosedUserType" [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-      <label *ngSwitchCase="'Vendor'">Your Vendor Name</label>
-      <label *ngSwitchDefault>Your Name</label>
-      <input type="text" (ngModel)="userName" name="userName" placeholder="Name..." required>
-      <em *ngIf="signUpForm.submitted && signUpForm.controls.userName.invalid">this field required</em>
-    </fieldset>
-
-    <fieldset [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-      <label>Email</label>
-      <input type="email" (ngModel)="email" name="email" placeholder="Email..." required>
-      <em *ngIf="signUpForm.submitted && signUpForm.controls.email.invalid">this field required</em>
-    </fieldset>
-
-    <fieldset [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-      <label>password</label>
-      <input type="password" (ngModel)="password" name="password" placeholder="Password..." required>
-      <em *ngIf="signUpForm.submitted && signUpForm.controls.password.invalid">this field required</em>
-    </fieldset>
-
-    <fieldset [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-      <label>Re-enter Password</label>
-      <input type="password" (ngModel)="password_2" name="password_2" placeholder="Re-Enter password..." required>
-      <em *ngIf="signUpForm.controls.password_2?.valid && signUpForm.value.password === signUpForm.value.password_2">Matched</em>
-      <em *ngIf="signUpForm.controls.password_2?.valid && signUpForm.value.password !== signUpForm.value.password_2">Not
-        Matched</em>
-      <em *ngIf="signUpForm.submitted && signUpForm.controls.password_2?.invalid">this field required</em>
-    </fieldset>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <div class="sign-in-background" (click)="toggleSignInFlag()"></div>
+  <signin-signup (signInToggleOutPut)="setSignInToggle($event)" [signInToggleInput]="signInToggle"></signin-signup>
 </div>
 
 <header>
@@ -67,12 +7,15 @@
     <h1>ZAHAB store</h1>
     <p>Best place for gold deals</p>
 
-    <div *ngIf="!toggleLogInBtn">
+    <i (click)="routeToFavouriteJewellery()">Favourite Products</i>
+    <i>{{favouriteCount}}</i>
+
+    <div *ngIf="toggleLogInBtn">
       <button (click)="toggleSignInFlag()">log in</button>
       <button (click)="toggleSignInFlag()">sign up</button>
     </div>
 
-    <div *ngIf="toggleLogInBtn">
+    <div *ngIf="!toggleLogInBtn">
       <h4>Welcome {{userType}}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav nav-list">
@@ -91,7 +34,7 @@
 
     <div class="container">
       <form #searchProductAndPlaceForm="ngForm"
-            (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndPlace(searchProductAndPlaceForm.value)"
+            (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndarea(searchProductAndPlaceForm.value)"
             class="serching-form" novalidate>
         <div class="form-group label-floating col-md-4">
           <label class="control-label">Product name</label>
@@ -105,14 +48,14 @@
 
         <div class="form-group label-floating col-md-4">
           <label class="control-label">Place</label>
-          <input [(ngModel)]="place" name="place" type="text" class="form-control">
+          <input [(ngModel)]="area" name="area" type="text" class="form-control">
         </div>
 
         <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
         <!--enter product name you are-->
         <!--searching for...</em>-->
 
-        <button [disabled]="!productName && !sellerName && !place" type="submit" class="btn btn-primary btn-raised">
+        <button [disabled]="!productName && !sellerName && !area" type="submit" class="btn btn-primary btn-raised">
           search
         </button>
       </form>
@@ -140,6 +83,7 @@
         <li><a [routerLink]="['/home/', 'ring']">Rings</a></li>
         <li><a [routerLink]="['/home/', 'bracelet']">Bracelets</a></li>
         <li><a [routerLink]="['/home/', 'band']">Bands</a></li>
+        <li><a [routerLink]="['/home/', 'other']">Different products</a></li>
         <!--<li class="dropdown">-->
         <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>-->
         <!--<ul class="dropdown-menu">-->

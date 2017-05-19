@@ -1,2 +1,3 @@
-export {CustomerProfile} from './customer-profile/customer.profile.component';
-export {customerRoutes} from './customer.routes';
+export * from './customer-favourite-Jewellery/customer-favourite-Jewellery-component';
+export * from './customer-profile/customer.profile.component';
+export * from './customer.routes';

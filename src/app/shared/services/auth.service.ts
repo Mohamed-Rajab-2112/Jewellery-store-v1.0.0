@@ -1,26 +1,38 @@
 import {Injectable} from "@angular/core";
-import {Customer} from "../models/Customer.model";
+import {User} from "../models/User.model";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
+import {Router} from "@angular/router";
 const userTypes = ['Customer', 'Vendor'];
 @Injectable()
 export class AuthService {
-  isAuth: boolean = false;
-  user = new BehaviorSubject(<Customer>{});
+  isAuth = new BehaviorSubject(false);
+  user = new BehaviorSubject(<User>{});
+  currentRoute = new BehaviorSubject('');
+
+  constructor(private router: Router) {
+
+  }
 
   logIn(values: any) {
-    this.isAuth = true;
+    this.isAuth.next(true);
     this.setUser({
+      id: 22222,
       name: values.userName,
-      userType: 'Vendor',
+      userType: 'Customer',
+      verified: true,
       telephone1: 1232135,
       telephone2: 5841354,
       email: 'asdasdaasd@asdasd.com',
       area: 'AinShams/Cairo'
-    })
+    });
   }
 
-  setUser(currentUserData: any) {
-    this.user.next(currentUserData)
+  setUser(currentUserData: User) {
+    this.user.next(currentUserData);
+  }
+
+  setCurrentRoute() {
+    this.currentRoute.next(this.router.routerState.snapshot.url)
   }
 
   signUp(signUpData: any) {
@@ -38,4 +50,6 @@ export class AuthService {
   deleteAccount() {
     return true;
   }
+
+
 }

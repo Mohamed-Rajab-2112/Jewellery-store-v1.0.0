@@ -1,9 +1,11 @@
 import {Component, OnInit} from "@angular/core";
 import {Params, ActivatedRoute} from "@angular/router";
-import {JewelleryService} from "../../shared/services/jewellery.service";
-import {JeweleryProduct} from "../../shared/models/jewelleryProduct.model";
-import {Seller} from "../../shared/models/seller.model";
-import {SellerService} from "../../shared/services/seller.service";
+import {
+  User,
+  JewelleryService,
+  SellerService,
+  JeweleryProduct
+} from "../../shared/index";
 
 @Component({
   selector: 'seller-details',
@@ -11,8 +13,9 @@ import {SellerService} from "../../shared/services/seller.service";
 })
 
 export class SellerDetailsComponent implements OnInit {
-  public sellingList: JeweleryProduct[];
-  public sellerDetails: Seller;
+  sellingList: JeweleryProduct[];
+  sellingListFiltered: JeweleryProduct[];
+  sellerDetails: User;
 
   constructor(private jewellery: JewelleryService, private seller: SellerService, private route: ActivatedRoute) {
   }
@@ -20,8 +23,18 @@ export class SellerDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
       this.sellingList = this.jewellery.getJewelleryBySellerId(Number(params['id']));
+      this.sellingListFiltered = this.sellingList.slice();
       this.sellerDetails = this.seller.getSellerById(Number(params['id']));
     });
     console.log(this.sellingList)
+  }
+
+  applyFilterTerms(terms: any) {
+    this.sellingListFiltered = this.jewellery.applyFilterTerms(terms, this.sellingList)
+  }
+
+  sortProducts(sortTerm: string) {
+    console.log(sortTerm);
+    this.jewellery.sortProducts(sortTerm, this.sellingListFiltered);
   }
 }

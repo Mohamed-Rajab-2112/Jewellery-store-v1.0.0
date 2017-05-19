@@ -1,0 +1,12 @@
+<button *ngFor="let type of types" (click)="assignType(type)">{{type}}</button>
+<button (click)="assignType()">All</button>
+
+<select [(ngModel)]="selectedDegree" (change)="filterByTerms()">
+  <option >All</option>
+  <option *ngFor="let goldDegree of goldDegrees" [selected]="selectedDegree == goldDegree">{{goldDegree}}</option>
+</select>
+<label>Sort by price</label>
+<select [(ngModel)]="priceSort" (change)="sortByPrice()">
+  <option>Lowest first</option>
+  <option>Highest first</option>
+</select>

@@ -1,12 +1,12 @@
 import {Component, OnInit} from "@angular/core";
-import {AuthService, CustomerService, Customer} from "../../shared/index";
+import {AuthService, CustomerService, User} from "../../shared/index";
 @Component({
   'selector': 'customer-profile',
   'templateUrl': 'app/customer/customer-profile/customer.profile.template.html'
 })
 
 export class CustomerProfile implements OnInit {
-  currentCustomer: Customer;
+  currentCustomer: User;
 
   constructor(private auth: AuthService, private customer: CustomerService) {
   }
@@ -14,7 +14,7 @@ export class CustomerProfile implements OnInit {
   ngOnInit() {
     this.auth.user.subscribe((val) => {
       console.log(val);
-      this.currentCustomer = <Customer>val;
+      this.currentCustomer = <User>val;
     })
   }
 

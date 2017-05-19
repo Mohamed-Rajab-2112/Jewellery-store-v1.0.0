@@ -1,8 +1,10 @@
 <div class="text-center">
-  <p *ngIf="searchResult.length">Search results for "{{searchTerms.productName}}"
-    <span *ngIf="searchTerms.sellerName">at "{{searchTerms.sellerName}}" </span>
-    <span *ngIf="searchTerms.sellerName">in {{searchTerms.place}}</span></p>
+  <!--<p *ngIf="searchResult.length">Search results for "{{searchTerms.productName}}"-->
+  <!--<span *ngIf="searchTerms.sellerName">at "{{searchTerms.sellerName}}" </span>-->
+  <!--<span *ngIf="searchTerms.sellerName">in {{searchTerms.place}}</span></p>-->
+
+  <products-filter (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>
 
   <p *ngIf="!searchResult.length">Unfortunately, No search results found</p>
-  <jewellery-thumbnail class="col-md-4" [product]="item" *ngFor="let item of searchResult"></jewellery-thumbnail>
+  <jewellery-thumbnail [products]="searchResultFiltered"></jewellery-thumbnail>
 </div>

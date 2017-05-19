@@ -4,7 +4,9 @@ export interface JeweleryProduct {
   productName: string;
   type: string;
   sellerName: string;
-  price: string;
-  place?: string;
-  imageUrl?: string;
+  price: number;
+  goldDegree: string;
+  area?: string;
+  imageUrl?: any[];
+  publishDate: string;
 }

@@ -5,21 +5,23 @@ import {FormsModule} from "@angular/forms";
 
 import {
   CustomerProfile,
-  customerRoutes
+  customerRoutes,
+  JewelleryFavouriteComponent
 } from './index';
 
 import {
-  CustomerService
+  SharedModule
 } from '../shared/index';
 
 @NgModule({
   imports: [CommonModule,
     RouterModule.forChild(customerRoutes),
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
-  declarations: [CustomerProfile],
-  providers: [
-    CustomerService
+  declarations: [
+    CustomerProfile,
+    JewelleryFavouriteComponent
   ]
 })
 

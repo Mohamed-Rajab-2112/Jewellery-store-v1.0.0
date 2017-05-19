@@ -1,0 +1,58 @@
+<form autocomplete="off" #productForm="ngForm" novalidate
+      (ngSubmit)="productForm.valid && publishProduct(productForm.value)">
+
+  <fieldset>
+    <label>Product Name</label>
+    <input type="text" name="productName" placeholder="Product Name..." [(ngModel)]="product.productName" required>
+    <em *ngIf="productForm.submitted && productForm.controls?.productName.invalid">This field is required</em>
+  </fieldset>
+
+  <fieldset>
+    <label>Product Image</label>
+    <label for="imagesInput" class="upload-btn">Upload Photos</label>
+    <input type="file" name="imageUrl" (change)="getImageUrl($event)" multiple id="imagesInput" accept="image/*"
+           style="visibility: visible">
+
+    <div *ngFor="let image of imagesFilesList">
+      <h5>{{image.name}}</h5>
+      <img [src]="image.url">
+      <button (click)="deleteImage(image)">Delete image</button>
+    </div>
+    <!--<em>You can't upload more than 3 images for the same product</em>-->
+    <em *ngIf="productForm.submitted && !imageUrlValid">Product image required</em>
+  </fieldset>
+
+  <fieldset>
+    <label>Product type</label>
+    <select name="type" [(ngModel)]="product.type" required>
+      <option [hidden]="product.type">{{product.type}}</option>
+      <option *ngFor="let type of productTypes" [selected]="type == product.type">{{type}}</option>
+    </select>
+    <em *ngIf="productForm.submitted && productForm.value.type == '-Choose Product Type-'">this field
+      required</em>
+  </fieldset>
+
+  <fieldset>
+    <label>Price for 1 gram (includes taxes and working cost)</label>
+    <input title="price" type="number" name="price" [(ngModel)]="product.price" required>
+    <em *ngIf="productForm.submitted && productForm.controls?.price.invalid">This field is required</em>
+  </fieldset>
+
+  <fieldset>
+    <label>Area</label>
+    <input type="text" name="area" [(ngModel)]="product.area" required>
+    <em *ngIf="productForm.submitted && productForm.controls?.area.invalid">This field is required</em>
+  </fieldset>
+
+  <fieldset>
+    <label>Gold Degree</label>
+    <select name="goldDegree" [(ngModel)]="product.goldDegree" required>
+      <option [hidden]="product.goldDegree">{{product.goldDegree}}</option>
+      <option *ngFor="let gold of goldDegrees" [selected]="gold == product.goldDegree">{{gold}}</option>
+    </select>
+    <em *ngIf="productForm.submitted && productForm.value.goldDegree == '-Choose Gold degree-'">This field is
+      required</em>
+  </fieldset>
+
+  <button type="submit">Publish Product</button>
+</form>

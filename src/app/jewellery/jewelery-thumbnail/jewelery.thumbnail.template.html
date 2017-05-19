@@ -1,4 +1,13 @@
-<div class="product-thumbnail" (click)="routingToJewelleryDetails()">
-  <h4>{{product?.productName}}</h4>
-  <h5>{{product?.price}}</h5>
+<div class="col-md-4" *ngFor="let product of products">
+
+  <jewellery-favourite *ngIf="showFavouriteBtn" [product]="product"></jewellery-favourite>
+
+  <i *ngIf="showEditDelBtn" (click)="editProduct(product)">edit</i>
+  <i *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</i>
+  <div class="product-thumbnail" (click)="routingToJewelleryDetails(product?.type, product?.id)">
+    <h4>{{product?.productName}}</h4>
+    <h5>{{product?.price}}</h5>
+  </div>
+  <add-product [product]="product" *ngIf="showEditForm(product)"></add-product>
 </div>
+

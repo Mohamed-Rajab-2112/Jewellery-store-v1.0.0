@@ -1,1 +1,8 @@
-<seller-thumbnail [sellerDetails]="seller" *ngFor="let seller of sellerList"></seller-thumbnail>
+<form>
+  <label>Find sellers by area</label>
+  <input type="text" placeholder="Filter by place" name="area" [(ngModel)]="area" (ngModelChange)="filterSellers(area)">
+</form>
+
+<p *ngIf="!filteredList.length">No search result found</p>
+
+<seller-thumbnail [sellerDetails]="seller" *ngFor="let seller of filteredList"></seller-thumbnail>

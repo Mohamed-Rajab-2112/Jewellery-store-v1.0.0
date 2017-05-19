@@ -1,0 +1,67 @@
+<h3>Log In</h3>
+<form name="logInForm" #logInForm="ngForm" autocomplete="off" (ngSubmit)="logInForm.valid && logIn(logInForm.value)"
+      novalidate>
+  <fieldset>
+    <input type="text" (ngModel)="userName" name="userName" placeholder="user name..." required>
+    <em *ngIf="logInForm.submitted && logInForm.controls.userName.invalid">this field required</em>
+  </fieldset>
+  <fieldset>
+    <input type="password" (ngModel)="password" name="password" placeholder="password ..." required>
+    <em *ngIf="logInForm.submitted && logInForm.controls.password.invalid">this field required</em>
+  </fieldset>
+  <button type="submit">Submit</button>
+  <button type="button" (click)="toggleSignInFlag()">Close</button>
+
+</form>
+
+<h3>Sign Up</h3>
+<form name="signUpForm" #signUpForm="ngForm" autocomplete="off"
+      (ngSubmit)="signUpForm.valid && signUpForm.value.password === signUpForm.value.password_2 && signUp(signUpForm.value)"
+      novalidate>
+  <fieldset>
+    <label>I'm a</label>
+    <button type="button"
+            [ngClass]="choosedUserType === 'Vendor' && setChoosedTypeButtonClass() || ['typeButtonNotSelected']"
+            (click)="toggleTypeButton('Vendor')">
+      <span>Vendor</span></button>
+    <button type="button"
+            [ngClass]="choosedUserType === 'Customer' && setChoosedTypeButtonClass() || ['typeButtonNotSelected']"
+            (click)="toggleTypeButton('Customer')"><span>Customer</span></button>
+    <em>Vendor can't change their name after registration</em>
+  </fieldset>
+
+  <fieldset [ngSwitch]="choosedUserType" [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
+    <label *ngSwitchCase="'Vendor'">Your Vendor Name</label>
+    <label *ngSwitchDefault>Your Name</label>
+    <input type="text" (ngModel)="userName" name="userName" placeholder="Name..." required>
+    <em *ngIf="signUpForm.submitted && signUpForm.controls.userName.invalid">this field required</em>
+  </fieldset>
+
+  <fieldset [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
+    <label>Email</label>
+    <input type="email" (ngModel)="email" name="email" placeholder="Email..." required>
+    <em *ngIf="signUpForm.submitted && signUpForm.controls.email.invalid">this field required</em>
+  </fieldset>
+
+  <fieldset [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
+    <label>password</label>
+    <input type="password" (ngModel)="password" name="password" placeholder="Password..." required>
+    <em *ngIf="signUpForm.submitted && signUpForm.controls.password.invalid">this field required</em>
+  </fieldset>
+
+  <fieldset [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
+    <label>Re-enter Password</label>
+    <input type="password" (ngModel)="password_2" name="password_2" placeholder="Re-Enter password..." required>
+    <em *ngIf="signUpForm.controls.password_2?.valid && signUpForm.value.password === signUpForm.value.password_2">Matched</em>
+    <em *ngIf="signUpForm.controls.password_2?.valid && signUpForm.value.password !== signUpForm.value.password_2">Not
+      Matched</em>
+    <em *ngIf="signUpForm.submitted && signUpForm.controls.password_2?.invalid">this field required</em>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+  <button type="button" (click)="toggleSignInFlag()">Close</button>
+
+</form>
+
+
+<div class="sign-in-background" (click)="toggleSignInFlag()"></div>

@@ -3,7 +3,8 @@ import {Router} from "@angular/router";
 
 import {JewelleryService} from "../services/jewellery.service";
 import {AuthService} from "../services/auth.service";
-import {Customer} from "../models/Customer.model";
+import {User} from "../models/User.model";
+import {CustomerService} from "../services/customer.service";
 
 @Component({
   selector: "nav-component",
@@ -14,19 +15,18 @@ import {Customer} from "../models/Customer.model";
 export class NavComponent implements OnInit {
   productName: string;
   sellerName: string;
-  place: string;
+  area: string;
   signInToggle: boolean;
   toggleLogInBtn: boolean;
   userName: string;
   userType: string;
-  choosedUserType: string;
-  userTypes: string[];
+  favouriteCount: number;
 
-  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService) {
+  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer:CustomerService) {
 
   }
 
-  searchProductAndPlace(values: any) {
+  searchProductAndarea(values: any) {
     this.router.navigate([`/search/${JSON.stringify(values)}`]);
   }
 
@@ -34,23 +34,25 @@ export class NavComponent implements OnInit {
     this.jewellery.searchTermsChanged.subscribe(value => {
       this.productName = value["productName"] === "undefined" ? "" : value["productName"];
       this.sellerName = value["sellerName"] === "undefined" ? "" : value["sellerName"];
-      this.place = value["place"] === "undefined" ? "" : value["place"];
+      this.area = value["area"] === "undefined" ? "" : value["area"];
     });
-    this.signInToggle = false;
-    this.choosedUserType = '-Membership type-';
-    this.userTypes = this.auth.getUserTypes();
+
     this.auth.user.subscribe((value) => {
       console.log(value);
-      // this.auth.actualUser = value;
       this.userName = value.name;
       this.userType = value.userType;
     });
+    this.auth.isAuth.subscribe((isAuth) => {
+      this.toggleLogInBtn = !isAuth;
+    });
+    this.customer.favouriteJewellery.subscribe((value) => {
+      this.favouriteCount = value.length;
+    })
   }
 
-  logIn(values: any) {
-    this.auth.logIn(values);
-    this.toggleLogInBtn = this.auth.isAuth;
-    this.signInToggle = false;
+  setSignInToggle(toggle: boolean) {
+    console.log(toggle);
+    this.signInToggle = toggle;
   }
 
   toggleSignInFormClass() {
@@ -61,30 +63,8 @@ export class NavComponent implements OnInit {
     }
   }
 
-  signUp(values: any) {
-    values.signUpDate = new Date(Date.now()).toISOString();
-    values.userType = this.choosedUserType;
-    console.log(values);
-    this.auth.signUp(values);
-  }
-
-  toggleTypeButton(type: string) {
-    this.choosedUserType = type;
-  }
-
   toggleSignInFlag() {
     this.signInToggle = !this.signInToggle;
-  }
-
-  setChoosedTypeButtonClass() {
-    if (this.choosedUserType == 'Vendor') {
-      return ['typeButtonSelected']
-    }
-    else if (this.choosedUserType == 'Customer') {
-      return ['typeButtonSelected']
-    } else {
-      return ['typeButtonNotSelected']
-    }
   }
 
   routeToProfile() {
@@ -95,6 +75,9 @@ export class NavComponent implements OnInit {
         this.router.navigate(['seller/vendor-profile'])
       }
     });
+  }
 
+  routeToFavouriteJewellery() {
+    this.router.navigate((['customer/customer-favourite-jewellery']))
   }
 }

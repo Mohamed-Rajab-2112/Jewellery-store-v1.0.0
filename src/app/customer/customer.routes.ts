@@ -1,12 +1,17 @@
 import {Routes} from "@angular/router";
 
-import {CustomerProfile} from './index';
-import {UserProfileActivator} from '../shared/services/user.profile.activator.service';
+import {CustomerProfile, JewelleryFavouriteComponent} from './index';
+import {CustomerProfileActivator} from '../shared/services/customer.auth.activator.service';
 
 export const customerRoutes: Routes = [
   {
     path: 'customer-profile',
     component: CustomerProfile,
-    canActivate: [UserProfileActivator]
+    canActivate: [CustomerProfileActivator]
+  },
+  {
+    path: 'customer-favourite-jewellery',
+    component: JewelleryFavouriteComponent,
+    canActivate: [CustomerProfileActivator]
   }
 ];

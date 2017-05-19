@@ -1,64 +1,109 @@
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 const tempJewellery: JeweleryProduct[] = [
   {
     id: 1,
     productName: "ring 1",
     type: "ring",
-    price: "500$",
+    price: 500,
     sellerName: "sss",
     sellerId: 22222,
-    place: "aaa",
-    imageUrl: "/app/images/01.png"
+    area: "aaa",
+    goldDegree: "18K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
   },
   {
     id: 2,
-    productName: "ring 1",
-    type: "ring",
-    price: "500$",
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
     sellerName: "sss",
     sellerId: 22222,
-    place: "aaa",
-    imageUrl: "/app/images/02.png"
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
   },
   {
     id: 3,
-    productName: "ring 1",
+    productName: "011",
     type: "ring",
-    price: "500$",
-    place: "aaa",
+    price: 500,
+    area: "aaa",
     sellerName: 'bbb',
     sellerId: 33333,
-    imageUrl: "/app/images/03.png"
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
   },
   {
     id: 4,
     productName: "ring",
     type: "ring",
-    price: "500$",
+    price: 500,
     sellerName: "bbb",
     sellerId: 33333,
-    place: "aaa",
-    imageUrl: "/app/images/04.png"
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
   },
   {
     id: 5,
     productName: "ring",
     type: "ring",
-    price: "600$",
+    price: 600,
     sellerName: "aaa",
     sellerId: 11111,
-    place: "aaa",
-    imageUrl: "/app/images/05.png"
+    goldDegree: "21K",
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
   },
   {
     id: 6,
-    productName: "ring",
-    type: "ring",
-    price: "200",
+    productName: "bands",
+    type: "band",
+    goldDegree: "21K",
+    price: 200,
     sellerName: "aaa",
-    sellerId: 11111,
-    place: "aaa",
-    imageUrl: "/app/images/06.png"
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
   }
+];
+
+const productTypes: string[] = [
+  'ring',
+  'bracelet',
+  'band',
+  'other'
+];
+
+const goldDegree: string[] = [
+  '18K',
+  '16K',
+  '21K',
+  '24K'
 ];
 
 import {Injectable} from "@angular/core";
@@ -69,6 +114,7 @@ import {SearchForm, JeweleryProduct} from "../index";
 export class JewelleryService {
   private searchTerms = new Subject<SearchForm>();
   searchTermsChanged = this.searchTerms.asObservable();
+  favouriteJewellery = new BehaviorSubject(<JeweleryProduct[]>[]);
 
   getMostVisitedJewellery() {
     return tempJewellery;
@@ -79,7 +125,7 @@ export class JewelleryService {
   }
 
   getJewelleryById(id: number): JeweleryProduct {
-    let choosedJewellery;
+    let choosedJewellery: JeweleryProduct;
     tempJewellery.map((item) => {
       item.id === id ? choosedJewellery = item : true;
     });
@@ -104,6 +150,7 @@ export class JewelleryService {
 
   private applySearchTerms(searchTerms: SearchForm, ...searchTerm: SearchForm[]): JeweleryProduct[] {
     let searchResult: JeweleryProduct[] = [];
+    console.log(searchTerm)
     if (searchTerm.length === 1) {
       tempJewellery.map((item) => {
         if (item["" + searchTerm[0]].includes(searchTerms["" + searchTerm[0]])) {
@@ -130,6 +177,7 @@ export class JewelleryService {
   }
 
   searchJewellery(searchTerms: SearchForm): JeweleryProduct[] {
+    console.log(searchTerms)
     let searchTermTitles = [];
     for (let property in searchTerms) {
       if (searchTerms.hasOwnProperty(property)) {
@@ -137,6 +185,63 @@ export class JewelleryService {
       }
     }
     return this.applySearchTerms(searchTerms, ...searchTermTitles);
+  }
+
+  getProductTypes() {
+    return productTypes;
+  }
+
+  getGoldDegree() {
+    return goldDegree;
+  }
+
+  /*currently simulate back-end but later will integrate a real back-end*/
+  deleteProduct(product: JeweleryProduct) {
+    tempJewellery.splice(tempJewellery.indexOf(product), 1);
+    return true;
+  }
+
+  /*this function for prototype purpose*/
+  addProductLocally(product: JeweleryProduct) {
+    tempJewellery.map((x, i) => {
+      if (x.id == product.id) {
+        tempJewellery[i] = product;
+      }
+    });
+    if (!~tempJewellery.indexOf(product)) {
+      tempJewellery.push(product);
+    }
+    console.log(tempJewellery);
+  }
+
+  applyFilterTerms(terms: any, fullProductsList: JeweleryProduct[]) {
+    console.log(terms);
+    if (terms.type !== 'All' || terms.goldDegree !== 'All') {
+      return (fullProductsList.filter((product) => {
+        if (terms.type !== 'All' && terms.goldDegree !== 'All') {
+          return product.type == terms.type && product.goldDegree == terms.goldDegree;
+        } else if (terms.type == 'All' || terms.goldDegree == 'All') {
+          return product.type == terms.type || product.goldDegree == terms.goldDegree;
+        }
+      }))
+    } else {
+      return fullProductsList.slice();
+    }
+  }
+
+  sortProducts(sortTerm: string, productsList: JeweleryProduct[]) {
+    productsList.sort((a, b) => {
+      if (sortTerm == 'Highest first') {
+        return b.price - a.price;
+      } else if (sortTerm == 'Lowest first') {
+        return a.price - b.price;
+      }
+    })
+  }
+
+  addProductToFavourite(product: JeweleryProduct) {
+    this.favouriteJewellery.value.push(product);
+    this.favouriteJewellery.next(this.favouriteJewellery.value)
   }
 }
 

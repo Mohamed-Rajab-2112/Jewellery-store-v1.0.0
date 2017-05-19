@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<ul>
+  <li>
+    <button>Products</button>
+  </li>
+  <li>
+    <button>Profile Info</button>
+  </li>
+</ul>
 
-</body>
-</html>
+<h3>Products list</h3>
+<products-filter (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>
+
+<jewellery-thumbnail [products]="sellerProductsFiltered"></jewellery-thumbnail>
+
+<button>add new product</button>
+<add-product [product]="{}" (newProduct)="addNewProduct($event)"></add-product>
+
+<h3>Profile info</h3>
+<seller-profile-edit [user]="user"></seller-profile-edit>

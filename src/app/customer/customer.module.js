@@ -20,11 +20,12 @@ CustomerModule = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule,
             router_1.RouterModule.forChild(index_1.customerRoutes),
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            index_2.SharedModule
         ],
-        declarations: [index_1.CustomerProfile],
-        providers: [
-            index_2.CustomerService
+        declarations: [
+            index_1.CustomerProfile,
+            index_1.JewelleryFavouriteComponent
         ]
     })
 ], CustomerModule);

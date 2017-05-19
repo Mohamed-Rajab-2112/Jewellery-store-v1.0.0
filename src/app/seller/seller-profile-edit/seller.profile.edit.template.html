@@ -1,0 +1,74 @@
+<form #profileForm="ngForm" (ngSubmit)="profileForm.valid && updateProfile(profileForm.value)">
+  <fieldset>
+    <label>name</label>
+    <input type="text" [value]="user.name" disabled>
+  </fieldset>
+
+  <fieldset>
+    <label>Vendor Logo</label>
+    <label for="logo">Upload logo</label>
+    <input id="logo" type="file" accept="image/*" style="visibility: hidden" (change)="getLogo($event)">
+  </fieldset>
+
+  <fieldset>
+    <label>Main telephone number</label>
+    <input type="text" name="telephone1" [(ngModel)]="user.telephone1" required>
+    <em *ngIf="profileForm.submitted && profileForm.controls?.telephone1.invalid">This field is required</em>
+    <label>Secondary telephone number</label>
+    <input type="text" name="telephone2" [(ngModel)]="user.telephone2">
+    <label>Secondary telephone number</label>
+    <input type="text" name="telephone3" [(ngModel)]="user.telephone3">
+    <button>Verify my phone number</button>
+    <em>Will verify your primary number only</em>
+  </fieldset>
+
+  <fieldset>
+    <input type="email" name="email" [(ngModel)]="user.email" required>
+    <em *ngIf="profileForm.submitted && profileForm.controls?.email.invalid">This field is required</em>
+  </fieldset>
+
+  <fieldset>
+    <input type="text" name="area" [(ngModel)]="user.area">
+  </fieldset>
+
+  <fieldset>
+    <em>You can't change your address after first month of registrations</em>
+    <input type="text" name="address" [(ngModel)]="user.address">
+    <button>Apply for verification</button>
+  </fieldset>
+
+  <p>To be more professional vendor and have more clients it is highly recommended to verify your vendor</p>
+
+  <ul>
+    <li>Verify your Phone number</li>
+    <li>Verify your place</li>
+  </ul>
+
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Change password</h3>
+<form #passwordForm="ngForm" name="passwordForm"
+      (ngSubmit)="passwordForm.valid && saveNewPassword(passwordForm.value.newPasword)">
+  <fieldset>
+    <label>Old password</label>
+    <input type="password" name="password" [(ngModel)]="password" required>
+    <label>New password</label>
+    <input type="password" name="newPasword" [(ngModel)]="newPasword" required>
+    <label>Re-type new password</label>
+    <input type="password" name="renewPasword" [(ngModel)]="renewPasword" required>
+    <em
+      *ngIf="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword === passwordForm.value.renewPasword">Matched</em>
+    <em
+      *ngIf="passwordForm.controls.renewPasword?.valid && passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword !== passwordForm.value.renewPasword">Not
+      Matched</em>
+    <em *ngIf="passwordForm.submitted && passwordForm.controls.newPasword?.invalid">this field required</em>
+  </fieldset>
+  <button
+    [disabled]="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword !== passwordForm.value.renewPasword"
+    type="submit">Submit
+  </button>
+</form>
+
+<h4>Delete Account</h4>
+<button (click)="deleteAccount()">Delete</button>

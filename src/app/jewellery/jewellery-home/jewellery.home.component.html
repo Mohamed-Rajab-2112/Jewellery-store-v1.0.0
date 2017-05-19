@@ -2,12 +2,12 @@
 
   <div class="container text-center">
     <h2>Hot Deals</h2>
-    <jewellery-thumbnail [product]="item" class="col-md-4" *ngFor="let item of deals"></jewellery-thumbnail>
+    <jewellery-thumbnail [products]="deals"></jewellery-thumbnail>
   </div>
 
   <div class="text-center">
     <h2>Most Visited</h2>
-    <jewellery-thumbnail [product]="item" class="col-md-4" *ngFor="let item of mostVisited"></jewellery-thumbnail>
+    <jewellery-thumbnail [products]="mostVisited"></jewellery-thumbnail>
   </div>
 
 </div>

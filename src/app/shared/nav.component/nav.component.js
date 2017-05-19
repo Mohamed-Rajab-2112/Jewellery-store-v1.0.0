@@ -12,13 +12,15 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var jewellery_service_1 = require("../services/jewellery.service");
 var auth_service_1 = require("../services/auth.service");
+var customer_service_1 = require("../services/customer.service");
 var NavComponent = (function () {
-    function NavComponent(router, jewellery, auth) {
+    function NavComponent(router, jewellery, auth, customer) {
         this.router = router;
         this.jewellery = jewellery;
         this.auth = auth;
+        this.customer = customer;
     }
-    NavComponent.prototype.searchProductAndPlace = function (values) {
+    NavComponent.prototype.searchProductAndarea = function (values) {
         this.router.navigate(["/search/" + JSON.stringify(values)]);
     };
     NavComponent.prototype.ngOnInit = function () {
@@ -26,22 +28,23 @@ var NavComponent = (function () {
         this.jewellery.searchTermsChanged.subscribe(function (value) {
             _this.productName = value["productName"] === "undefined" ? "" : value["productName"];
             _this.sellerName = value["sellerName"] === "undefined" ? "" : value["sellerName"];
-            _this.place = value["place"] === "undefined" ? "" : value["place"];
+            _this.area = value["area"] === "undefined" ? "" : value["area"];
         });
-        this.signInToggle = false;
-        this.choosedUserType = '-Membership type-';
-        this.userTypes = this.auth.getUserTypes();
         this.auth.user.subscribe(function (value) {
             console.log(value);
-            // this.auth.actualUser = value;
             _this.userName = value.name;
             _this.userType = value.userType;
         });
+        this.auth.isAuth.subscribe(function (isAuth) {
+            _this.toggleLogInBtn = !isAuth;
+        });
+        this.customer.favouriteJewellery.subscribe(function (value) {
+            _this.favouriteCount = value.length;
+        });
     };
-    NavComponent.prototype.logIn = function (values) {
-        this.auth.logIn(values);
-        this.toggleLogInBtn = this.auth.isAuth;
-        this.signInToggle = false;
+    NavComponent.prototype.setSignInToggle = function (toggle) {
+        console.log(toggle);
+        this.signInToggle = toggle;
     };
     NavComponent.prototype.toggleSignInFormClass = function () {
         if (this.signInToggle) {
@@ -51,28 +54,8 @@ var NavComponent = (function () {
             return ['sign-in', 'hide-sign-in'];
         }
     };
-    NavComponent.prototype.signUp = function (values) {
-        values.signUpDate = new Date(Date.now()).toISOString();
-        values.userType = this.choosedUserType;
-        console.log(values);
-        this.auth.signUp(values);
-    };
-    NavComponent.prototype.toggleTypeButton = function (type) {
-        this.choosedUserType = type;
-    };
     NavComponent.prototype.toggleSignInFlag = function () {
         this.signInToggle = !this.signInToggle;
-    };
-    NavComponent.prototype.setChoosedTypeButtonClass = function () {
-        if (this.choosedUserType == 'Vendor') {
-            return ['typeButtonSelected'];
-        }
-        else if (this.choosedUserType == 'Customer') {
-            return ['typeButtonSelected'];
-        }
-        else {
-            return ['typeButtonNotSelected'];
-        }
     };
     NavComponent.prototype.routeToProfile = function () {
         var _this = this;
@@ -85,6 +68,9 @@ var NavComponent = (function () {
             }
         });
     };
+    NavComponent.prototype.routeToFavouriteJewellery = function () {
+        this.router.navigate((['customer/customer-favourite-jewellery']));
+    };
     return NavComponent;
 }());
 NavComponent = __decorate([
@@ -93,7 +79,7 @@ NavComponent = __decorate([
         templateUrl: "./nav.component.template.html",
         styleUrls: ["./nav.component.styles.css"]
     }),
-    __metadata("design:paramtypes", [router_1.Router, jewellery_service_1.JewelleryService, auth_service_1.AuthService])
+    __metadata("design:paramtypes", [router_1.Router, jewellery_service_1.JewelleryService, auth_service_1.AuthService, customer_service_1.CustomerService])
 ], NavComponent);
 exports.NavComponent = NavComponent;
 //# sourceMappingURL=nav.component.js.map

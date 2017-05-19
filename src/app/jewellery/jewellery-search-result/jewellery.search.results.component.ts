@@ -10,6 +10,7 @@ import {JewelleryService, JeweleryProduct, SearchForm} from "../../shared/index"
 
 export class JewellerySearchResultsComponent implements OnInit {
   searchResult: JeweleryProduct[];
+  searchResultFiltered: JeweleryProduct[];
   searchTerms: SearchForm;
 
   constructor(private route: ActivatedRoute, private jewellery: JewelleryService) {
@@ -22,6 +23,15 @@ export class JewellerySearchResultsComponent implements OnInit {
       this.searchTerms = JSON.parse(params["terms"]);
       this.jewellery.setSearchTerms(this.searchTerms);
       this.searchResult = this.jewellery.searchJewellery(this.searchTerms);
+      this.searchResultFiltered = this.jewellery.searchJewellery(this.searchTerms);
     });
+  }
+
+  applyFilterTerms(terms: any) {
+    this.searchResultFiltered = this.jewellery.applyFilterTerms(terms, this.searchResult)
+  }
+
+  sortProducts(sortTerm: string) {
+    this.jewellery.sortProducts(sortTerm, this.searchResultFiltered);
   }
 }

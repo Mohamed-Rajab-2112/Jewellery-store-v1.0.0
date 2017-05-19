@@ -1,45 +1,22 @@
-// import {Customer} from '../index'
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import {Injectable} from "@angular/core";
+import {JeweleryProduct} from "./../index";
+import {User} from "./../index";
 import {AuthService} from "./auth.service";
 
-// const Customers: Customer[] = [
-//   {
-//     name: 'asdaaa',
-//     telephone1: 1546846454,
-//     telephone2: 4687454678,
-//     email: 'asdasdasddd@asdasd.com',
-//     area: 'AinShams/Cairo'
-//   },
-//   {
-//     name: 'asdaaa',
-//     telephone1: 1546846454,
-//     telephone2: 4687454678,
-//     email: 'asdasdasddd@asdasd.com',
-//     area: 'AinShams/Cairo'
-//   },
-//   {
-//     name: 'asdaaa',
-//     telephone1: 1546846454,
-//     telephone2: 4687454678,
-//     email: 'asdasdasddd@asdasd.com',
-//     area: 'AinShams/Cairo'
-//   },
-//   {
-//     name: 'asdaaa',
-//     telephone1: 1546846454,
-//     telephone2: 4687454678,
-//     email: 'asdasdasddd@asdasd.com',
-//     area: 'AinShams/Cairo'
-//   }
-// ];
 @Injectable()
+
+
 export class CustomerService {
+  favouriteJewellery = new BehaviorSubject(<JeweleryProduct[]>[]);
+
   constructor(private auth: AuthService) {
+
   }
 
   updateProfileData(values: any) {
     console.log(values);
-    let currentUserData = {};
+    let currentUserData = <User>{};
     this.auth.user.subscribe((user) => {
       currentUserData = user;
       for (let property in values) {
@@ -49,5 +26,10 @@ export class CustomerService {
       }
     });
     this.auth.setUser(currentUserData);
+  }
+
+  addProductToFavourite(product: JeweleryProduct) {
+    this.favouriteJewellery.value.push(product);
+    this.favouriteJewellery.next(this.favouriteJewellery.value)
   }
 }

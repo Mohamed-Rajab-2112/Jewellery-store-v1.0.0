@@ -1,15 +1,20 @@
-export {JewelleryService} from "./services/jewellery.service";
-export {NavComponent} from "./nav.component/nav.component";
-export {FooterComponent} from "./footer.component/footer.component";
-export {SearchForm} from "./models/searchForm.model";
-export {JeweleryProduct} from "./models/jewelleryProduct.model";
-export {Customer} from "./models/Customer.model";
-export {SellerService} from "./services/seller.service";
-export {Seller} from "../shared/models/seller.model";
+export * from "./services/auth.service";
+
+export * from "./services/jewellery.service";
+export * from "./nav.component/nav.component";
+export * from "./footer.component/footer.component";
+export * from "./models/searchForm.model";
+export * from "./models/jewelleryProduct.model";
+export * from "./models/User.model";
+export * from "./services/seller.service";
+export * from "./services/jewellery.details.and.seller.details.activator";
+export * from "./services/default.redirect.activator";
+export * from "./services/jewellery.list.activator";
+export * from "./signin.signup.component/signin.signup.component";
 
 /*Service exports*/
-export {AuthService} from "./services/auth.service";
-export {CustomerService} from "./services/customer.service";
-export {UserProfileActivator} from "./services/user.profile.activator.service";
+export * from "./services/customer.service";
+export * from "./services/customer.auth.activator.service";
+export * from "./services/vendor.auth.activator.service";
 
-export {SharedModule} from "../shared/shared.module";
+export * from "./../shared/shared.module";

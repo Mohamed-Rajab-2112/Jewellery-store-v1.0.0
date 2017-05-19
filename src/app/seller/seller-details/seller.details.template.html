@@ -1,9 +1,14 @@
 <img [src]="sellerDetails.imageUrl">
 <h2>{{sellerDetails.name}}</h2>
 
-<jewellery-thumbnail [product]="item" *ngFor="let item of sellingList"></jewellery-thumbnail>
+<h3 *ngIf="sellerDetails.verified">Verified</h3>
+<h3 *ngIf="!sellerDetails.verified">Not Verified</h3>
 
-<p>{{sellerDetails.telNumber1}}</p>
+<p>{{sellerDetails?.telNumber1}}</p>
 <p>{{sellerDetails?.telNumber2}}</p>
 <p>{{sellerDetails?.address}}</p>
 <p>{{sellerDetails?.area}}</p>
+
+<products-filter (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>
+
+<jewellery-thumbnail [products]="sellingListFiltered"></jewellery-thumbnail>
