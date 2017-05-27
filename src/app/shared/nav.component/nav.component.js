@@ -34,6 +34,7 @@ var NavComponent = (function () {
             console.log(value);
             _this.userName = value.name;
             _this.userType = value.userType;
+            _this.showFavourite = value.userType == 'Customer';
         });
         this.auth.isAuth.subscribe(function (isAuth) {
             _this.toggleLogInBtn = !isAuth;

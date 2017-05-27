@@ -16,12 +16,15 @@ const numberOfImagesToUpload = 3;
 export class SellerAddComponent implements OnInit {
   @Input() product: any;
   @Output() newProduct = new EventEmitter();
+  @Output() newPrice = new EventEmitter();
+  @Output() publishDone = new EventEmitter();
   productTypes: string[];
   goldDegrees: string[];
   imageUrlValid: boolean;
   imagesFilesList: any[] = [];
   editMode: boolean;
   productOldValue: any;
+  oldPrice: number;
 
   constructor(private jewellery: JewelleryService, private seller: SellerService, private sanitizer: DomSanitizer, private _compiler: Compiler) {
   }
@@ -29,6 +32,7 @@ export class SellerAddComponent implements OnInit {
   ngOnInit() {
     this._compiler.clearCache();
     console.log(this.product);
+    this.oldPrice = this.product.price;
     this.productOldValue = JSON.stringify(this.product);
     console.log(this.productOldValue);
     this.product = JSON.parse(this.productOldValue);
@@ -52,14 +56,17 @@ export class SellerAddComponent implements OnInit {
   }
 
   publishProduct(productDetails: any) {
+    if (productDetails.price != this.oldPrice && confirm('Do you want to change all other products prices by the same amount ?')) {
+      this.newPrice.emit(productDetails.price - this.oldPrice);
+    }
     productDetails.imageUrl = this.imagesFilesList;
     this.product.id ? productDetails.id = this.product.id : true;
     this.imageUrlValid = !!productDetails.imageUrl.length;
     if (this.imageUrlValid) {
       productDetails.id = productDetails.id || this.seller.sellerDetails.id + Date.now();
       this.seller.postNewProduct(productDetails);
-      this.newProduct.emit(productDetails)
-
+      this.newProduct.emit(productDetails);
+      this.publishDone.emit(true);
     }
     console.log(productDetails);
   }

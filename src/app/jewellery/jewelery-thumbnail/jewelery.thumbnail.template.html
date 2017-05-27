@@ -1,6 +1,6 @@
 <div class="col-md-4" *ngFor="let product of products">
 
-  <jewellery-favourite *ngIf="showFavouriteBtn" [product]="product"></jewellery-favourite>
+  <jewellery-favourite *ngIf="showFavouriteBtn(product)" [product]="product"></jewellery-favourite>
 
   <i *ngIf="showEditDelBtn" (click)="editProduct(product)">edit</i>
   <i *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</i>
@@ -8,6 +8,6 @@
     <h4>{{product?.productName}}</h4>
     <h5>{{product?.price}}</h5>
   </div>
-  <add-product [product]="product" *ngIf="showEditForm(product)"></add-product>
+  <add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product" *ngIf="showEditForm(product)"></add-product>
 </div>
 

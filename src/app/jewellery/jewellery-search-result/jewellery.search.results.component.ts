@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 
-import {JewelleryService, JeweleryProduct, SearchForm} from "../../shared/index";
+import {JewelleryService, JeweleryProduct, SearchForm} from "./../../shared/index";
 
 @Component({
   selector: "jewellery-search-result",

@@ -1,4 +1,3 @@
-import {BehaviorSubject} from "rxjs/BehaviorSubject";
 const tempJewellery: JeweleryProduct[] = [
   {
     id: 1,
@@ -114,7 +113,6 @@ import {SearchForm, JeweleryProduct} from "../index";
 export class JewelleryService {
   private searchTerms = new Subject<SearchForm>();
   searchTermsChanged = this.searchTerms.asObservable();
-  favouriteJewellery = new BehaviorSubject(<JeweleryProduct[]>[]);
 
   getMostVisitedJewellery() {
     return tempJewellery;
@@ -239,10 +237,6 @@ export class JewelleryService {
     })
   }
 
-  addProductToFavourite(product: JeweleryProduct) {
-    this.favouriteJewellery.value.push(product);
-    this.favouriteJewellery.next(this.favouriteJewellery.value)
-  }
 }
 
 

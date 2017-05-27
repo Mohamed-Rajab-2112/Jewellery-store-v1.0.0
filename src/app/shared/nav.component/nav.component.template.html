@@ -1,14 +1,45 @@
-<div class="sign-in" [ngClass]="toggleSignInFormClass()">
+<div class="earrings" [ngClass]="toggleSignInFormClass()">
   <signin-signup (signInToggleOutPut)="setSignInToggle($event)" [signInToggleInput]="signInToggle"></signin-signup>
 </div>
 
 <header>
+  <!--<div class="nav">-->
+    <!--<div class="container-fluid">-->
+
+      <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+        <ul class="list-unstyled list-inline text-center">
+          <li><a [routerLink]="['seller/sellers-list']">Sellers</a></li>
+          <li><a [routerLink]="['/home/', 'ring']">Rings</a></li>
+          <li><a [routerLink]="['/home/', 'bracelet']">Bracelets</a></li>
+          <li>
+              <a [routerLink]="['/home']">Brand</a>
+          </li>
+          <li><a [routerLink]="['/home/', 'band']">Bands</a></li>
+          <li><a [routerLink]="['/home/', 'earring']">earrings</a></li>
+          <li><a [routerLink]="['/home/', 'other']">Different products</a></li>
+          <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>-->
+          <!--<ul class="dropdown-menu">-->
+          <!--<li><a href="#">Rings</a></li>-->
+          <!--<li><a href="#">Bracelets</a></li>-->
+          <!--<li><a href="#">Bands</a></li>-->
+          <!--<li class="divider"></li>-->
+          <!--<li><a href="#">Separated link</a></li>-->
+          <!--<li class="divider"></li>-->
+          <!--<li><a href="#">One more separated link</a></li>-->
+          <!--</ul>-->
+          <!--</li>-->
+        </ul>
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
   <div class="background">
     <h1>ZAHAB store</h1>
     <p>Best place for gold deals</p>
 
-    <i (click)="routeToFavouriteJewellery()">Favourite Products</i>
-    <i>{{favouriteCount}}</i>
+    <i (click)="routeToFavouriteJewellery()" *ngIf="showFavourite">Favourite Products <i>{{favouriteCount}}</i></i>
+
 
     <div *ngIf="toggleLogInBtn">
       <button (click)="toggleSignInFlag()">log in</button>
@@ -64,39 +95,4 @@
   </div>
 </header>
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" [routerLink]="['/home']">Brand</a>
-    </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav nav-list">
-        <li><a [routerLink]="['seller/sellers-list']">Sellers</a></li>
-        <li><a [routerLink]="['/home/', 'ring']">Rings</a></li>
-        <li><a [routerLink]="['/home/', 'bracelet']">Bracelets</a></li>
-        <li><a [routerLink]="['/home/', 'band']">Bands</a></li>
-        <li><a [routerLink]="['/home/', 'other']">Different products</a></li>
-        <!--<li class="dropdown">-->
-        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>-->
-        <!--<ul class="dropdown-menu">-->
-        <!--<li><a href="#">Rings</a></li>-->
-        <!--<li><a href="#">Bracelets</a></li>-->
-        <!--<li><a href="#">Bands</a></li>-->
-        <!--<li class="divider"></li>-->
-        <!--<li><a href="#">Separated link</a></li>-->
-        <!--<li class="divider"></li>-->
-        <!--<li><a href="#">One more separated link</a></li>-->
-        <!--</ul>-->
-        <!--</li>-->
-      </ul>
-    </div>
-  </div>
-</nav>

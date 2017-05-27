@@ -1,11 +1,11 @@
-import {ActivatedRouteSnapshot, CanActivate} from "@angular/router";
+import {ActivatedRouteSnapshot, CanActivate, Router} from "@angular/router";
 import {Injectable} from "@angular/core";
 
 import {AuthService} from "../index";
 
 @Injectable()
 export class VendorProfileActivator implements CanActivate {
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private router: Router) {
   }
 
   canActivate(): boolean {
@@ -22,6 +22,9 @@ export class VendorProfileActivator implements CanActivate {
       () => {
 
       });
+    if (!res) {
+      this.router.navigate(['/home']);
+    }
     return res;
   }
 }

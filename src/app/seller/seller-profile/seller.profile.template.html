@@ -12,6 +12,10 @@
 
 <jewellery-thumbnail [products]="sellerProductsFiltered"></jewellery-thumbnail>
 
+
+<!--<button (click)="applyPriceAddition()">Edit price for all products</button>-->
+<!--<input type="number" [(ngModel)]="priceAddition">-->
+
 <button>add new product</button>
 <add-product [product]="{}" (newProduct)="addNewProduct($event)"></add-product>
 

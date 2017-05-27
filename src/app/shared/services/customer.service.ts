@@ -28,8 +28,13 @@ export class CustomerService {
     this.auth.setUser(currentUserData);
   }
 
+  checkItemAlreadyInFavourite(product: JeweleryProduct) {
+    return ~this.favouriteJewellery.value.indexOf(product);
+  }
+
   addProductToFavourite(product: JeweleryProduct) {
-    this.favouriteJewellery.value.push(product);
-    this.favouriteJewellery.next(this.favouriteJewellery.value)
+    !this.checkItemAlreadyInFavourite(product) && this.favouriteJewellery.value.push(product);
+    this.favouriteJewellery.next(this.favouriteJewellery.value);
+    console.log(this.favouriteJewellery);
   }
 }

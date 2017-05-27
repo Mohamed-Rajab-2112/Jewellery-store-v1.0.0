@@ -9,15 +9,6 @@
   height: 100%;
 }
 
-/*.sign-in form {*/
-  /*position: relative;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  /*z-index: 101;*/
-  /*width: 50%;*/
-  /*margin: 0 auto;*/
-/*}*/
-
 .show-sign-in {
   visibility: visible;
 }
@@ -26,21 +17,28 @@
   visibility: hidden;
 }
 
-/*.sign-in-background {*/
-  /*position: fixed;*/
-  /*top: 0;*/
-  /*z-index: 100;*/
-  /*height: 100%;*/
-  /*width: 100%;*/
-  /*background-color: rgba(0, 0, 0, 0.5);*/
-/*}*/
+.background {
+  background: url("app/images/home-background.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 864px;
+}
 
-/*.typeButtonSelected {*/
-  /*background-color: blueviolet;*/
-  /*color: wheat;*/
-/*}*/
+header ul {
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius : 20px;
+  background-color: #DBBFAE;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /*height: 90px;*/
+  box-sizing: border-box;
+  margin: 0;
+}
 
-/*.typeButtonNotSelected {*/
-  /*color: blueviolet;*/
-  /*background-color: wheat;*/
-/*}*/
+header ul li {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 10%;
+  /*vertical-align: middle;*/
+}

@@ -1,7 +1,7 @@
 <div>
   <h2>{{jewelleryDetails.sellerName}}</h2>
   <h2>{{jewelleryDetails.productName}}</h2>
-  <jewellery-favourite [product]="jewelleryDetails"></jewellery-favourite>
+  <jewellery-favourite *ngIf="showFavouriteBtn(jewelleryDetails)" [product]="jewelleryDetails"></jewellery-favourite>
   <h3>{{jewelleryDetails.place}}</h3>
   <img [src]="image.url" *ngFor="let image of jewelleryDetails.imageUrl">
   <h2>Price: {{jewelleryDetails.price}}</h2>

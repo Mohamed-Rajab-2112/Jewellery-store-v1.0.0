@@ -21,8 +21,9 @@ export class NavComponent implements OnInit {
   userName: string;
   userType: string;
   favouriteCount: number;
+  showFavourite: boolean;
 
-  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer:CustomerService) {
+  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService) {
 
   }
 
@@ -41,10 +42,14 @@ export class NavComponent implements OnInit {
       console.log(value);
       this.userName = value.name;
       this.userType = value.userType;
+      this.showFavourite = value.userType == 'Customer';
+
     });
+
     this.auth.isAuth.subscribe((isAuth) => {
       this.toggleLogInBtn = !isAuth;
     });
+
     this.customer.favouriteJewellery.subscribe((value) => {
       this.favouriteCount = value.length;
     })

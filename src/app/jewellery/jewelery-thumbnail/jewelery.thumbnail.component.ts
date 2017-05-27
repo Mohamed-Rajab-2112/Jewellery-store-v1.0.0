@@ -4,6 +4,7 @@ import {JeweleryProduct} from "../../shared/models/jewelleryProduct.model";
 import {AuthService} from "../../shared/services/auth.service";
 import {audit} from "rxjs/operator/audit";
 import {JewelleryService} from "../../shared/services/jewellery.service";
+import {CustomerService} from "../../shared/services/customer.service";
 @Component({
   selector: "jewellery-thumbnail",
   templateUrl: "app/jewellery/jewelery-thumbnail/jewelery.thumbnail.template.html",
@@ -14,10 +15,9 @@ export class JewelleryThumbnailComponent implements OnInit {
   @Input() products: JeweleryProduct[];
   currentRoute: string;
   showEditDelBtn: boolean;
-  showFavouriteBtn: boolean;
   currentEditproduct: JeweleryProduct;
 
-  constructor(private jewellery: JewelleryService, private auth: AuthService, private router: Router) {
+  constructor(private jewellery: JewelleryService, private auth: AuthService, private router: Router, private customer: CustomerService) {
 
   }
 
@@ -26,6 +26,7 @@ export class JewelleryThumbnailComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.products);
     this.showEditDelBtn = false;
     this.auth.setCurrentRoute();
     this.auth.currentRoute.subscribe((routeUrl) => {
@@ -33,13 +34,15 @@ export class JewelleryThumbnailComponent implements OnInit {
         this.showEditDelBtn = true;
       }
     });
+  }
+
+  showFavouriteBtn(product: JeweleryProduct) {
+    let result: boolean = false;
     this.auth.user.subscribe((user) => {
-        this.showFavouriteBtn = user.userType == 'Customer';
-      },
-      (err) => {
-        this.showFavouriteBtn = false;
-        console.log(err);
-      })
+      result = user.userType == 'Customer' && !this.customer.checkItemAlreadyInFavourite(product);
+    });
+
+    return result;
   }
 
   deleteProduct(product: JeweleryProduct) {
@@ -61,5 +64,17 @@ export class JewelleryThumbnailComponent implements OnInit {
 
   showEditForm(product: JeweleryProduct) {
     return product == this.currentEditproduct
+  }
+
+  applyNewPricesForVendor(newPrice: number) {
+    this.products.forEach((product) => {
+      product.price += newPrice;
+    })
+  }
+
+  closeEditMode(publishDone: boolean) {
+    if (publishDone) {
+      this.currentEditproduct = null;
+    }
   }
 }
