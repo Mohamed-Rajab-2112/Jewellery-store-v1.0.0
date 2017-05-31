@@ -1,13 +1,48 @@
-<div>
+<div class="home">
 
-  <div class="container text-center">
-    <h2>Hot Deals</h2>
-    <jewellery-thumbnail [products]="deals"></jewellery-thumbnail>
+  <h2>How it works</h2>
+  <div class="how-it-works-details-container">
+    <div>
+      <img src="app/assets/images/ic_search_white.svg">
+      <h3>Search for the suitable gold product</h3>
+    </div>
+    <div>
+      <img src="app/assets/images/phone.svg">
+      <h3>Call the vendor to get more details about the item</h3>
+    </div>
+    <div>
+      <img src="app/assets/images/businessman-with-dollar-money-sign-icon.svg">
+      <h3>Visit the vendor to buy the gold product</h3>
+    </div>
   </div>
 
-  <div class="text-center">
-    <h2>Most Visited</h2>
-    <jewellery-thumbnail [products]="mostVisited"></jewellery-thumbnail>
+  <h2>Latest Offers</h2>
+  <div class="offers-container">
+    <div>
+      <img src="app/assets/images/arrow-left.svg" [hidden]="translateValueLatestOffers == 0"
+           (click)="arrow('latestOffers', 'left')">
+    </div>
+    <div class="overFlow-container">
+      <jewellery-thumbnail [products]="deals" [translate]="translateValueLatestOffers"></jewellery-thumbnail>
+    </div>
+    <div>
+      <img src="app/assets/images/arrow-right.svg" [hidden]="translateValueLatestOffers == -200"
+           (click)="arrow('latestOffers', 'right')">
+    </div>
   </div>
 
+  <h2>Most Visited</h2>
+  <div class="offers-container">
+    <div>
+      <img src="app/assets/images/arrow-left.svg" [hidden]="translateValueMostVisited == 0"
+           (click)="arrow('mostVisited', 'left')">
+    </div>
+    <div class="overFlow-container">
+      <jewellery-thumbnail [products]="mostVisited" [translate]="translateValueMostVisited"></jewellery-thumbnail>
+    </div>
+    <div>
+      <img src="app/assets/images/arrow-right.svg" [hidden]="translateValueMostVisited == -200"
+           (click)="arrow('mostVisited', 'right')">
+    </div>
+  </div>
 </div>

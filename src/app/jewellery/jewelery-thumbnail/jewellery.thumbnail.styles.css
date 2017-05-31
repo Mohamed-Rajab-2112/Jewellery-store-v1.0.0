@@ -1,5 +1,49 @@
-.product-thumbnail {
-  background-color: lightcoral;
-  border-radius: 5px;
+/* line 3, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container {
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  width: 100%;
+  height: 500px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 14, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail {
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  margin: 0.5%;
+  width: 19%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
   cursor: pointer;
+  background-color: #DFDFDF;
+  border: 1px solid #DFDFDF;
+  transition: 0.3s all;
+}
+/* line 30, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail:hover {
+  transition: 0.5s all;
+  box-sizing: border-box;
+  border: 1px solid #87655A;
+}
+/* line 35, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail img {
+  width: 80%;
+}
+/* line 38, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail h3 {
+  margin: 5px;
+}
+/* line 41, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .fav-btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }

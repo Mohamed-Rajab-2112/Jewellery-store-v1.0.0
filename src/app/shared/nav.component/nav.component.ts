@@ -22,6 +22,7 @@ export class NavComponent implements OnInit {
   userType: string;
   favouriteCount: number;
   showFavourite: boolean;
+  activeLable: string;
 
   constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService) {
 
@@ -84,5 +85,21 @@ export class NavComponent implements OnInit {
 
   routeToFavouriteJewellery() {
     this.router.navigate((['customer/customer-favourite-jewellery']))
+  }
+
+  showLable(activeLable: string) {
+    this.activeLable = activeLable;
+  }
+
+  hideLable() {
+    this.activeLable = null;
+  }
+
+  toggleLable(activeLable: string) {
+    if (this.activeLable == activeLable) {
+      return ['show-lable']
+    } else {
+      return []
+    }
   }
 }

@@ -7,8 +7,8 @@ import {JewelleryService} from "../../shared/services/jewellery.service";
 import {CustomerService} from "../../shared/services/customer.service";
 @Component({
   selector: "jewellery-thumbnail",
-  templateUrl: "app/jewellery/jewelery-thumbnail/jewelery.thumbnail.template.html",
-  styleUrls: ["app/jewellery/jewelery-thumbnail/jewellery.thumbnail.styles.css"]
+  templateUrl: "./jewelery.thumbnail.template.html",
+  styleUrls: ["./jewellery.thumbnail.styles.css"]
 })
 
 export class JewelleryThumbnailComponent implements OnInit {
@@ -16,6 +16,7 @@ export class JewelleryThumbnailComponent implements OnInit {
   currentRoute: string;
   showEditDelBtn: boolean;
   currentEditproduct: JeweleryProduct;
+  @Input() translate: number;
 
   constructor(private jewellery: JewelleryService, private auth: AuthService, private router: Router, private customer: CustomerService) {
 
@@ -76,5 +77,9 @@ export class JewelleryThumbnailComponent implements OnInit {
     if (publishDone) {
       this.currentEditproduct = null;
     }
+  }
+
+  applyTranslate() {
+    return {'transform': 'translate(' + this.translate + '%)'}
   }
 }

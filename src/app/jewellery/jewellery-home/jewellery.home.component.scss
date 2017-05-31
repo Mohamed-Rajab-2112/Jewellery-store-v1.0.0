@@ -1,0 +1,56 @@
+@import "../../assets/stylesheets/colors-theme";
+
+.home {
+  background-color: $bgcolor;
+  padding-bottom: 130px;
+  margin-bottom: 0;
+  h2 {
+    padding-top: 75px;
+    text-align: center;
+    margin-top: 0;
+    &:after {
+      content: '';
+      width: 40px;
+      display: block;
+      margin: 15px auto;
+      border-bottom: 2px solid $dcolor;
+    }
+  }
+  .how-it-works-details-container {
+    display: flex;
+    margin: 50px auto 0;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    div {
+      //border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        height: 107px;
+      }
+      h3 {
+        text-align: center;
+        width: 75%;
+      }
+    }
+  }
+
+  .offers-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    .overFlow-container {
+      overflow: hidden;
+      height: 500px;
+      width: 80%;
+    }
+    div {
+      width: 5%;
+      margin: 5px;
+      //border: 1px solid black;
+    }
+  }
+}

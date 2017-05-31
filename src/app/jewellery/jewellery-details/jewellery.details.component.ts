@@ -6,7 +6,7 @@ import {CustomerService} from "../../shared/services/customer.service";
 
 @Component({
   selector: "jeweller-details",
-  templateUrl: "app/jewellery/jewellery-details/jewellery.details.template.html"
+  templateUrl: "./jewellery.details.template.html"
 })
 
 export class JewelleryDetailsComponent implements OnInit {

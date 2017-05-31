@@ -1,0 +1,15 @@
+/* line 1, jewellery.favourite.button.styles.scss */
+button {
+  height: 25px;
+  background-color: transparent;
+  border: none;
+}
+/* line 6, jewellery.favourite.button.styles.scss */
+button:active {
+  outline: none;
+}
+/* line 9, jewellery.favourite.button.styles.scss */
+button img {
+  cursor: pointer;
+  height: 100%;
+}

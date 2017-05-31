@@ -4,7 +4,8 @@ import {JeweleryProduct} from "../../shared/models/jewelleryProduct.model";
 
 @Component({
   selector: 'jewellery-favourite',
-  templateUrl: 'app/jewellery/jewellery-favourite-button-component/jewellery.favourite.button.template.html'
+  templateUrl: './jewellery.favourite.button.template.html',
+  styleUrls: ['./jewellery.favourite.button.styles.css']
 })
 
 export class JewelleryFavouriteBtn {

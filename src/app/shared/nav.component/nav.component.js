@@ -72,6 +72,20 @@ var NavComponent = (function () {
     NavComponent.prototype.routeToFavouriteJewellery = function () {
         this.router.navigate((['customer/customer-favourite-jewellery']));
     };
+    NavComponent.prototype.showLable = function (activeLable) {
+        this.activeLable = activeLable;
+    };
+    NavComponent.prototype.hideLable = function () {
+        this.activeLable = null;
+    };
+    NavComponent.prototype.toggleLable = function (activeLable) {
+        if (this.activeLable == activeLable) {
+            return ['show-lable'];
+        }
+        else {
+            return [];
+        }
+    };
     return NavComponent;
 }());
 NavComponent = __decorate([

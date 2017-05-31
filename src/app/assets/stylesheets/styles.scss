@@ -1,0 +1,30 @@
+@import "compass";
+@import "normalize.css";
+@import "./colors-theme";
+
+html body h1 {
+  margin-top: 0;
+  font-size: 250%;
+}
+
+html {
+  font-family: Helvetica, sans-serif;
+  background-color: $grey;
+  color: $mcolor;
+}
+
+html body {
+  //background-color: $bgcolor;
+  width: 80%;
+  margin: 0 auto 0;
+  border-top-right-radius: 20px;
+  border-top-left-radius : 20px;
+  h2 {
+    font-weight: 100;
+    color: $dcolor;
+  }
+  h3 {
+    font-weight: 100;
+    color: $ldcolor;
+  }
+}

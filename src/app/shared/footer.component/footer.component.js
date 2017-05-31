@@ -14,8 +14,8 @@ var FooterComponent = (function () {
 FooterComponent = __decorate([
     core_1.Component({
         selector: "footer-component",
-        template: "\n    <footer class=\"text-center col-md-12\">\n      <p>Developed & designed by Mohamed Ragab</p>\n    </footer>\n  ",
-        styles: ["\n    footer {\n      background-color: black;\n      color: white;\n      margin-top: 100px;\n    }\n  "]
+        templateUrl: './footer.template.html',
+        styleUrls: ['./footer.styles.css']
     })
 ], FooterComponent);
 exports.FooterComponent = FooterComponent;

@@ -76,8 +76,368 @@ const tempJewellery: JeweleryProduct[] = [
   },
   {
     id: 6,
-    productName: "bands",
-    type: "band",
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerName: "aaa",
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 2,
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
+    sellerName: "sss",
+    sellerId: 22222,
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    area: "aaa",
+    sellerName: 'bbb',
+    sellerId: 33333,
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerName: "bbb",
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerName: "aaa",
+    sellerId: 11111,
+    goldDegree: "21K",
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerName: "aaa",
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 2,
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
+    sellerName: "sss",
+    sellerId: 22222,
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    area: "aaa",
+    sellerName: 'bbb',
+    sellerId: 33333,
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerName: "bbb",
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerName: "aaa",
+    sellerId: 11111,
+    goldDegree: "21K",
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerName: "aaa",
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 2,
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
+    sellerName: "sss",
+    sellerId: 22222,
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    area: "aaa",
+    sellerName: 'bbb',
+    sellerId: 33333,
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerName: "bbb",
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerName: "aaa",
+    sellerId: 11111,
+    goldDegree: "21K",
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerName: "aaa",
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 2,
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
+    sellerName: "sss",
+    sellerId: 22222,
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    area: "aaa",
+    sellerName: 'bbb',
+    sellerId: 33333,
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerName: "bbb",
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerName: "aaa",
+    sellerId: 11111,
+    goldDegree: "21K",
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerName: "aaa",
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    area: "aaa",
+    sellerName: 'bbb',
+    sellerId: 33333,
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerName: "bbb",
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerName: "aaa",
+    sellerId: 11111,
+    goldDegree: "21K",
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
     goldDegree: "21K",
     price: 200,
     sellerName: "aaa",
@@ -94,7 +454,8 @@ const tempJewellery: JeweleryProduct[] = [
 const productTypes: string[] = [
   'ring',
   'bracelet',
-  'band',
+  'earring',
+  'necklace',
   'other'
 ];
 

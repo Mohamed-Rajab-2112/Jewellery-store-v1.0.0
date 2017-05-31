@@ -1,13 +1,19 @@
-<div class="col-md-4" *ngFor="let product of products">
+<div class="product-thumbnail-container" [ngStyle]="applyTranslate()">
+  <div *ngFor="let product of products" class="product-thumbnail">
 
-  <jewellery-favourite *ngIf="showFavouriteBtn(product)" [product]="product"></jewellery-favourite>
+    <i *ngIf="showEditDelBtn" (click)="editProduct(product)">edit</i>
+    <i *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</i>
 
-  <i *ngIf="showEditDelBtn" (click)="editProduct(product)">edit</i>
-  <i *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</i>
-  <div class="product-thumbnail" (click)="routingToJewelleryDetails(product?.type, product?.id)">
-    <h4>{{product?.productName}}</h4>
-    <h5>{{product?.price}}</h5>
+    <jewellery-favourite class="fav-btn" *ngIf="showFavouriteBtn(product)" [product]="product"></jewellery-favourite>
+
+    <div (click)="routingToJewelleryDetails(product?.type, product?.id)">
+      <img [src]="product?.imageUrl[0].url">
+      <h3>{{product?.price}}</h3>
+      <h3>{{product?.productName}}</h3>
+    </div>
+
+    <add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product"
+                 *ngIf="showEditForm(product)"></add-product>
   </div>
-  <add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product" *ngIf="showEditForm(product)"></add-product>
 </div>
 
