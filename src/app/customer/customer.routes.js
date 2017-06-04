@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("./index");
 var customer_auth_activator_service_1 = require("../shared/services/customer.auth.activator.service");
 exports.customerRoutes = [

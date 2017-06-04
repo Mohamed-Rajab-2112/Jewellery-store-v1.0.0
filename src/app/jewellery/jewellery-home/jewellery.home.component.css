@@ -1,24 +1,26 @@
 /* line 3, jewellery.home.component.scss */
 .home {
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 5px 5px 100px grey;
   background-color: #F8C8C6;
   padding-bottom: 130px;
-  margin-bottom: 0;
 }
-/* line 7, jewellery.home.component.scss */
+/* line 11, jewellery.home.component.scss */
 .home h2 {
   padding-top: 75px;
   text-align: center;
   margin-top: 0;
 }
-/* line 11, jewellery.home.component.scss */
+/* line 16, jewellery.home.component.scss */
 .home h2:after {
   content: '';
   width: 40px;
   display: block;
   margin: 15px auto;
-  border-bottom: 2px solid #6D2E2F;
+  border-bottom: 2px solid #455C7E;
 }
-/* line 19, jewellery.home.component.scss */
+/* line 24, jewellery.home.component.scss */
 .home .how-it-works-details-container {
   display: flex;
   margin: 50px auto 0;
@@ -26,35 +28,36 @@
   justify-content: space-around;
   align-items: center;
 }
-/* line 25, jewellery.home.component.scss */
+/* line 30, jewellery.home.component.scss */
 .home .how-it-works-details-container div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 30, jewellery.home.component.scss */
+/* line 35, jewellery.home.component.scss */
 .home .how-it-works-details-container div img {
   height: 107px;
 }
-/* line 33, jewellery.home.component.scss */
+/* line 38, jewellery.home.component.scss */
 .home .how-it-works-details-container div h3 {
+  margin-top: 25px;
   text-align: center;
   width: 75%;
 }
-/* line 40, jewellery.home.component.scss */
+/* line 45, jewellery.home.component.scss */
 .home .offers-container {
   display: flex;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
 }
-/* line 45, jewellery.home.component.scss */
+/* line 50, jewellery.home.component.scss */
 .home .offers-container .overFlow-container {
   overflow: hidden;
   height: 500px;
   width: 80%;
 }
-/* line 50, jewellery.home.component.scss */
+/* line 55, jewellery.home.component.scss */
 .home .offers-container div {
   width: 5%;
   margin: 5px;

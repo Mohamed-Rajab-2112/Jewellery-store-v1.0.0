@@ -9,7 +9,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  //align-items: center;
   .links-container {
     display: flex;
     justify-content: space-between;
@@ -23,7 +22,7 @@ footer {
     margin: 0;
     text-align: center;
     a {
-      text-decoration: none;
+      //text-decoration: none;
       color: $bgcolor;
       transition: 0.3s all;
       &:hover {
@@ -32,5 +31,4 @@ footer {
       }
     }
   }
-  //margin-top: 100px;
 }

@@ -9,29 +9,28 @@ footer {
   flex-direction: column;
   justify-content: space-around;
 }
-/* line 13, footer.styles.scss */
+/* line 12, footer.styles.scss */
 footer .links-container {
   display: flex;
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
 }
-/* line 18, footer.styles.scss */
+/* line 17, footer.styles.scss */
 footer .links-container a {
   margin: 0 15px;
 }
-/* line 22, footer.styles.scss */
+/* line 21, footer.styles.scss */
 footer p {
   margin: 0;
   text-align: center;
 }
-/* line 25, footer.styles.scss */
+/* line 24, footer.styles.scss */
 footer p a {
-  text-decoration: none;
   color: #F8C8C6;
   transition: 0.3s all;
 }
-/* line 29, footer.styles.scss */
+/* line 28, footer.styles.scss */
 footer p a:hover {
   color: #fff;
   transition: 0.5s all;

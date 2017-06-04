@@ -1,7 +1,6 @@
 @import "../../assets/stylesheets/colors-theme";
 
 .product-thumbnail-container {
-  //transform: translate(-400px);
   transition: transform 0.5s ease-in-out;
   display: flex;
   width: 100%;
@@ -9,15 +8,16 @@
   flex-wrap: wrap;
   flex-direction: column;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   .product-thumbnail {
     //border: 1px solid black;
     box-sizing: border-box;
     position: relative;
     text-align: center;
-    margin: 0.5%;
+    margin: 5px 0.5%;
     width: 19%;
+    height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,10 +33,12 @@
       border: 1px solid $ldcolor;
     }
     img {
-      width: 80%;
+      width: 70%;
     }
     h3 {
-      margin: 5px;
+      word-wrap: break-word;
+      width: 80%;
+      margin: 5px auto;
     }
     .fav-btn {
       position: absolute;

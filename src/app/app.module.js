@@ -5,10 +5,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
+var animations_1 = require("@angular/platform-browser/animations");
+var http_1 = require("@angular/http");
+// import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 var index_1 = require("./jewellery/index");
 var index_2 = require("./shared/index");
 var AppModule = (function () {
@@ -22,6 +27,10 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(index_1.appRoutes),
             forms_1.FormsModule,
             index_2.SharedModule,
+            ng_bootstrap_1.NgbModule.forRoot(),
+            // NoopAnimationsModule,
+            animations_1.BrowserAnimationsModule,
+            http_1.HttpModule
         ],
         declarations: [
             index_1.JewelleryStoreAppComponent,
@@ -30,7 +39,7 @@ AppModule = __decorate([
             index_1.JewellerySearchResultsComponent,
             index_1.JewelleryDetailsComponent,
             index_2.NavComponent,
-            index_2.FooterComponent,
+            index_2.FooterComponent
         ],
         bootstrap: [index_1.JewelleryStoreAppComponent],
         providers: [
@@ -42,7 +51,7 @@ AppModule = __decorate([
             index_2.VendorProfileActivator,
             index_2.JewelleryAndSellerDetailsActivator,
             index_2.DefaultRedirectActivator,
-            index_2.JewelleryListActivator
+            index_2.JewelleryListActivator,
         ]
     })
 ], AppModule);

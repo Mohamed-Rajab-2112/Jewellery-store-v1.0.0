@@ -1,112 +1,111 @@
-<div class="earrings" [ngClass]="toggleSignInFormClass()">
+<div [ngClass]="toggleSignInFormClass()">
   <signin-signup (signInToggleOutPut)="setSignInToggle($event)" [signInToggleInput]="signInToggle"></signin-signup>
 </div>
 
+<div class="nav">
+  <div class="above-header-container">
+    <p (click)="routeToFavouriteJewellery()">Favourite Products {{favouriteCount}}</p>
 
-<div class="above-header-container">
-  <p (click)="routeToFavouriteJewellery()">Favourite Products {{favouriteCount}}</p>
-
-  <div *ngIf="toggleLogInBtn">
-    <button (click)="toggleSignInFlag()">log in</button>
-    <button (click)="toggleSignInFlag()">sign up</button>
-  </div>
-</div>
-
-<header>
-
-  <ul class="nav-container">
-    <li>
-      <a [routerLink]="['seller/sellers-list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}"
-         (mouseover)="showLable('sellers')" (mouseleave)="hideLable()"
-         class="menu-icon"><img src="app/assets/images/seller-icon.svg"></a>
-      <h4 [ngClass]="toggleLable('sellers')">Vendors</h4>
-    </li>
-
-    <li>
-      <a [routerLink]="['/home/', 'ring']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-         class="menu-icon" (mouseover)="showLable('Rings')"
-         (mouseleave)="hideLable()"><img
-        src="app/assets/images/wedding-ring.svg"></a>
-      <h4 [ngClass]="toggleLable('Rings')">Rings</h4>
-    </li>
-
-    <li><a [routerLink]="['/home/', 'necklace']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-           class="menu-icon" (mouseover)="showLable('Necklaces')"
-           (mouseleave)="hideLable()"><img src="app/assets/images/necklace-icon.svg"></a>
-      <h4 [ngClass]="toggleLable('Necklaces')">Necklaces</h4>
-    </li>
-
-    <li>
-      <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo"><img
-        src="app/assets/images/zahab-logo-optimized.png"> </a>
-    </li>
-
-    <li><a [routerLink]="['/home/', 'bracelet']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-           class="menu-icon" (mouseover)="showLable('Bracelet')"
-           (mouseleave)="hideLable()"><img src="app/assets/images/bracelet-icon.svg"></a>
-      <h4 [ngClass]="toggleLable('Bracelet')">Bracelets</h4>
-    </li>
-
-    <li><a [routerLink]="['/home/', 'earring']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-           class="menu-icon" (mouseover)="showLable('Earring')"
-           (mouseleave)="hideLable()"><img src="app/assets/images/earrings-icon.svg"></a>
-      <h4 [ngClass]="toggleLable('Earring')">Earrings</h4>
-    </li>
-
-    <li><a [routerLink]="['/home/', 'other']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-           class="menu-icon" (mouseover)="showLable('Other')"
-           (mouseleave)="hideLable()"><img src="app/assets/images/different-icon.svg"></a>
-      <h4 [ngClass]="toggleLable('Other')">Other products</h4>
-    </li>
-  </ul>
-
-  <div class="background">
-    <div *ngIf="!toggleLogInBtn">
-      <h4>Welcome {{userType}}
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav nav-list">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{userName}}<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a (click)="routeToProfile()">Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Sign out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </h4>
+    <div *ngIf="toggleLogInBtn">
+      <button (click)="toggleSignInFlag()">log in</button>
+      <button (click)="toggleSignInFlag()">sign up</button>
     </div>
 
-    <h1>Search further!</h1>
-    <h2>Start now</h2>
-
-
-    <form #searchProductAndPlaceForm="ngForm"
-          (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndarea(searchProductAndPlaceForm.value)"
-          class="serching-form" novalidate>
-
-      <input [(ngModel)]="productName" name="productName" type="text" placeholder="ring, necklace, etc ...">
-
-      <!--<label class="control-label">Seller name</label>-->
-      <!--<input [(ngModel)]="sellerName" name="sellerName" type="text" class="form-control">-->
-
-      <label>In</label>
-
-      <input [(ngModel)]="area" name="area" type="text" dir="rtl" placeholder="مصر الجديده, مدينة نصر, ...">
-
-      <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
-      <!--enter product name you are-->
-      <!--searching for...</em>-->
-
-      <button [disabled]="!productName && !sellerName && !area" type="submit" class="btn btn-primary btn-raised">
-        <img src="app/assets/images/search-icon.svg">
-      </button>
-      <!--<label><img src="app/assets/images/search-icon.svg"></label>-->
-
-    </form>
-
+    <div class="row" *ngIf="!toggleLogInBtn">
+      <div class="col">
+        <div ngbDropdown class="user-dropdown-menu">
+          <p id="dropdownBasic1">Hello!, {{userType}}<a ngbDropdownToggle>
+            {{userName}}
+          </a></p>
+          <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+            <a class="dropdown-item" (click)="routeToProfile()">Profile</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
+
+  <header>
+
+    <ul class="nav-container">
+      <li>
+        <a [routerLink]="['seller/sellers-list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}"
+           (mouseover)="showLable('sellers')" (mouseleave)="hideLable()"
+           class="menu-icon"><img src="app/assets/images/seller-icon.svg"></a>
+        <h4 [ngClass]="toggleLable('sellers')">Vendors</h4>
+      </li>
+
+      <li>
+        <a [routerLink]="['/home/', 'ring']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+           class="menu-icon" (mouseover)="showLable('Rings')"
+           (mouseleave)="hideLable()"><img
+          src="app/assets/images/wedding-ring.svg"></a>
+        <h4 [ngClass]="toggleLable('Rings')">Rings</h4>
+      </li>
+
+      <li><a [routerLink]="['/home/', 'necklace']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+             class="menu-icon" (mouseover)="showLable('Necklaces')"
+             (mouseleave)="hideLable()"><img src="app/assets/images/necklace-icon.svg"></a>
+        <h4 [ngClass]="toggleLable('Necklaces')">Necklaces</h4>
+      </li>
+
+      <li>
+        <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+           class="logo"><img
+          src="app/assets/images/zahab-logo-optimized.png"> </a>
+      </li>
+
+      <li><a [routerLink]="['/home/', 'bracelet']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+             class="menu-icon" (mouseover)="showLable('Bracelet')"
+             (mouseleave)="hideLable()"><img src="app/assets/images/bracelet-icon.svg"></a>
+        <h4 [ngClass]="toggleLable('Bracelet')">Bracelets</h4>
+      </li>
+
+      <li><a [routerLink]="['/home/', 'earring']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+             class="menu-icon" (mouseover)="showLable('Earring')"
+             (mouseleave)="hideLable()"><img src="app/assets/images/earrings-icon.svg"></a>
+        <h4 [ngClass]="toggleLable('Earring')">Earrings</h4>
+      </li>
+
+      <li><a [routerLink]="['/home/', 'other']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+             class="menu-icon" (mouseover)="showLable('Other')"
+             (mouseleave)="hideLable()"><img src="app/assets/images/different-icon.svg"></a>
+        <h4 [ngClass]="toggleLable('Other')">Other products</h4>
+      </li>
+    </ul>
+
+    <div class="background">
+
+      <h1>Search further!</h1>
+      <h2>Start now</h2>
+
+      <form #searchProductAndPlaceForm="ngForm" autocomplete="off"
+            (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndarea(searchProductAndPlaceForm.value)"
+            class="serching-form" novalidate>
+
+        <input [(ngModel)]="productName" name="productName" type="text" placeholder="ring, necklace, etc ...">
+
+        <!--<label class="control-label">Seller name</label>-->
+        <!--<input [(ngModel)]="sellerName" name="sellerName" type="text" class="form-control">-->
+
+        <label>In</label>
+
+        <input [(ngModel)]="area" name="area" type="text" dir="rtl" placeholder="مصر الجديده, مدينة نصر, ...">
+
+        <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
+        <!--enter product name you are-->
+        <!--searching for...</em>-->
+
+        <button [disabled]="!productName && !sellerName && !area" type="submit" class="btn btn-primary btn-raised">
+          <img src="app/assets/images/search-icon.svg">
+        </button>
+        <!--<label><img src="app/assets/images/search-icon.svg"></label>-->
+
+      </form>
+
+    </div>
+  </header>
+</div>
 
 

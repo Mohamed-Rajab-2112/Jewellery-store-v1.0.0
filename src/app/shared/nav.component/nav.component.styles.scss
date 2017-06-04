@@ -1,13 +1,4 @@
-$lcolor: #E2D7D3;
-$mcolor: #DBBFAE;
-$dcolor: #6D2E2F;
-$ldcolor: #87655A;
-$bgcolor: #F8C8C6;
-
-$grey: #DFDFDF;
-$mmcolor: #95989A;
-
-$lsrcolor: #455C7E;
+@import "../../assets/stylesheets/colors-theme";
 
 .serching-form {
   margin: 0 auto;
@@ -18,6 +9,7 @@ $lsrcolor: #455C7E;
   z-index: 100;
   width: 100%;
   height: 100%;
+  transition: 0.35s all;
 }
 
 .show-sign-in {
@@ -28,170 +20,192 @@ $lsrcolor: #455C7E;
   visibility: hidden;
 }
 
-.above-header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 75px;
-  p, button {
-    text-align: center;
-    padding: 3px;
-    width: 200px;
-    border-radius: 20px;
-    border: 1px solid $mmcolor;
-    background-color: $lcolor;
-    color: $mmcolor;
-    transition: 0.3s all;
-    &:hover {
-      cursor: pointer;
-      background-color: $mmcolor;
-      color: $lcolor;
-      transition: 0.5s all;
-    }
-  }
-  button {
-    width: 100px;
-  }
-
-}
-
-.nav-container {
-  box-shadow: 5px 5px 100px grey;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  height: 70px;
-  align-content: center;
-  align-items: center;
-  background-color: $mcolor;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  li {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    list-style: none;
-    flex-grow: 1;
-    flex-shrink: 0;
-    text-align: center;
-    box-sizing: border-box;
-    .menu-icon {
-      position: relative;
-      margin: 0 auto;
-      border-radius: 50px;
-      height: 45px;
-      width: 45px;
-      background-color: $lcolor;
-      box-sizing: border-box;
-      transition: 0.3s all;
-      &:hover {
-        transform: translate(0, -15px) scale(1.25, 1.25);
-        transition: 0.5s all;
-        background-color: #fff;
-      }
-      &.active {
-        transform: translate(0, -15px) scale(1.25, 1.25);
-        transition: 0.5s all;
-        background-color: #fff;
-      }
-      img {
-        text-align: center;
-        vertical-align: middle;
-        height: 50px;
-        width: 70%;
-        padding: 3px;
-        box-sizing: border-box;
-      }
-    }
-    h4 {
-      position: absolute;
-      font-weight: 100;
-      margin: 0;
-      transition: 0.3s all;
-      text-align: center;
-      color: $dcolor;
-      z-index: -1;
-    }
-    .show-lable {
-      transition: 0.5s all;
-      transform: scale(1.1);
-      z-index: 0;
-      top: 37px;
-    }
-    .logo {
-      img {
-        height: 50px;
-      }
-    }
-  }
-}
-
-.background {
-  background: url("app/images/home-background.jpg") no-repeat center center;
-  background-size: cover;
-  width: 100%;
-  height: 750px;
-  z-index: -1;
-  box-shadow: 5px 5px 100px grey;
+.nav {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  //border: 1px solid black;
-  h1 {
-    margin-top: 150px;
-    text-transform: capitalize;
-  }
-  h2 {
-    margin-top: -25px;
-    margin-bottom: 70px;
-  }
-  h1, h2 {
-    color: $lsrcolor;
-    font-weight: 100;
-  }
-  form {
+  width: 80%;
+  margin: 0 auto;
+  .above-header-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    //border: 1px solid black;
-    input {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: rgba(0, 0, 0, 0);
-      border: none;
-      border-bottom: 1px solid $dcolor;
-      font-size: 2em;
-      width: 30%;
-      color: $lsrcolor;
-      transition: 0.5s all;
-      &:focus {
-        outline: none;
-        font-size: 2em;
+    height: 75px;
+    & > p, button {
+      text-align: center;
+      padding: 3px;
+      width: 200px;
+      border-radius: 20px;
+      border: 1px solid $mmcolor;
+      background-color: $lcolor;
+      color: $mmcolor;
+      transition: 0.3s all;
+      &:hover {
+        cursor: pointer;
+        background-color: $mmcolor;
+        color: $lcolor;
+        transition: 0.5s all;
       }
-    }
-    label {
-      //border: 1px solid black;
-      margin-left: 30px;
-      margin-right: 30px;
-      color: $dcolor;
-      font-size: 2.5em;
     }
     button {
       width: 100px;
-      background-color: rgba(0, 0, 0, 0);
-      border: none;
       &:focus {
         outline: none;
       }
-      img {
-        width: 80%;
+    }
+    .user-dropdown-menu {
+      & > p a {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $ldcolor;
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  .nav-container {
+    box-shadow: 5px 5px 100px grey;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    align-content: center;
+    align-items: center;
+    background-color: $mcolor;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    li {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      list-style: none;
+      flex-grow: 1;
+      flex-shrink: 0;
+      text-align: center;
+      box-sizing: border-box;
+      .menu-icon {
+        position: relative;
+        margin: 0 auto;
+        border-radius: 50px;
+        height: 45px;
+        width: 45px;
+        background-color: $lcolor;
+        box-sizing: border-box;
+        transition: 0.3s all;
+        &:hover {
+          transform: translate(0, -15px) scale(1.25, 1.25);
+          transition: 0.5s all;
+          background-color: #fff;
+        }
+        &.active {
+          transform: translate(0, -15px) scale(1.25, 1.25);
+          transition: 0.5s all;
+          background-color: #fff;
+        }
+        img {
+          text-align: center;
+          vertical-align: middle;
+          height: 50px;
+          width: 70%;
+          padding: 3px;
+          box-sizing: border-box;
+        }
+      }
+      h4 {
+        position: absolute;
+        font-weight: 400;
+        font-size: 1em;
+        margin: 0;
+        transition: 0.3s all;
+        text-align: center;
+        color: $dcolor;
+        z-index: -1;
+      }
+      .show-lable {
+        transition: 0.5s all;
+        transform: scale(1.1);
+        z-index: 0;
+        top: 37px;
+      }
+      .logo {
+        img {
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .background {
+    background: url("app/images/home-background.jpg") no-repeat center center fixed;
+    //background-attachment: scroll;
+    background-size: cover;
+    width: 100%;
+    height: 850px;
+    //z-index: -1;
+    //box-shadow: 5px 5px 100px grey;
+    //box-shadow: -5px 5px 100px -100px rgba(0,0,0,.8), -5px 5px 100px -100px rgba(0,0,0,.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    //border: 1px solid black;
+    h1 {
+      margin-top: 110px;
+      //font-weight: bold;
+      font-weight: 400;
+      letter-spacing: 15px;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin-bottom: 70px;
+      font-weight: 600;
+    }
+    h1, h2 {
+      color: $darkBlue;
+    }
+    form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+      //border: 1px solid black;
+      input {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        border-bottom: 1px solid $dcolor;
+        font-size: 2em;
+        box-sizing: border-box;
+        width: 30%;
+        color: $darkBlue;
+        transition: 0.5s all;
+        &:focus {
+          outline: none;
+        }
+      }
+      label {
+        //border: 1px solid black;
+        margin-left: 30px;
+        margin-right: 30px;
+        color: $dcolor;
+        font-size: 2.5em;
+      }
+      button {
+        width: 100px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        &:focus {
+          outline: none;
+        }
+        img {
+          width: 80%;
+        }
       }
     }
   }

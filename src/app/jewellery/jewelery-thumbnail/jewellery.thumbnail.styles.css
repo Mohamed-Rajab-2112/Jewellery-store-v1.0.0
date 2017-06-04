@@ -7,16 +7,17 @@
   flex-wrap: wrap;
   flex-direction: column;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
-/* line 14, jewellery.thumbnail.styles.scss */
+/* line 13, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail {
   box-sizing: border-box;
   position: relative;
   text-align: center;
-  margin: 0.5%;
+  margin: 5px 0.5%;
   width: 19%;
+  height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,13 +36,15 @@
 }
 /* line 35, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail img {
-  width: 80%;
+  width: 70%;
 }
 /* line 38, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail h3 {
-  margin: 5px;
+  word-wrap: break-word;
+  width: 80%;
+  margin: 5px auto;
 }
-/* line 41, jewellery.thumbnail.styles.scss */
+/* line 43, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail .fav-btn {
   position: absolute;
   top: 5px;

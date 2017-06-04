@@ -2,6 +2,7 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
+Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./customer-favourite-Jewellery/customer-favourite-Jewellery-component"));
 __export(require("./customer-profile/customer.profile.component"));
 __export(require("./customer.routes"));

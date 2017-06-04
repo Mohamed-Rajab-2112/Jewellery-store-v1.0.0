@@ -9,11 +9,23 @@ import {
   JewelleryFavouriteBtn
 } from '../index'
 
+import {
+  MdButtonModule,
+  MdCheckboxModule,
+  MdInputModule,
+  MdIconModule,
+  MdTabsModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    MdInputModule,
+    MdIconModule,
+    // MdTabsModule
   ],
   declarations: [
     JewelleryThumbnailComponent,
@@ -27,7 +39,12 @@ import {
     SellerAddComponent,
     SellerProductsFilter,
     SinginSignUpComponent,
-    JewelleryFavouriteBtn
+    JewelleryFavouriteBtn,
+    MdButtonModule,
+    MdCheckboxModule,
+    MdInputModule,
+    MdIconModule,
+    // MdTabsModule
   ]
 })
 

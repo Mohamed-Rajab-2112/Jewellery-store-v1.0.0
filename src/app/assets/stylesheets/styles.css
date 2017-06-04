@@ -1,31 +1,31 @@
-@import url(normalize.css);
 /* line 5, styles.scss */
-html body h1 {
-  margin-top: 0;
-  font-size: 250%;
-}
-
-/* line 10, styles.scss */
 html {
   font-family: Helvetica, sans-serif;
   background-color: #DFDFDF;
   color: #DBBFAE;
 }
-
-/* line 16, styles.scss */
+/* line 9, styles.scss */
 html body {
-  width: 80%;
+  background-color: #DFDFDF;
   margin: 0 auto 0;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-/* line 22, styles.scss */
-html body h2 {
-  font-weight: 100;
-  color: #6D2E2F;
+/* line 15, styles.scss */
+html body h1 {
+  margin-top: 0;
+  text-transform: capitalize;
 }
-/* line 26, styles.scss */
+/* line 19, styles.scss */
+html body h2 {
+  color: #455C7E;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+/* line 24, styles.scss */
 html body h3 {
-  font-weight: 100;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  font-weight: 400;
   color: #87655A;
 }

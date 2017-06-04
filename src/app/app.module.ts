@@ -2,6 +2,10 @@ import {NgModule}      from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpModule} from '@angular/http';
+// import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import {
   JewelleryStoreAppComponent,
@@ -24,7 +28,7 @@ import {
   VendorProfileActivator,
   JewelleryAndSellerDetailsActivator,
   DefaultRedirectActivator,
-  JewelleryListActivator
+  JewelleryListActivator,
 } from "./shared/index";
 
 
@@ -33,6 +37,10 @@ import {
     RouterModule.forRoot(appRoutes),
     FormsModule,
     SharedModule,
+    NgbModule.forRoot(),
+    // NoopAnimationsModule,
+    BrowserAnimationsModule,
+    HttpModule
   ],
   declarations: [
     JewelleryStoreAppComponent,
@@ -41,7 +49,7 @@ import {
     JewellerySearchResultsComponent,
     JewelleryDetailsComponent,
     NavComponent,
-    FooterComponent,
+    FooterComponent
   ],
   bootstrap: [JewelleryStoreAppComponent],
   providers: [
@@ -53,7 +61,7 @@ import {
     VendorProfileActivator,
     JewelleryAndSellerDetailsActivator,
     DefaultRedirectActivator,
-    JewelleryListActivator]
+    JewelleryListActivator,]
 })
 
 export class AppModule {

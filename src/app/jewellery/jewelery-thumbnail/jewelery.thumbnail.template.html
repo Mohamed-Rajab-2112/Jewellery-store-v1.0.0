@@ -10,6 +10,7 @@
       <img [src]="product?.imageUrl[0].url">
       <h3>{{product?.price}}</h3>
       <h3>{{product?.productName}}</h3>
+      <h3>{{product?.sellerName}}</h3>
     </div>
 
     <add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product"
