@@ -1,0 +1,26 @@
+/* line 3, seller.products.filter.styles.scss */
+.jewellery-filter-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 9, seller.products.filter.styles.scss */
+.jewellery-filter-container .button-group {
+  display: flex;
+  justify-content: space-between;
+}
+/* line 14, seller.products.filter.styles.scss */
+.jewellery-filter-container .button-group button {
+  color: #133759;
+  background-color: #F5D0CA;
+  border: none;
+  width: 100px;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+/* line 20, seller.products.filter.styles.scss */
+.jewellery-filter-container .button-group .selected-button {
+  color: #F5D0CA;
+  background-color: #133759;
+}

@@ -1,21 +1,20 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ChangeDetectionStrategy, DoCheck} from "@angular/core";
 import {Router} from "@angular/router";
 
 import {JewelleryService} from "../services/jewellery.service";
 import {AuthService} from "../services/auth.service";
-import {User} from "../models/User.model";
 import {CustomerService} from "../services/customer.service";
+import {Utility} from "../services/utility.service";
 
 @Component({
   selector: "nav-component",
   templateUrl: "./nav.component.template.html",
-  styleUrls: ["./nav.component.styles.css"]
+  styleUrls: ["./nav.component.styles.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class NavComponent implements OnInit {
-  productName: string;
-  sellerName: string;
-  area: string;
+
   signInToggle: boolean;
   toggleLogInBtn: boolean;
   userName: string;
@@ -23,28 +22,22 @@ export class NavComponent implements OnInit {
   favouriteCount: number;
   showFavourite: boolean;
   activeLable: string;
+  tabNum: number;
+  currentActiveItem: string;
+  activeClass: string[];
+  showBackground: boolean;
 
-  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService) {
+  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService, private utility: Utility) {
 
-  }
-
-  searchProductAndarea(values: any) {
-    this.router.navigate([`/search/${JSON.stringify(values)}`]);
   }
 
   ngOnInit() {
-    this.jewellery.searchTermsChanged.subscribe(value => {
-      this.productName = value["productName"] === "undefined" ? "" : value["productName"];
-      this.sellerName = value["sellerName"] === "undefined" ? "" : value["sellerName"];
-      this.area = value["area"] === "undefined" ? "" : value["area"];
-    });
 
     this.auth.user.subscribe((value) => {
       console.log(value);
       this.userName = value.name;
       this.userType = value.userType;
       this.showFavourite = value.userType == 'Customer';
-
     });
 
     this.auth.isAuth.subscribe((isAuth) => {
@@ -53,7 +46,17 @@ export class NavComponent implements OnInit {
 
     this.customer.favouriteJewellery.subscribe((value) => {
       this.favouriteCount = value.length;
-    })
+    });
+
+    this.utility.navBarBackgroundState.subscribe((navBarBackgroundState) => {
+      console.log('will hide');
+      console.log(navBarBackgroundState);
+      this.showBackground = navBarBackgroundState;
+      console.log(this.showBackground)
+    });
+
+    console.log(this.showBackground)
+
   }
 
   setSignInToggle(toggle: boolean) {
@@ -69,8 +72,9 @@ export class NavComponent implements OnInit {
     }
   }
 
-  toggleSignInFlag() {
+  toggleSignInFlag(tabNum: number) {
     this.signInToggle = !this.signInToggle;
+    this.tabNum = tabNum;
   }
 
   routeToProfile() {
@@ -98,10 +102,29 @@ export class NavComponent implements OnInit {
   toggleLable(activeLable: string) {
     if (this.activeLable == activeLable) {
       return ['show-lable']
-    } else {
-      return []
+    }
+    if (activeLable == this.currentActiveItem) {
+      return ['show-lable']
     }
   }
 
+  setCurrentActiveNavItem(item: string) {
+    this.currentActiveItem = item;
 
+    this.auth.navIsActive.subscribe((navIsActive) => {
+      if (item == this.currentActiveItem && navIsActive) {
+        this.activeClass = ['active']
+      }
+      else {
+        this.activeClass = []
+      }
+    });
+    this.auth.setNavActive(true);
+  }
+
+  toggleActiveItem(ownItem: string) {
+    if (ownItem == this.currentActiveItem) {
+      return this.activeClass;
+    }
+  }
 }

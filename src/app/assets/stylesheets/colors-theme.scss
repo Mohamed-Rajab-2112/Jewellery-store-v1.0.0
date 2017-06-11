@@ -1,10 +1,33 @@
-$lcolor: #E2D7D3;
-$mcolor: #DBBFAE;
-$dcolor: #6D2E2F;
-$ldcolor: #87655A;
-$bgcolor: #F8C8C6;
+$lcolor: #F5D0CA;
+$mcolor: #F0C7C5;
+$dcolor: #133759;
+$ldcolor: #586D8C;
+$bgcolor: #fff;
 
 $grey: #DFDFDF;
 
-$mmcolor: #95989A;
+$mmcolor: #8A6D67;
 $darkBlue: #455C7E;
+
+$appWidth: 70%;
+
+@mixin icon {
+  background-color: $mmcolor;
+  border-radius: 20px;
+  padding: 3px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+@mixin button-default {
+  color: $dcolor;
+  background-color: $lcolor;
+  border: none;
+}
+
+@mixin button-focused {
+  color: $lcolor;
+  background-color: $dcolor;
+}
+
+$thumbnailsContainerHeight: 500px;

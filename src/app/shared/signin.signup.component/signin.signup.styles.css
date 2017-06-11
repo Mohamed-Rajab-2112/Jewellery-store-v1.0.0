@@ -43,7 +43,7 @@
 .log-in-sign-up .forms form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   width: 100%;
   box-sizing: border-box;
@@ -52,31 +52,72 @@
   border-radius: 3px;
 }
 /* line 52, signin.signup.styles.scss */
+.log-in-sign-up .forms form .vendors-note {
+  text-align: center;
+}
+/* line 54, signin.signup.styles.scss */
+.log-in-sign-up .forms form .vendors-note md-icon {
+  position: relative;
+  top: 5px;
+}
+/* line 59, signin.signup.styles.scss */
 .log-in-sign-up .forms form md-input-container {
   width: 100%;
 }
-/* line 55, signin.signup.styles.scss */
-.log-in-sign-up .forms form div {
+/* line 62, signin.signup.styles.scss */
+.log-in-sign-up .forms form .customer-vendor-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+/* line 70, signin.signup.styles.scss */
+.log-in-sign-up .forms form .buttons-container {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-/* line 61, signin.signup.styles.scss */
+/* line 74, signin.signup.styles.scss */
+.log-in-sign-up .forms form .buttons-container button:last-child {
+  background-color: #586D8C;
+}
+/* line 78, signin.signup.styles.scss */
+.log-in-sign-up .forms form .match-msg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 83, signin.signup.styles.scss */
+.log-in-sign-up .forms form .match-msg em {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+/* line 87, signin.signup.styles.scss */
+.log-in-sign-up .forms form .match-msg .matched {
+  color: #133759;
+}
+/* line 90, signin.signup.styles.scss */
+.log-in-sign-up .forms form .match-msg .not-matched {
+  color: red;
+}
+/* line 95, signin.signup.styles.scss */
 .log-in-sign-up .forms .login-form {
   height: 280px;
 }
-/* line 65, signin.signup.styles.scss */
+/* line 99, signin.signup.styles.scss */
 .log-in-sign-up .typeButtonSelected {
-  background-color: blueviolet;
-  color: wheat;
+  color: #F5D0CA;
+  background-color: #133759;
 }
-/* line 69, signin.signup.styles.scss */
+/* line 102, signin.signup.styles.scss */
 .log-in-sign-up .typeButtonNotSelected {
-  color: blueviolet;
-  background-color: wheat;
+  color: #133759;
+  background-color: #F5D0CA;
+  border: none;
 }
 
-/* line 75, signin.signup.styles.scss */
+/* line 107, signin.signup.styles.scss */
 .sign-in-background {
   position: fixed;
   top: 0;

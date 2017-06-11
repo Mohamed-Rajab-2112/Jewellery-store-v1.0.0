@@ -1,0 +1,23 @@
+<form #searchProductAndPlaceForm="ngForm" autocomplete="off"
+      (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndarea(searchProductAndPlaceForm.value)"
+      class="serching-form" novalidate>
+
+  <input [(ngModel)]="productName" name="productName" type="text" placeholder="ring, necklace, etc ...">
+
+  <!--<label class="control-label">Seller name</label>-->
+  <!--<input [(ngModel)]="sellerName" name="sellerName" type="text" class="form-control">-->
+
+  <label>In</label>
+
+  <input [(ngModel)]="area" name="area" type="text" dir="rtl" placeholder="مصر الجديده, مدينة نصر, ...">
+
+  <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
+  <!--enter product name you are-->
+  <!--searching for...</em>-->
+
+  <button [disabled]="!productName && !sellerName && !area" type="submit" class="btn">
+    <img src="app/assets/images/search-icon.svg">
+  </button>
+  <!--<label><img src="app/assets/images/search-icon.svg"></label>-->
+
+</form>

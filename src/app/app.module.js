@@ -13,7 +13,6 @@ var forms_1 = require("@angular/forms");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var animations_1 = require("@angular/platform-browser/animations");
 var http_1 = require("@angular/http");
-// import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 var index_1 = require("./jewellery/index");
 var index_2 = require("./shared/index");
 var AppModule = (function () {
@@ -28,7 +27,6 @@ AppModule = __decorate([
             forms_1.FormsModule,
             index_2.SharedModule,
             ng_bootstrap_1.NgbModule.forRoot(),
-            // NoopAnimationsModule,
             animations_1.BrowserAnimationsModule,
             http_1.HttpModule
         ],
@@ -39,7 +37,8 @@ AppModule = __decorate([
             index_1.JewellerySearchResultsComponent,
             index_1.JewelleryDetailsComponent,
             index_2.NavComponent,
-            index_2.FooterComponent
+            index_2.FooterComponent,
+            index_1.JewellerySearchForm
         ],
         bootstrap: [index_1.JewelleryStoreAppComponent],
         providers: [
@@ -52,6 +51,8 @@ AppModule = __decorate([
             index_2.JewelleryAndSellerDetailsActivator,
             index_2.DefaultRedirectActivator,
             index_2.JewelleryListActivator,
+            index_2.RegisteredIcons,
+            index_2.Utility
         ]
     })
 ], AppModule);

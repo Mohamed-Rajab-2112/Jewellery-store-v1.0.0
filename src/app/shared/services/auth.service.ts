@@ -1,13 +1,15 @@
 import {Injectable} from "@angular/core";
 import {User} from "../models/User.model";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
+import {Subject} from "rxjs/Subject";
 import {Router} from "@angular/router";
 const userTypes = ['Customer', 'Vendor'];
 @Injectable()
 export class AuthService {
   isAuth = new BehaviorSubject(false);
   user = new BehaviorSubject(<User>{});
-  currentRoute = new BehaviorSubject('');
+  currentRoute = new Subject<string>();
+  navIsActive = new Subject<boolean>();
 
   constructor(private router: Router) {
 
@@ -18,7 +20,7 @@ export class AuthService {
     this.setUser({
       id: 22222,
       name: values.userName,
-      userType: 'Customer',
+      userType: 'Vendor',
       verified: true,
       telephone1: 1232135,
       telephone2: 5841354,
@@ -32,7 +34,11 @@ export class AuthService {
   }
 
   setCurrentRoute() {
-    this.currentRoute.next(this.router.routerState.snapshot.url)
+    this.currentRoute.next(this.router.routerState.snapshot.url);
+  }
+
+  setNavActive(value: boolean) {
+    this.navIsActive.next(value);
   }
 
   signUp(signUpData: any) {
@@ -50,6 +56,4 @@ export class AuthService {
   deleteAccount() {
     return true;
   }
-
-
 }

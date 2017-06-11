@@ -23,7 +23,8 @@ SellerModule = __decorate([
             common_1.CommonModule,
             router_1.RouterModule.forChild(index_1.sellerRoutes),
             index_2.SharedModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule
         ],
         declarations: [
             index_1.SellersListComponent,

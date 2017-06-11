@@ -1,0 +1,26 @@
+@import "../../assets/stylesheets/colors-theme";
+
+.jewellery-filter-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  //border: 1px solid black;
+  .button-group {
+    //flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    //border: 1px solid black;
+    button {
+      @include button-default;
+      width: 100px;
+      text-transform: capitalize;
+      margin-right: 5px;
+    }
+    .selected-button {
+      @include button-focused;
+    }
+  }
+
+}
+

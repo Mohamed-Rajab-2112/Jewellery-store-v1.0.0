@@ -10,4 +10,9 @@ export interface User {
   area?: string;
   imageUrl?: string
   address?: string;
+  ringCount?:number;
+  braceletCount?:number;
+  necklaceCount?:number;
+  earringCount?:number;
+  otherCount?:number;
 }

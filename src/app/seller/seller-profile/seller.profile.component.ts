@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 
 import {
   JeweleryProduct,
@@ -24,8 +24,9 @@ export class SellerProfileComponent implements OnInit {
     this.auth.user.subscribe((val) => {
       this.user = <User>val;
       this.sellerProducts = this.jewellery.getJewelleryBySellerId(val.id);
-      this.sellerProductsFiltered = this.jewellery.getJewelleryBySellerId(val.id);
+      this.sellerProductsFiltered = this.sellerProducts.slice();
     });
+    this.auth.setNavActive(false);
   }
 
   addNewProduct(newProduct: any) {

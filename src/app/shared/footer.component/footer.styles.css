@@ -2,9 +2,9 @@
 footer {
   height: 150px;
   font-weight: 100;
-  background-color: #6D2E2F;
-  color: #E2D7D3;
-  margin-top: 0;
+  background-color: #133759;
+  color: #F5D0CA;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -27,7 +27,7 @@ footer p {
 }
 /* line 24, footer.styles.scss */
 footer p a {
-  color: #F8C8C6;
+  color: #fff;
   transition: 0.3s all;
 }
 /* line 28, footer.styles.scss */

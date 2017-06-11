@@ -15,7 +15,8 @@ export class CustomerProfile implements OnInit {
     this.auth.user.subscribe((val) => {
       console.log(val);
       this.currentCustomer = <User>val;
-    })
+    });
+    this.auth.setNavActive(false);
   }
 
   updateProfileData(values: any) {

@@ -1,14 +1,17 @@
-import {Component, OnInit, Output, EventEmitter} from "@angular/core";
+import {Component, OnInit, Output, EventEmitter, Input} from "@angular/core";
 import {JewelleryService} from "../../shared/services/jewellery.service";
+import {JeweleryProduct} from "../../shared/models/jewelleryProduct.model";
 @Component({
   selector: 'products-filter',
-  templateUrl: 'app/seller/seller-products-filter/seller.products.filter.template.html'
+  templateUrl: 'app/seller/seller-products-filter/seller.products.filter.template.html',
+  styleUrls: ['app/seller/seller-products-filter/seller.products.filter.styles.css']
 })
 
 export class SellerProductsFilter implements OnInit {
   @Output() filterTerms = new EventEmitter;
   @Output() sortTerm = new EventEmitter;
-  types: string[];
+  @Input() products: JeweleryProduct[];
+  typesAndCounts: any[];
   goldDegrees: string[];
   selectedDegree: string;
   type: string;
@@ -18,13 +21,20 @@ export class SellerProductsFilter implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.goldDegrees);
     this.goldDegrees = this.jewellery.getGoldDegree();
-    console.log(this.goldDegrees);
     this.selectedDegree = 'All';
-    this.types = this.jewellery.getProductTypes();
+    this.typesAndCounts = this.jewellery.getCountJewelleryByType(this.products);
+    // this.jewellery.getProductTypes().map((type) => {
+    //
+    //   this.typesAndCounts.push({
+    //     type: type,
+    //     count: this.jewellery.getCountJewelleryByType(this.jewellery.getProductTypes(), this.products)
+    //   })
+    // });
+    // this.typesAndCounts = this.jewellery.getProductTypes();
     this.priceSort = 'Lowest first';
-    this.sortByPrice()
+    this.type = 'All';
+    this.sortByPrice();
   }
 
   filterByTerms() {
@@ -38,7 +48,15 @@ export class SellerProductsFilter implements OnInit {
 
   assignType(type: string) {
     this.type = type;
-    this.filterByTerms()
+    this.filterByTerms();
+  }
+
+  applySelectedBtnClass(type: string) {
+    console.log(type);
+    console.log(this.type);
+    if (this.type == type) {
+      return 'selected-button';
+    }
   }
 
   sortByPrice() {

@@ -5,4 +5,5 @@ export * from "../jewellery.store.app";
 export * from "./jewelery-thumbnail/jewelery.thumbnail.component";
 export * from "./jewellery-search-result/jewellery.search.results.component";
 export * from "./jewellery-details/jewellery.details.component";
+export * from "./jewellery-search-form/jewellery.search.form.component";
 export * from "./routes";

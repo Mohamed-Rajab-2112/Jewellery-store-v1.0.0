@@ -1,0 +1,80 @@
+@import "../../assets/stylesheets/colors-theme";
+
+.seller-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $appWidth;
+  margin: 0 auto;
+  .seller-cover-img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background: image-url('seller-cover-image.jpg') fixed;
+    background-size: cover;
+    .overFlow-container {
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .name-and-verification {
+      display: flex;
+      align-items: center;
+      h2 {
+        color: $grey;
+        margin-right: 5px;
+      }
+      h3 {
+        color: $grey;
+        img {
+          height: 25px;
+        }
+      }
+    }
+    .seller-info-container {
+      display: flex;
+      //border: 1px solid black;
+      p {
+        //border: 1px solid black;
+        height: 100%;
+        background-color: $grey;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 5px;
+        img {
+          @include icon;
+        }
+      }
+    }
+  }
+
+  .products-listing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
+    width: 100%;
+    padding-top: 75px;
+    background-color: $bgcolor;
+    //border: 1px solid black;
+    .overFlow-container {
+      border: 1px solid black;
+      margin: 25px auto 0;
+      //margin-top: 25px;
+      overflow: hidden;
+      height: 1000px;
+      width: 80%;
+      jewellery-thumbnail {
+        height: inherit;
+      }
+    }
+  }
+}

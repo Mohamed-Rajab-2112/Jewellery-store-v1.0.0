@@ -1,0 +1,47 @@
+@import "../../assets/stylesheets/colors-theme";
+
+.sellers-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $appWidth;
+  margin: 0 auto;
+  .warning {
+    width: 100%;
+  }
+  form {
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 0;
+    background-color: $mcolor;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //border: 1px solid black;
+    .field {
+      width: 90%;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      background-color: #fff;
+      border-radius: 3px;
+      md-input-container {
+        width: 100%;
+      }
+    }
+  }
+  p {
+    img {
+      height: 25px;
+    }
+  }
+  seller-thumbnail {
+    width: 100%;
+  }
+  ngb-pagination {
+  margin-top: 35px;
+  }
+}

@@ -10,5 +10,6 @@ __export(require("../jewellery.store.app"));
 __export(require("./jewelery-thumbnail/jewelery.thumbnail.component"));
 __export(require("./jewellery-search-result/jewellery.search.results.component"));
 __export(require("./jewellery-details/jewellery.details.component"));
+__export(require("./jewellery-search-form/jewellery.search.form.component"));
 __export(require("./routes"));
 //# sourceMappingURL=index.js.map

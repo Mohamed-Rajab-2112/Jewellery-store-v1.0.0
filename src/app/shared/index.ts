@@ -16,5 +16,7 @@ export * from "./signin.signup.component/signin.signup.component";
 export * from "./services/customer.service";
 export * from "./services/customer.auth.activator.service";
 export * from "./services/vendor.auth.activator.service";
+export * from "./services/registered.icons.service";
+export * from "./services/utility.service";
 
 export * from "./../shared/shared.module";

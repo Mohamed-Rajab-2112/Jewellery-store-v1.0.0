@@ -1,14 +1,30 @@
-<img [src]="sellerDetails.imageUrl">
-<h2>{{sellerDetails.name}}</h2>
+<div class="seller-details-container">
 
-<h3 *ngIf="sellerDetails.verified">Verified</h3>
-<h3 *ngIf="!sellerDetails.verified">Not Verified</h3>
+  <div class="seller-cover-img">
+    <div class="overFlow-container">
+      <img [src]="sellerDetails.imageUrl">
+    </div>
 
-<p>{{sellerDetails?.telNumber1}}</p>
-<p>{{sellerDetails?.telNumber2}}</p>
-<p>{{sellerDetails?.address}}</p>
-<p>{{sellerDetails?.area}}</p>
+    <div class="name-and-verification">
+      <h2>{{sellerDetails.name}}</h2>
+      <h3 *ngIf="sellerDetails.verified"><img src="app/assets/images/check-circle-icon.svg">Verified</h3>
+      <h3 *ngIf="!sellerDetails.verified"><img src="app/assets/images/cross-icon.svg">Not Verified</h3>
+    </div>
 
-<products-filter (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>
+    <div class="seller-info-container">
+      <p *ngIf="sellerDetails.telephone1"><img src="app/assets/images/phone-icon.svg">{{sellerDetails?.telephone1}}</p>
+      <p *ngIf="sellerDetails.telephone2"><img src="app/assets/images/phone-icon.svg">{{sellerDetails?.telephone2}}</p>
+      <!--<p>{{sellerDetails?.address}}</p>-->
+      <p><img src="app/assets/images/location-icon.svg">{{sellerDetails?.area}}</p>
+    </div>
+  </div>
 
-<jewellery-thumbnail [products]="sellingListFiltered"></jewellery-thumbnail>
+  <div *ngIf="sellingList.length" class="products-listing-container">
+    <products-filter [products]="sellingList" (filterTerms)="applyFilterTerms($event)"
+                     (sortTerm)="sortProducts($event)"></products-filter>
+    <div class="overFlow-container">
+      <jewellery-thumbnail [products]="sellingListFiltered"></jewellery-thumbnail>
+    </div>
+  </div>
+  <p *ngIf="!sellingList.length">This vendor Doesn't have any Jewellery to show yet, please come back later!</p>
+</div>

@@ -1,0 +1,90 @@
+/* line 3, seller.details.styles.scss */
+.seller-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+/* line 9, seller.details.styles.scss */
+.seller-details-container .seller-cover-img {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  background: url('../app/assets/images/seller-cover-image.jpg') fixed;
+  background-size: cover;
+}
+/* line 18, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .overFlow-container {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+/* line 23, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .overFlow-container img {
+  width: 100%;
+  height: 100%;
+}
+/* line 28, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .name-and-verification {
+  display: flex;
+  align-items: center;
+}
+/* line 31, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .name-and-verification h2 {
+  color: #DFDFDF;
+  margin-right: 5px;
+}
+/* line 35, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .name-and-verification h3 {
+  color: #DFDFDF;
+}
+/* line 37, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .name-and-verification h3 img {
+  height: 25px;
+}
+/* line 42, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .seller-info-container {
+  display: flex;
+}
+/* line 45, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .seller-info-container p {
+  height: 100%;
+  background-color: #DFDFDF;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+}
+/* line 52, seller.details.styles.scss */
+.seller-details-container .seller-cover-img .seller-info-container p img {
+  background-color: #8A6D67;
+  border-radius: 20px;
+  padding: 3px;
+  height: 25px;
+  margin-right: 5px;
+}
+/* line 59, seller.details.styles.scss */
+.seller-details-container .products-listing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-top: 75px;
+  background-color: #fff;
+}
+/* line 68, seller.details.styles.scss */
+.seller-details-container .products-listing-container .overFlow-container {
+  border: 1px solid black;
+  margin: 25px auto 0;
+  overflow: hidden;
+  height: 1000px;
+  width: 80%;
+}
+/* line 75, seller.details.styles.scss */
+.seller-details-container .products-listing-container .overFlow-container jewellery-thumbnail {
+  height: inherit;
+}

@@ -1,12 +1,24 @@
-<button *ngFor="let type of types" (click)="assignType(type)">{{type}}</button>
-<button (click)="assignType()">All</button>
+<div class="jewellery-filter-container">
 
-<select [(ngModel)]="selectedDegree" (change)="filterByTerms()">
-  <option >All</option>
-  <option *ngFor="let goldDegree of goldDegrees" [selected]="selectedDegree == goldDegree">{{goldDegree}}</option>
-</select>
-<label>Sort by price</label>
-<select [(ngModel)]="priceSort" (change)="sortByPrice()">
-  <option>Lowest first</option>
-  <option>Highest first</option>
-</select>
+  <div class="button-group">
+    <button *ngFor="let typeAndCount of typesAndCounts" md-raised-button
+            [ngClass]="applySelectedBtnClass(typeAndCount.type)" (click)="assignType(typeAndCount.type)">
+      {{typeAndCount.type}}({{typeAndCount.count}})
+    </button>
+    <button *ngIf="typesAndCounts.length > 1" (click)="assignType('All')" [ngClass]="applySelectedBtnClass('All')"
+            md-raised-button>All Products
+    </button>
+  </div>
+
+  <div>
+    <md-select [(ngModel)]="selectedDegree" [placeholder]="'Filter by gold degree'" (change)="filterByTerms()">
+      <md-option [value]="'All'">All</md-option>
+      <md-option *ngFor="let goldDegree of goldDegrees" [value]="goldDegree">{{goldDegree}}</md-option>
+    </md-select>
+
+    <md-select [(ngModel)]="priceSort" [placeholder]="'Sort by price'" (change)="sortByPrice()">
+      <md-option [value]="'Lowest first'">Lowest first</md-option>
+      <md-option [value]="'Highest first'">Highest first</md-option>
+    </md-select>
+  </div>
+</div>

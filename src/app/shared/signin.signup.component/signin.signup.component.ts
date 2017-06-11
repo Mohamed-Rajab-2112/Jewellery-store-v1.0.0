@@ -1,31 +1,31 @@
-import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy} from "@angular/core";
 import {AuthService} from "../services/auth.service";
-import {DomSanitizer} from '@angular/platform-browser';
-import {MdIconRegistry} from '@angular/material';
-
+import {RegisteredIcons} from "../services/registered.icons.service"
 
 @Component({
   selector: 'signin-signup',
   templateUrl: 'app/shared/signin.signup.component/signin.signup.template.html',
-  styleUrls: ['app/shared/signin.signup.component/signin.signup.styles.css']
+  styleUrls: ['app/shared/signin.signup.component/signin.signup.styles.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class SinginSignUpComponent implements OnInit {
   @Output() signInToggleOutPut = new EventEmitter;
   @Input() signInToggleInput: boolean;
+  @Input() tabNum: number;
   userTypes: string[];
   signInToggle: boolean;
   choosedUserType: string;
-  tabNum: number;
+  signUpNameStyle: string;
+  logInNameStyle: string;
 
-  constructor(private auth: AuthService, private iconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
+  constructor(private auth: AuthService, private rgisteredIcons: RegisteredIcons) {
   }
 
   ngOnInit() {
     this.signInToggle = true;
     this.userTypes = this.auth.getUserTypes();
-    this.iconRegistry.addSvgIcon('arrow', this.sanitizer.bypassSecurityTrustResourceUrl('app/assets/images/arrow.svg'))
-    this.tabNum = 0;
+    this.rgisteredIcons.addRegisteredSvgIcons();
   }
 
   logIn(values: any) {
@@ -65,14 +65,16 @@ export class SinginSignUpComponent implements OnInit {
   }
 
   toggleTab(tabNum: number) {
-    if (this.tabNum != tabNum) {
-      this.tabNum = tabNum;
+    if (tabNum == 0) {
+      this.signUpNameStyle = "{'font-weight': 100}"
     }
+    else if (tabNum == 1) {
+      this.logInNameStyle = "{'font-weight': 100}"
+    }
+    this.tabNum = tabNum;
   }
 
   selectTab() {
-    console.log(this.tabNum);
-    console.log('translate(' + this.tabNum * -50 + '%)');
     return {'transform': 'translate(' + this.tabNum * -50 + '%)'};
   }
 

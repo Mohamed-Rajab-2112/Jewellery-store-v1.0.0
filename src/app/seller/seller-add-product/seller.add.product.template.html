@@ -11,7 +11,7 @@
     <label>Product Image</label>
     <label for="imagesInput" class="upload-btn">Upload Photos</label>
     <input type="file" name="imageUrl" (change)="getImageUrl($event)" multiple id="imagesInput" accept="image/*"
-           style="visibility: visible">
+           style="visibility: hidden">
 
     <div *ngFor="let image of imagesFilesList">
       <h5>{{image.name}}</h5>

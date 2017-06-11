@@ -2,6 +2,13 @@ import {Component, OnInit} from "@angular/core";
 import {
   JewelleryService
 } from "../../shared/services/jewellery.service";
+import {AuthService} from "../../shared/services/auth.service";
+import {Observable} from "rxjs/Rx";
+
+import "rxjs/add/operator/map";
+
+import {Utility} from "../../shared/services/utility.service";
+
 
 @Component({
   selector: "jewellery-home",
@@ -15,7 +22,11 @@ export class JewelleryHomeComponent implements OnInit {
   translateValueLatestOffers: number;
   translateValueMostVisited: number;
 
-  constructor(private Jewellery: JewelleryService) {
+
+  filteredStates: any;
+
+
+  constructor(private Jewellery: JewelleryService, private auth: AuthService, private utility: Utility) {
   }
 
   ngOnInit() {
@@ -23,6 +34,40 @@ export class JewelleryHomeComponent implements OnInit {
     this.deals = this.Jewellery.getHotDeals();
     this.translateValueLatestOffers = -100;
     this.translateValueMostVisited = -100;
+    this.auth.setNavActive(false);
+    this.utility.setNavBarBackgroundState(true);
+
+    /*============== RXJS course training ===============*/
+    // let numbers = [1, 2, 3];
+    // let source = Observable.create((value: any) => {
+    //   let index = 0;
+    //   let produceValue = () => {
+    //     value.next(numbers[index++]);
+    //     if (index < numbers.length) {
+    //       setTimeout(produceValue, 2000);
+    //     } else {
+    //       value.complete();
+    //     }
+    //   };
+    //
+    //   produceValue();
+    // }).map((n: number) => {
+    //   return n * 2;
+    // }).filter((n: number) => {
+    //   return n > 4
+    // });
+    //
+    // source.subscribe(
+    //   (value: number) => {
+    //     console.log(value);
+    //   },
+    //   (e: any) => {
+    //     console.log(e)
+    //   },
+    //   () => {
+    //     console.log('complete')
+    //   });
+    /*===================================================*/
   }
 
   arrow(type: string, direction: string) {

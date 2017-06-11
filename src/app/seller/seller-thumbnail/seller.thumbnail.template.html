@@ -1,10 +1,35 @@
-<div [routerLink]="['/seller/sellers-list', sellerDetails.id]">
-  <h2>{{sellerDetails.name}}</h2>
-  <h3 *ngIf="sellerDetails.verified">Verified</h3>
-  <h3 *ngIf="!sellerDetails.verified">Not Verified</h3>
-  <img [src]="sellerDetails?.imageUrl">
-  <h3>{{sellerDetails.telephone1}}</h3>
-  <h3>{{sellerDetails?.telephone2}}</h3>
-  <h3>{{sellerDetails?.address}}</h3>
-  <h3>{{sellerDetails?.area}}</h3>
-</div>
+<md-card [routerLink]="['/seller/sellers-list', sellerDetails.id]">
+  <div class="seller-name-verification-container">
+    <h2>{{sellerDetails.name}}</h2>
+    <h3 *ngIf="sellerDetails.verified"><img src="app/assets/images/check-circle-icon.svg">Verified</h3>
+    <h3 *ngIf="!sellerDetails.verified" class="not-verified"><img src="app/assets/images/cross-icon.svg">Not Verified
+    </h3>
+  </div>
+
+  <div class="logo-and-details-container">
+    <div class="overflow">
+      <img [src]="sellerDetails?.imageUrl">
+    </div>
+
+    <div class="products-count-container">
+      <h4><img src="app/assets/images/wedding-ring.svg"> Rings: <span class="badge badge-default">{{sellerDetails?.ringCount}}</span>
+      </h4>
+      <h4><img src="app/assets/images/necklace-icon.svg"> Necklaces: <span class="badge badge-default">{{sellerDetails?.necklaceCount}}</span>
+      </h4>
+      <h4><img src="app/assets/images/bracelet-icon.svg"> Bracelets: <span class="badge badge-default">{{sellerDetails?.braceletCount}}</span>
+      </h4>
+      <h4><img src="app/assets/images/earrings-icon.svg"> Earrings: <span class="badge badge-default">{{sellerDetails?.earringCount}}</span>
+      </h4>
+      <h4><img src="app/assets/images/different-icon.svg"> Others: <span class="badge badge-default">{{sellerDetails?.otherCount}}</span>
+      </h4>
+    </div>
+
+    <div>
+      <h3 *ngIf="sellerDetails.telephone1"><img src="app/assets/images/phone-icon.svg">{{sellerDetails.telephone1}}</h3>
+      <h3 *ngIf="sellerDetails.telephone2"><img src="app/assets/images/phone-icon.svg">{{sellerDetails?.telephone2}}</h3>
+      <!--<h3>{{sellerDetails?.address}}</h3>-->
+      <h3><img src="app/assets/images/location-icon.svg">{{sellerDetails?.area}}</h3>
+    </div>
+  </div>
+
+</md-card>

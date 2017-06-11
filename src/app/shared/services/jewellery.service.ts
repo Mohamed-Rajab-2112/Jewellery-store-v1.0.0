@@ -466,6 +466,12 @@ const goldDegree: string[] = [
   '24K'
 ];
 
+const areas: string[] = [
+  'عين شمس, القاهره'
+  ,
+  'مصر الجديده, القاهره'
+];
+
 import {Injectable} from "@angular/core";
 import {Subject} from "rxjs/Subject";
 import {SearchForm, JeweleryProduct} from "../index";
@@ -474,6 +480,7 @@ import {SearchForm, JeweleryProduct} from "../index";
 export class JewelleryService {
   private searchTerms = new Subject<SearchForm>();
   searchTermsChanged = this.searchTerms.asObservable();
+  productsTypes: string[];
 
   getMostVisitedJewellery() {
     return tempJewellery;
@@ -507,9 +514,51 @@ export class JewelleryService {
     })
   }
 
+  getCountJewelleryBySellerIdAndJewelleryType(id: number, type: string) {
+    return tempJewellery.filter((jewellery) => {
+      return jewellery.sellerId == id && jewellery.type == type;
+    }).length;
+  }
+
+  getCountJewelleryByType(products: JeweleryProduct[]) {
+    let productsCountByType: any[] = [];
+    /*this is temproraly call and will be removed later after implementing back end*/
+    this.getProductTypes();
+    /*-------------------------------------------------*/
+    products.map((product: JeweleryProduct) => {
+      for (let type of this.productsTypes) {
+        if (product.type == type) {
+          if (productsCountByType.length) {
+            for (let i = 0, l = productsCountByType.length; i < l; i++) {
+              if (productsCountByType[i].type == product.type) {
+                productsCountByType[i].count++;
+                break;
+              }
+              else if (i == productsCountByType.length - 1) {
+                productsCountByType.push({
+                  type: product.type,
+                  count: 1
+                });
+              }
+            }
+          }
+          else {
+            productsCountByType.push({
+              type: product.type,
+              count: 1
+            });
+          }
+          break;
+        }
+      }
+    });
+    // console.log(productsCountByType);
+    return productsCountByType;
+  }
+
   private applySearchTerms(searchTerms: SearchForm, ...searchTerm: SearchForm[]): JeweleryProduct[] {
     let searchResult: JeweleryProduct[] = [];
-    console.log(searchTerm)
+    console.log(searchTerm);
     if (searchTerm.length === 1) {
       tempJewellery.map((item) => {
         if (item["" + searchTerm[0]].includes(searchTerms["" + searchTerm[0]])) {
@@ -547,6 +596,7 @@ export class JewelleryService {
   }
 
   getProductTypes() {
+    this.productsTypes = productTypes;
     return productTypes;
   }
 
@@ -596,6 +646,10 @@ export class JewelleryService {
         return a.price - b.price;
       }
     })
+  }
+
+  getAreas() {
+    return areas;
   }
 
 }

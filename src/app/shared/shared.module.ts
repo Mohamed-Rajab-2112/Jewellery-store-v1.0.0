@@ -9,22 +9,33 @@ import {
   JewelleryFavouriteBtn
 } from '../index'
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+
 import {
   MdButtonModule,
   MdCheckboxModule,
   MdInputModule,
   MdIconModule,
-  MdTabsModule
+  MdTooltipModule,
+  MdCardModule,
+  MdAutocompleteModule,
+  MdSelectModule
+  // MdTabsModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    NgbModule,
     MdButtonModule,
     MdCheckboxModule,
     MdInputModule,
     MdIconModule,
+    MdTooltipModule,
+    MdCardModule,
+    MdAutocompleteModule,
+    MdSelectModule
     // MdTabsModule
   ],
   declarations: [
@@ -40,10 +51,15 @@ import {
     SellerProductsFilter,
     SinginSignUpComponent,
     JewelleryFavouriteBtn,
+    NgbModule,
     MdButtonModule,
     MdCheckboxModule,
     MdInputModule,
     MdIconModule,
+    MdTooltipModule,
+    MdCardModule,
+    MdAutocompleteModule,
+    MdSelectModule
     // MdTabsModule
   ]
 })

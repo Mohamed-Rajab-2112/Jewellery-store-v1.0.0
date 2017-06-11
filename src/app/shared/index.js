@@ -16,5 +16,7 @@ __export(require("./signin.signup.component/signin.signup.component"));
 __export(require("./services/customer.service"));
 __export(require("./services/customer.auth.activator.service"));
 __export(require("./services/vendor.auth.activator.service"));
+__export(require("./services/registered.icons.service"));
+__export(require("./services/utility.service"));
 __export(require("./../shared/shared.module"));
 //# sourceMappingURL=index.js.map
