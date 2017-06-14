@@ -76,21 +76,37 @@
 /* line 70, jewellery.home.component.scss */
 .home .offers-container {
   display: flex;
-  margin: 0 auto;
   justify-content: center;
   align-items: center;
 }
 /* line 75, jewellery.home.component.scss */
+.home .offers-container button {
+  background-color: transparent;
+  cursor: pointer;
+}
+/* line 78, jewellery.home.component.scss */
+.home .offers-container button:focus, .home .offers-container button:active {
+  outline: 0;
+}
+/* line 87, jewellery.home.component.scss */
+.home .offers-container button img {
+  height: 100px;
+}
+/* line 91, jewellery.home.component.scss */
+.home .offers-container .btn:focus {
+  outline: 0;
+}
+/* line 94, jewellery.home.component.scss */
 .home .offers-container .overFlow-container {
   overflow: hidden;
-  height: 500px;
+  height: 255px;
   width: 80%;
 }
-/* line 79, jewellery.home.component.scss */
+/* line 99, jewellery.home.component.scss */
 .home .offers-container .overFlow-container jewellery-thumbnail {
-  height: inherit;
+  width: 600%;
 }
-/* line 83, jewellery.home.component.scss */
+/* line 103, jewellery.home.component.scss */
 .home .offers-container div {
   width: 5%;
   margin: 5px;

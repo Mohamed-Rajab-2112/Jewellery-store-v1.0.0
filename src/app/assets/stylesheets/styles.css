@@ -47,6 +47,10 @@ html body h4 {
   font-weight: 400;
 }
 /* line 43, styles.scss */
+html body button {
+  border: none;
+}
+/* line 46, styles.scss */
 html body a:focus, html body button:focus {
-  outline: none;
+  outline: none !important;
 }

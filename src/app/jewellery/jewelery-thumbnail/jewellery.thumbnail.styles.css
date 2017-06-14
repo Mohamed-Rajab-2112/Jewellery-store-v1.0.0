@@ -2,20 +2,19 @@
 .product-thumbnail-container {
   transition: transform 0.5s ease-in-out;
   display: flex;
-  width: 100%;
+  width: inherit;
   height: inherit;
-  flex-wrap: wrap;
-  flex-direction: column;
+  flex-wrap: inherit;
   margin: 0 auto;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
-/* line 13, jewellery.thumbnail.styles.scss */
+/* line 14, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail {
   box-sizing: border-box;
   position: relative;
   text-align: center;
-  margin: 5px 0.5%;
+  margin: 5px 3px;
   width: 19%;
   height: 240px;
   display: flex;
@@ -28,23 +27,23 @@
   border: 1px solid #DFDFDF;
   transition: 0.3s all;
 }
-/* line 30, jewellery.thumbnail.styles.scss */
+/* line 31, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail:hover {
   transition: 0.5s all;
   box-sizing: border-box;
   border: 1px solid #586D8C;
 }
-/* line 35, jewellery.thumbnail.styles.scss */
+/* line 36, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail img {
   width: 70%;
 }
-/* line 38, jewellery.thumbnail.styles.scss */
+/* line 39, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail h3 {
   word-wrap: break-word;
   width: 80%;
   margin: 5px auto;
 }
-/* line 43, jewellery.thumbnail.styles.scss */
+/* line 44, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail .fav-btn {
   position: absolute;
   top: 5px;

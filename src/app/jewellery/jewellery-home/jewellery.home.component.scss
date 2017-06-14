@@ -69,15 +69,35 @@
   }
   .offers-container {
     display: flex;
-    margin: 0 auto;
+    //margin: 0 auto;
     justify-content: center;
     align-items: center;
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      cursor: pointer;
+      &:focus, &:active {
+        outline: 0;
+      }
+      //.disabled {
+      //  img {
+      //    opacity: 0.7;
+      //  }
+      //}
+      //height: 250px;
+      img {
+        height: 100px;
+      }
+    }
+    .btn:focus {
+      outline: 0;
+    }
     .overFlow-container {
       overflow: hidden;
-      height: 500px;
+      height: 255px;
       width: 80%;
+      //border: 1px black solid;
       jewellery-thumbnail {
-        height: inherit;
+        width: 600%;
       }
     }
     div {

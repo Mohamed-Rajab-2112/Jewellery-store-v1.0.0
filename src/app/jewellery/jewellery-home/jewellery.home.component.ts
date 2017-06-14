@@ -22,18 +22,14 @@ export class JewelleryHomeComponent implements OnInit {
   translateValueLatestOffers: number;
   translateValueMostVisited: number;
 
-
-  filteredStates: any;
-
-
   constructor(private Jewellery: JewelleryService, private auth: AuthService, private utility: Utility) {
   }
 
   ngOnInit() {
     this.mostVisited = this.Jewellery.getMostVisitedJewellery();
     this.deals = this.Jewellery.getHotDeals();
-    this.translateValueLatestOffers = -100;
-    this.translateValueMostVisited = -100;
+    this.translateValueLatestOffers = 0;
+    this.translateValueMostVisited = 0;
     this.auth.setNavActive(false);
     this.utility.setNavBarBackgroundState(true);
 
@@ -73,21 +69,23 @@ export class JewelleryHomeComponent implements OnInit {
   arrow(type: string, direction: string) {
     if (type == 'latestOffers' && direction == 'left') {
       if (this.translateValueLatestOffers >= -200 && this.translateValueLatestOffers != 0) {
-        this.translateValueLatestOffers += 100;
+        this.translateValueLatestOffers += 16.67;
       }
     } else if (type == 'latestOffers' && direction == 'right') {
       if (this.translateValueLatestOffers <= 0 && this.translateValueLatestOffers != -200) {
-        this.translateValueLatestOffers -= 100;
+        this.translateValueLatestOffers -= 16.67;
       }
     } else if (type == 'mostVisited' && direction == 'left') {
       if (this.translateValueMostVisited >= -200 && this.translateValueMostVisited != 0) {
-        this.translateValueMostVisited += 100;
+        this.translateValueMostVisited += 16.67;
       }
     } else if (type == 'mostVisited' && direction == 'right') {
       if (this.translateValueMostVisited <= 0 && this.translateValueMostVisited != -200) {
-        this.translateValueMostVisited -= 100;
+        this.translateValueMostVisited -= 16.67;
       }
     }
+
     console.log(this.translateValueLatestOffers)
   }
+
 }

@@ -27,32 +27,32 @@
 
   <h2>Latest Offers</h2>
   <div class="offers-container">
-    <div>
-      <img src="app/assets/images/arrow-left.svg" [hidden]="translateValueLatestOffers == 0"
-           (click)="arrow('latestOffers', 'left')">
-    </div>
+    <button [disabled]="translateValueLatestOffers == 0" (click)="arrow('latestOffers', 'left')">
+      <img src="app/assets/images/arrow-left.svg"  [ngStyle]="translateValueLatestOffers == 0 ? {'opacity': '0.7'}: ''">
+    </button>
     <div class="overFlow-container">
       <jewellery-thumbnail [products]="deals" [translate]="translateValueLatestOffers"></jewellery-thumbnail>
     </div>
-    <div>
-      <img src="app/assets/images/arrow-right.svg" [hidden]="translateValueLatestOffers == -200"
-           (click)="arrow('latestOffers', 'right')">
-    </div>
+    <button [disabled]="translateValueLatestOffers <= -83" (click)="arrow('latestOffers', 'right')">
+      <img src="app/assets/images/arrow-right.svg" [ngStyle]="translateValueLatestOffers <= -83 ? {'opacity': '0.7'}: ''">
+    </button>
   </div>
 
   <h2>Most Visited</h2>
   <div class="offers-container">
-    <div>
-      <img src="app/assets/images/arrow-left.svg" [hidden]="translateValueMostVisited == 0"
-           (click)="arrow('mostVisited', 'left')">
-    </div>
+    <!--<div>-->
+    <button [disabled]="translateValueMostVisited == 0" (click)="arrow('mostVisited', 'left')" [ngStyle]="translateValueMostVisited == 0 ? {'opacity': '0.7'}: ''">
+      <img src="app/assets/images/arrow-left.svg">
+    </button>
+    <!--</div>-->
     <div class="overFlow-container">
       <jewellery-thumbnail [products]="mostVisited" [translate]="translateValueMostVisited"></jewellery-thumbnail>
     </div>
-    <div>
-      <img src="app/assets/images/arrow-right.svg" [hidden]="translateValueMostVisited == -200"
-           (click)="arrow('mostVisited', 'right')">
-    </div>
+    <!--<div>-->
+    <button [disabled]="translateValueMostVisited <= -83" (click)="arrow('mostVisited', 'right')">
+      <img src="app/assets/images/arrow-right.svg" [ngStyle]="translateValueMostVisited <= -83 ? {'opacity': '0.7'}: ''">
+    </button>
+    <!--</div>-->
   </div>
 
 

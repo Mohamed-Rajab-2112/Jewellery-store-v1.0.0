@@ -40,8 +40,11 @@ html {
       color: $ldcolor;
       font-weight: 400;
     }
+    button {
+      border: none;
+    }
     a:focus, button:focus {
-      outline: none;
+      outline: none !important;
     }
   }
 }

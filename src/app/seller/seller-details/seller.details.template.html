@@ -22,7 +22,7 @@
   <div *ngIf="sellingList.length" class="products-listing-container">
     <products-filter [products]="sellingList" (filterTerms)="applyFilterTerms($event)"
                      (sortTerm)="sortProducts($event)"></products-filter>
-    <div class="overFlow-container">
+    <div class="overFlow-container" [ngClass]="selectedHeightClass">
       <jewellery-thumbnail [products]="sellingListFiltered"></jewellery-thumbnail>
     </div>
   </div>

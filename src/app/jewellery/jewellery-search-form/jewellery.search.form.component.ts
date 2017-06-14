@@ -12,6 +12,7 @@ export class JewellerySearchForm implements OnInit {
   productName: string;
   sellerName: string;
   area: string;
+  types: string[];
 
   constructor(private router: Router, private jewellery: JewelleryService) {
   }
@@ -22,6 +23,7 @@ export class JewellerySearchForm implements OnInit {
       this.sellerName = value["sellerName"] === "undefined" ? "" : value["sellerName"];
       this.area = value["area"] === "undefined" ? "" : value["area"];
     });
+    this.types = this.jewellery.getProductTypes();
   }
 
   searchProductAndarea(values: any) {

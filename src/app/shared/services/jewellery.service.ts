@@ -4,7 +4,7 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "ring 1",
     type: "ring",
     price: 500,
-    sellerName: "sssssssssssssssssssss",
+    sellerName: "ssssss ssssss sssssssss",
     sellerId: 22222,
     area: "aaa",
     goldDegree: "18K",

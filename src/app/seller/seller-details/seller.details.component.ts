@@ -17,6 +17,7 @@ export class SellerDetailsComponent implements OnInit {
   sellingList: JeweleryProduct[];
   sellingListFiltered: JeweleryProduct[];
   sellerDetails: User;
+  selectedHeightClass: string;
 
   constructor(private jewellery: JewelleryService, private seller: SellerService, private route: ActivatedRoute) {
   }
@@ -27,7 +28,16 @@ export class SellerDetailsComponent implements OnInit {
       this.sellingListFiltered = this.sellingList.slice();
       this.sellerDetails = this.seller.getSellerById(Number(params['id']));
     });
-    console.log(this.sellingList)
+    console.log(this.sellingList);
+    let measuredRatio = Math.ceil(this.sellingListFiltered.length / 5);
+    console.log(measuredRatio);
+    if (measuredRatio == 1) {
+      this.selectedHeightClass = 'height-for-overFlow-container-1';
+    } else if (measuredRatio == 2) {
+      this.selectedHeightClass = 'height-for-overFlow-container-2';
+    } else if (measuredRatio == 3) {
+      this.selectedHeightClass = 'height-for-overFlow-container-3';
+    }
   }
 
   applyFilterTerms(terms: any) {

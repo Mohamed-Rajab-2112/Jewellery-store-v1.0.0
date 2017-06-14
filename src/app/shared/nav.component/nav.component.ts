@@ -106,6 +106,9 @@ export class NavComponent implements OnInit {
     if (activeLable == this.currentActiveItem) {
       return ['show-lable']
     }
+    else {
+      return []
+    }
   }
 
   setCurrentActiveNavItem(item: string) {

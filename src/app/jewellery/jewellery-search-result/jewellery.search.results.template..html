@@ -3,7 +3,7 @@
   <!--<span *ngIf="searchTerms.sellerName">at "{{searchTerms.sellerName}}" </span>-->
   <!--<span *ngIf="searchTerms.sellerName">in {{searchTerms.place}}</span></p>-->
 
-  <products-filter (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>
+  <!--<products-filter (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>-->
 
   <p *ngIf="!searchResult.length">Unfortunately, No search results found</p>
   <jewellery-thumbnail [products]="searchResultFiltered"></jewellery-thumbnail>

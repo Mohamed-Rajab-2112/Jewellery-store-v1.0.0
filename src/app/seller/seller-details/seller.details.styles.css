@@ -78,13 +78,11 @@
 }
 /* line 68, seller.details.styles.scss */
 .seller-details-container .products-listing-container .overFlow-container {
-  border: 1px solid black;
   margin: 25px auto 0;
-  overflow: hidden;
-  height: 1000px;
   width: 80%;
 }
 /* line 75, seller.details.styles.scss */
 .seller-details-container .products-listing-container .overFlow-container jewellery-thumbnail {
   height: inherit;
+  flex-wrap: wrap;
 }

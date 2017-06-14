@@ -88,6 +88,9 @@ var NavComponent = (function () {
         if (activeLable == this.currentActiveItem) {
             return ['show-lable'];
         }
+        else {
+            return [];
+        }
     };
     NavComponent.prototype.setCurrentActiveNavItem = function (item) {
         var _this = this;
