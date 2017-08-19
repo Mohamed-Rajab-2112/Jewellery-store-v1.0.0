@@ -26,7 +26,6 @@ var NavComponent = (function () {
     NavComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.auth.user.subscribe(function (value) {
-            console.log(value);
             _this.userName = value.name;
             _this.userType = value.userType;
             _this.showFavourite = value.userType == 'Customer';
@@ -37,16 +36,8 @@ var NavComponent = (function () {
         this.customer.favouriteJewellery.subscribe(function (value) {
             _this.favouriteCount = value.length;
         });
-        this.utility.navBarBackgroundState.subscribe(function (navBarBackgroundState) {
-            console.log('will hide');
-            console.log(navBarBackgroundState);
-            _this.showBackground = navBarBackgroundState;
-            console.log(_this.showBackground);
-        });
-        console.log(this.showBackground);
     };
     NavComponent.prototype.setSignInToggle = function (toggle) {
-        console.log(toggle);
         this.signInToggle = toggle;
     };
     NavComponent.prototype.toggleSignInFormClass = function () {

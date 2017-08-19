@@ -1,0 +1,60 @@
+/* line 3, jewellery.details.styles.scss */
+.jewellery-details {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+/* line 9, jewellery.details.styles.scss */
+.jewellery-details .title-price-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 100px auto 50px;
+}
+/* line 15, jewellery.details.styles.scss */
+.jewellery-details .images-description-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+/* line 21, jewellery.details.styles.scss */
+.jewellery-details .images-description-container .all-images-container {
+  display: block;
+}
+/* line 25, jewellery.details.styles.scss */
+.jewellery-details .images-description-container .all-images-container img {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 31, jewellery.details.styles.scss */
+.jewellery-details .images-description-container .all-images-container .images-list {
+  text-align: center;
+}
+/* line 35, jewellery.details.styles.scss */
+.jewellery-details .images-description-container .all-images-container .images-list img {
+  display: inline-block;
+  width: 25%;
+  margin: 1%;
+  border: 1px solid #133759;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+/* line 42, jewellery.details.styles.scss */
+.jewellery-details .images-description-container .all-images-container .images-list img:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+/* line 49, jewellery.details.styles.scss */
+.jewellery-details .images-description-container p {
+  margin-top: 50px;
+  text-align: center;
+}
+/* line 54, jewellery.details.styles.scss */
+.jewellery-details .selectedimage {
+  opacity: 0.5;
+}

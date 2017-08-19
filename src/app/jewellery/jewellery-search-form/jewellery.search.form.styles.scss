@@ -7,13 +7,16 @@ form {
   width: 100%;
   align-items: center;
   //border: 1px solid black;
+  md-input-container {
+    font-size: 2em;
+  }
   input {
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    border-bottom: 1px solid $dcolor;
-    font-size: 2em;
+    //border-bottom: 1px solid $dcolor;
+    font-size: 1em;
     box-sizing: border-box;
-    width: 30%;
+    //width: 30%;
     color: $darkBlue;
     transition: 0.5s all;
     &:focus {

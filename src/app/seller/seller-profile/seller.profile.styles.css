@@ -1,0 +1,31 @@
+/* line 3, seller.profile.styles.scss */
+.seller-profile-container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+/* line 8, seller.profile.styles.scss */
+.seller-profile-container h2 {
+  padding-top: 50px;
+  margin: 0 0 0 50px;
+}
+/* line 12, seller.profile.styles.scss */
+.seller-profile-container h3 {
+  padding-left: 50px;
+}
+/* line 15, seller.profile.styles.scss */
+.seller-profile-container button {
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  color: #133759;
+  background-color: #F5D0CA;
+  border: none;
+  transition: 0.5s all;
+}
+/* line 20, seller.profile.styles.scss */
+.seller-profile-container button:hover {
+  color: #F5D0CA;
+  background-color: #133759;
+  transition: 0.5s all;
+}

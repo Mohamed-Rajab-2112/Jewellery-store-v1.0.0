@@ -4,7 +4,6 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "ring 1",
     type: "ring",
     price: 500,
-    sellerName: "ssssss ssssss sssssssss",
     sellerId: 22222,
     area: "aaa",
     goldDegree: "18K",
@@ -12,6 +11,166 @@ const tempJewellery: JeweleryProduct[] = [
       name: '01.png',
       url: "/app/images/01.png"
     }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 2,
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
+    sellerId: 22222,
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    },{
+      name: '02.png',
+      url: "/app/images/02.png"
+    },{
+      name: '03.png',
+      url: "/app/images/03.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerId: 11111,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 2,
+    productName: "bracelet",
+    type: "bracelet",
+    price: 500,
+    sellerId: 22222,
+    area: "aaa",
+    goldDegree: "24K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 3,
+    productName: "011",
+    type: "ring",
+    price: 500,
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    },{
+      name: '02.png',
+      url: "/app/images/02.png"
+    },{
+      name: '03.png',
+      url: "/app/images/03.png"
+    }],
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
+  },
+  {
+    id: 4,
+    productName: "ring",
+    type: "ring",
+    price: 500,
+    sellerId: 33333,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 5,
+    productName: "ring",
+    type: "ring",
+    price: 600,
+    sellerId: 11111,
+    area: "aaa",
+    goldDegree: "21K",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
+    publishDate: "5/5/2017"
+  },
+  {
+    id: 6,
+    productName: "earring",
+    type: "earring",
+    goldDegree: "21K",
+    price: 200,
+    sellerId: 22222,
+    area: "aaa",
+    imageUrl: [{
+      name: '01.png',
+      url: "/app/images/01.png"
+    }],
     publishDate: "5/5/2017"
   },
   {
@@ -19,7 +178,6 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "bracelet",
     type: "bracelet",
     price: 500,
-    sellerName: "sss",
     sellerId: 22222,
     area: "aaa",
     goldDegree: "24K",
@@ -34,22 +192,27 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "011",
     type: "ring",
     price: 500,
-    area: "aaa",
-    sellerName: 'bbb',
     sellerId: 33333,
+    area: "aaa",
     goldDegree: "21K",
     imageUrl: [{
       name: '01.png',
       url: "/app/images/01.png"
+    },{
+      name: '02.png',
+      url: "/app/images/02.png"
+    },{
+      name: '03.png',
+      url: "/app/images/03.png"
     }],
-    publishDate: "5/5/2017"
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
   },
   {
     id: 4,
     productName: "ring",
     type: "ring",
     price: 500,
-    sellerName: "bbb",
     sellerId: 33333,
     area: "aaa",
     goldDegree: "21K",
@@ -64,10 +227,9 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "ring",
     type: "ring",
     price: 600,
-    sellerName: "aaa",
     sellerId: 11111,
-    goldDegree: "21K",
     area: "aaa",
+    goldDegree: "21K",
     imageUrl: [{
       name: '01.png',
       url: "/app/images/01.png"
@@ -80,7 +242,6 @@ const tempJewellery: JeweleryProduct[] = [
     type: "earring",
     goldDegree: "21K",
     price: 200,
-    sellerName: "aaa",
     sellerId: 22222,
     area: "aaa",
     imageUrl: [{
@@ -94,7 +255,6 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "bracelet",
     type: "bracelet",
     price: 500,
-    sellerName: "sss",
     sellerId: 22222,
     area: "aaa",
     goldDegree: "24K",
@@ -109,22 +269,27 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "011",
     type: "ring",
     price: 500,
-    area: "aaa",
-    sellerName: 'bbb',
     sellerId: 33333,
+    area: "aaa",
     goldDegree: "21K",
     imageUrl: [{
       name: '01.png',
       url: "/app/images/01.png"
+    },{
+      name: '02.png',
+      url: "/app/images/02.png"
+    },{
+      name: '03.png',
+      url: "/app/images/03.png"
     }],
-    publishDate: "5/5/2017"
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
   },
   {
     id: 4,
     productName: "ring",
     type: "ring",
     price: 500,
-    sellerName: "bbb",
     sellerId: 33333,
     area: "aaa",
     goldDegree: "21K",
@@ -139,10 +304,9 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "ring",
     type: "ring",
     price: 600,
-    sellerName: "aaa",
     sellerId: 11111,
-    goldDegree: "21K",
     area: "aaa",
+    goldDegree: "21K",
     imageUrl: [{
       name: '01.png',
       url: "/app/images/01.png"
@@ -155,7 +319,6 @@ const tempJewellery: JeweleryProduct[] = [
     type: "earring",
     goldDegree: "21K",
     price: 200,
-    sellerName: "aaa",
     sellerId: 22222,
     area: "aaa",
     imageUrl: [{
@@ -169,7 +332,6 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "bracelet",
     type: "bracelet",
     price: 500,
-    sellerName: "sss",
     sellerId: 22222,
     area: "aaa",
     goldDegree: "24K",
@@ -184,22 +346,27 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "011",
     type: "ring",
     price: 500,
-    area: "aaa",
-    sellerName: 'bbb',
     sellerId: 33333,
+    area: "aaa",
     goldDegree: "21K",
     imageUrl: [{
       name: '01.png',
       url: "/app/images/01.png"
+    },{
+      name: '02.png',
+      url: "/app/images/02.png"
+    },{
+      name: '03.png',
+      url: "/app/images/03.png"
     }],
-    publishDate: "5/5/2017"
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
   },
   {
     id: 4,
     productName: "ring",
     type: "ring",
     price: 500,
-    sellerName: "bbb",
     sellerId: 33333,
     area: "aaa",
     goldDegree: "21K",
@@ -214,7 +381,6 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "ring",
     type: "ring",
     price: 600,
-    sellerName: "aaa",
     sellerId: 11111,
     goldDegree: "21K",
     area: "aaa",
@@ -230,157 +396,6 @@ const tempJewellery: JeweleryProduct[] = [
     type: "earring",
     goldDegree: "21K",
     price: 200,
-    sellerName: "aaa",
-    sellerId: 22222,
-    area: "aaa",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 2,
-    productName: "bracelet",
-    type: "bracelet",
-    price: 500,
-    sellerName: "sss",
-    sellerId: 22222,
-    area: "aaa",
-    goldDegree: "24K",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 3,
-    productName: "011",
-    type: "ring",
-    price: 500,
-    area: "aaa",
-    sellerName: 'bbb',
-    sellerId: 33333,
-    goldDegree: "21K",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 4,
-    productName: "ring",
-    type: "ring",
-    price: 500,
-    sellerName: "bbb",
-    sellerId: 33333,
-    area: "aaa",
-    goldDegree: "21K",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 5,
-    productName: "ring",
-    type: "ring",
-    price: 600,
-    sellerName: "aaa",
-    sellerId: 11111,
-    goldDegree: "21K",
-    area: "aaa",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 6,
-    productName: "earring",
-    type: "earring",
-    goldDegree: "21K",
-    price: 200,
-    sellerName: "aaa",
-    sellerId: 22222,
-    area: "aaa",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 2,
-    productName: "bracelet",
-    type: "bracelet",
-    price: 500,
-    sellerName: "sss",
-    sellerId: 22222,
-    area: "aaa",
-    goldDegree: "24K",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 3,
-    productName: "011",
-    type: "ring",
-    price: 500,
-    area: "aaa",
-    sellerName: 'bbb',
-    sellerId: 33333,
-    goldDegree: "21K",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 4,
-    productName: "ring",
-    type: "ring",
-    price: 500,
-    sellerName: "bbb",
-    sellerId: 33333,
-    area: "aaa",
-    goldDegree: "21K",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 5,
-    productName: "ring",
-    type: "ring",
-    price: 600,
-    sellerName: "aaa",
-    sellerId: 11111,
-    goldDegree: "21K",
-    area: "aaa",
-    imageUrl: [{
-      name: '01.png',
-      url: "/app/images/01.png"
-    }],
-    publishDate: "5/5/2017"
-  },
-  {
-    id: 6,
-    productName: "earring",
-    type: "earring",
-    goldDegree: "21K",
-    price: 200,
-    sellerName: "aaa",
     sellerId: 22222,
     area: "aaa",
     imageUrl: [{
@@ -395,21 +410,26 @@ const tempJewellery: JeweleryProduct[] = [
     type: "ring",
     price: 500,
     area: "aaa",
-    sellerName: 'bbb',
     sellerId: 33333,
     goldDegree: "21K",
     imageUrl: [{
       name: '01.png',
       url: "/app/images/01.png"
+    },{
+      name: '02.png',
+      url: "/app/images/02.png"
+    },{
+      name: '03.png',
+      url: "/app/images/03.png"
     }],
-    publishDate: "5/5/2017"
+    publishDate: "5/5/2017",
+    description: 'Some stubid description goes here'
   },
   {
     id: 4,
     productName: "ring",
     type: "ring",
     price: 500,
-    sellerName: "bbb",
     sellerId: 33333,
     area: "aaa",
     goldDegree: "21K",
@@ -424,7 +444,6 @@ const tempJewellery: JeweleryProduct[] = [
     productName: "ring",
     type: "ring",
     price: 600,
-    sellerName: "aaa",
     sellerId: 11111,
     goldDegree: "21K",
     area: "aaa",
@@ -434,13 +453,12 @@ const tempJewellery: JeweleryProduct[] = [
     }],
     publishDate: "5/5/2017"
   },
-  {
+    {
     id: 6,
     productName: "earring",
     type: "earring",
     goldDegree: "21K",
     price: 200,
-    sellerName: "aaa",
     sellerId: 22222,
     area: "aaa",
     imageUrl: [{
@@ -585,7 +603,7 @@ export class JewelleryService {
   }
 
   searchJewellery(searchTerms: SearchForm): JeweleryProduct[] {
-    console.log(searchTerms)
+    console.log(searchTerms);
     let searchTermTitles = [];
     for (let property in searchTerms) {
       if (searchTerms.hasOwnProperty(property)) {

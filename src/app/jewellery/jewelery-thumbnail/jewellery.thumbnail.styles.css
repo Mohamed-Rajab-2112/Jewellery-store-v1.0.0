@@ -34,18 +34,37 @@
   border: 1px solid #586D8C;
 }
 /* line 36, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+/* line 41, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button:first-child {
+  background-color: blue;
+}
+/* line 44, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button:last-child {
+  background-color: red;
+}
+/* line 48, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail img {
   width: 70%;
 }
-/* line 39, jewellery.thumbnail.styles.scss */
+/* line 51, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail h3 {
   word-wrap: break-word;
   width: 80%;
   margin: 5px auto;
 }
-/* line 44, jewellery.thumbnail.styles.scss */
+/* line 56, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail .fav-btn {
   position: absolute;
   top: 5px;
   left: 5px;
+}
+/* line 65, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .alert-body {
+  display: flex;
+  align-items: center;
 }

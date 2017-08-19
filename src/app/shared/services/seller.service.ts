@@ -257,14 +257,15 @@ export class SellerService {
   }
 
   postNewProduct(productDetails: any) {
-    // productDetails.id = productDetails.id || this.sellerDetails.id + Date.now();
     productDetails.sellerId = this.sellerDetails.id;
-    productDetails.sellerName = this.sellerDetails.name;
+    // productDetails.sellerName = this.sellerDetails.name;
+    productDetails.area = this.sellerDetails.area;
 
     /*this call for prototyping purposes*/
     productDetails.imageUrl.map((x: any) => {
       x.url = '/app/images/' + x.name;
     });
+    console.log(productDetails);
     this.jewellery.addProductLocally(productDetails);
     return true;
   }

@@ -1,11 +1,11 @@
-<div class="jewellery-filter-container">
+<div class="jewellery-filter-container" *ngIf="products?.length">
 
   <div class="button-group">
     <button *ngFor="let typeAndCount of typesAndCounts" md-raised-button
             [ngClass]="applySelectedBtnClass(typeAndCount.type)" (click)="assignType(typeAndCount.type)">
       {{typeAndCount.type}}({{typeAndCount.count}})
     </button>
-    <button *ngIf="typesAndCounts.length > 1" (click)="assignType('All')" [ngClass]="applySelectedBtnClass('All')"
+    <button *ngIf="typesAndCounts?.length > 1" (click)="assignType('All')" [ngClass]="applySelectedBtnClass('All')"
             md-raised-button>All Products
     </button>
   </div>

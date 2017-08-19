@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter, Input} from "@angular/core";
+import {Component, OnInit, Output, EventEmitter, Input, OnChanges} from "@angular/core";
 import {JewelleryService} from "../../shared/services/jewellery.service";
 import {JeweleryProduct} from "../../shared/models/jewelleryProduct.model";
 @Component({
@@ -7,7 +7,7 @@ import {JeweleryProduct} from "../../shared/models/jewelleryProduct.model";
   styleUrls: ['app/seller/seller-products-filter/seller.products.filter.styles.css']
 })
 
-export class SellerProductsFilter implements OnInit {
+export class SellerProductsFilter implements OnInit, OnChanges {
   @Output() filterTerms = new EventEmitter;
   @Output() sortTerm = new EventEmitter;
   @Input() products: JeweleryProduct[];
@@ -24,17 +24,18 @@ export class SellerProductsFilter implements OnInit {
     this.goldDegrees = this.jewellery.getGoldDegree();
     this.selectedDegree = 'All';
     this.typesAndCounts = this.jewellery.getCountJewelleryByType(this.products);
-    // this.jewellery.getProductTypes().map((type) => {
-    //
-    //   this.typesAndCounts.push({
-    //     type: type,
-    //     count: this.jewellery.getCountJewelleryByType(this.jewellery.getProductTypes(), this.products)
-    //   })
-    // });
-    // this.typesAndCounts = this.jewellery.getProductTypes();
     this.priceSort = 'Lowest first';
-    this.type = 'All';
+    this.typesAndCounts.length > 1 ? this.assignType('All') : this.typesAndCounts.length && this.assignType(this.typesAndCounts[0].type);
     this.sortByPrice();
+  }
+
+  ngOnChanges() {
+    this.typesAndCounts = this.jewellery.getCountJewelleryByType(this.products);
+    if (this.typesAndCounts.length > 1) {
+      this.assignType('All')
+    } else {
+      this.typesAndCounts.length && this.assignType(this.typesAndCounts[0].type);
+    }
   }
 
   filterByTerms() {
@@ -52,8 +53,6 @@ export class SellerProductsFilter implements OnInit {
   }
 
   applySelectedBtnClass(type: string) {
-    console.log(type);
-    console.log(this.type);
     if (this.type == type) {
       return 'selected-button';
     }

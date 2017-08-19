@@ -68,21 +68,6 @@
   margin-right: 5px;
 }
 /* line 59, seller.details.styles.scss */
-.seller-details-container .products-listing-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.seller-details-container jewellery-full-option {
   width: 100%;
-  padding-top: 75px;
-  background-color: #fff;
-}
-/* line 68, seller.details.styles.scss */
-.seller-details-container .products-listing-container .overFlow-container {
-  margin: 25px auto 0;
-  width: 80%;
-}
-/* line 75, seller.details.styles.scss */
-.seller-details-container .products-listing-container .overFlow-container jewellery-thumbnail {
-  height: inherit;
-  flex-wrap: wrap;
 }

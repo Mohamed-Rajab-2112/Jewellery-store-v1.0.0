@@ -1,0 +1,46 @@
+@import "../../assets/stylesheets/colors-theme.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100%;
+  .form-field-container {
+    margin-bottom: 25px;
+    width: 100%;
+    & > * {
+      width: 100%;
+    }
+  }
+  button {
+    @include button-default;
+    &:hover {
+      @include button-focused;
+    }
+  }
+  .upload-btn {
+    padding: 5px;
+    cursor: pointer;
+    @include button-default;
+    &:hover {
+      @include button-focused;
+    }
+  }
+  .prod-img-thumbnail-container {
+    margin-bottom: 25px;
+    img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+  }
+  .dialog-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px !important;
+    margin-top: 35px;
+    padding-bottom: 25px;
+    //border: 1px solid black;
+  }
+}
+

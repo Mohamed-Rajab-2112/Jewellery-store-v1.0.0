@@ -3,10 +3,10 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
+
 import {
   SellersListComponent,
   sellerRoutes,
-  SellerThumbnail,
   SellerDetailsComponent,
   SellerProfileComponent,
   SellerProfileEditComponent
@@ -26,10 +26,10 @@ import {
   ],
   declarations: [
     SellersListComponent,
-    SellerThumbnail,
+    // SellerThumbnail,
     SellerDetailsComponent,
     SellerProfileComponent,
-    SellerProfileEditComponent,
+    SellerProfileEditComponent
   ]
 })
 

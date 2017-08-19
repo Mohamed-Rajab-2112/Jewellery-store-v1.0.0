@@ -11,7 +11,10 @@ __export(require("./services/seller.service"));
 __export(require("./services/jewellery.details.and.seller.details.activator"));
 __export(require("./services/default.redirect.activator"));
 __export(require("./services/jewellery.list.activator"));
-__export(require("./signin.signup.component/signin.signup.component"));
+var signin_signup_component_1 = require("./signin.signup.component/signin.signup.component");
+exports.SinginSignUpComponent = signin_signup_component_1.SinginSignUpComponent;
+var jewellery_full_option_component_1 = require("./jewellery.full.option.component/jewellery.full.option.component");
+exports.JewelleryFullOption = jewellery_full_option_component_1.JewelleryFullOption;
 /*Service exports*/
 __export(require("./services/customer.service"));
 __export(require("./services/customer.auth.activator.service"));

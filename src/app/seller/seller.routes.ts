@@ -13,6 +13,6 @@ import {
 
 export const sellerRoutes: Routes = [
   {path: "sellers-list", component: SellersListComponent},
-  {path: "vendor-profile", component: SellerProfileComponent, canActivate: [VendorProfileActivator]},
+  {path: "vendor-profile", component: SellerProfileComponent/*, canActivate: [VendorProfileActivator]*/},
   {path: "sellers-list/:id", component: SellerDetailsComponent, canActivate: [JewelleryAndSellerDetailsActivator]}
 ];

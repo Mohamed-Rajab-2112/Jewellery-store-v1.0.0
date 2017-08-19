@@ -1,23 +1,18 @@
-<ul>
-  <li>
-    <button>Products</button>
-  </li>
-  <li>
-    <button>Profile Info</button>
-  </li>
-</ul>
+<div class="seller-profile-container">
 
-<h3>Products list</h3>
-<products-filter [products]="sellerProducts" (filterTerms)="applyFilterTerms($event)" (sortTerm)="sortProducts($event)"></products-filter>
-
-<jewellery-thumbnail [products]="sellerProductsFiltered"></jewellery-thumbnail>
+  <h2>{{user.name}} Products list</h2>
 
 
-<!--<button (click)="applyPriceAddition()">Edit price for all products</button>-->
-<!--<input type="number" [(ngModel)]="priceAddition">-->
+  <!--<div [hidden]="toggleAddProductForm">-->
+  <!--<h3>Add new Jewellery product</h3>-->
+  <!--<add-product [product]="{}" (newProduct)="addNewProduct($event)"></add-product>-->
+  <!--</div>-->
 
-<button>add new product</button>
-<add-product [product]="{}" (newProduct)="addNewProduct($event)"></add-product>
+  <jewellery-full-option [products]="sellerProducts">
+    <button type="button" md-raised-button (click)="openDialog()">Add new product</button>
+  </jewellery-full-option>
 
-<h3>Profile info</h3>
-<seller-profile-edit [user]="user"></seller-profile-edit>
+  <h2>Profile info</h2>
+  <seller-profile-edit [user]="user"></seller-profile-edit>
+
+</div>

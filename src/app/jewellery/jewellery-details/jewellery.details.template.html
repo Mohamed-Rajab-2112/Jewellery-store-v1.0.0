@@ -1,8 +1,22 @@
-<div>
-  <h2>{{jewelleryDetails.sellerName}}</h2>
-  <h2>{{jewelleryDetails.productName}}</h2>
+<div class="jewellery-details">
+
+  <div class="title-price-container">
+    <h2>{{jewelleryDetails.productName}}</h2>
+    <h2>{{jewelleryDetails.price}} L.E</h2>
+  </div>
+
   <jewellery-favourite *ngIf="showFavouriteBtn(jewelleryDetails)" [product]="jewelleryDetails"></jewellery-favourite>
-  <h3>{{jewelleryDetails.place}}</h3>
-  <img [src]="image.url" *ngFor="let image of jewelleryDetails.imageUrl">
-  <h2>Price: {{jewelleryDetails.price}}</h2>
+
+  <div class="images-description-container">
+    <div class="all-images-container">
+      <img [src]="selectedImage.url">
+      <div class="images-list">
+        <img [src]="image.url" *ngFor="let image of jewelleryDetails.imageUrl" [ngClass]="selectedImageClass(image)" (click)="applySelectedImage(image)">
+      </div>
+    </div>
+    <p>{{jewelleryDetails.description}}</p>
+  </div>
+
+  <seller-thumbnail [sellerDetails]="jewelleryDetails.sellerDetails"></seller-thumbnail>
+
 </div>

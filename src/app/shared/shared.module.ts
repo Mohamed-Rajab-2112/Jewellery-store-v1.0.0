@@ -6,7 +6,9 @@ import {
   SellerAddComponent,
   SellerProductsFilter,
   SinginSignUpComponent,
-  JewelleryFavouriteBtn
+  JewelleryFavouriteBtn,
+  SellerThumbnail,
+  JewelleryFullOption
 } from '../index'
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
@@ -19,7 +21,8 @@ import {
   MdTooltipModule,
   MdCardModule,
   MdAutocompleteModule,
-  MdSelectModule
+  MdSelectModule,
+  MdDialogModule
   // MdTabsModule
 } from '@angular/material';
 
@@ -35,22 +38,30 @@ import {
     MdTooltipModule,
     MdCardModule,
     MdAutocompleteModule,
-    MdSelectModule
+    MdSelectModule,
+    MdDialogModule,
     // MdTabsModule
   ],
   declarations: [
     JewelleryThumbnailComponent,
-    SellerAddComponent,
-    SellerProductsFilter,
-    SinginSignUpComponent,
-    JewelleryFavouriteBtn
-  ],
-  exports: [
-    JewelleryThumbnailComponent,
-    SellerAddComponent,
+    JewelleryFullOption,
     SellerProductsFilter,
     SinginSignUpComponent,
     JewelleryFavouriteBtn,
+    SellerThumbnail,
+    SellerAddComponent
+
+  ],
+  entryComponents: [
+    SellerAddComponent
+  ],
+  exports: [
+    JewelleryThumbnailComponent,
+    JewelleryFullOption,
+    SinginSignUpComponent,
+    JewelleryFavouriteBtn,
+    SellerThumbnail,
+    SellerAddComponent,
     NgbModule,
     MdButtonModule,
     MdCheckboxModule,
@@ -59,7 +70,8 @@ import {
     MdTooltipModule,
     MdCardModule,
     MdAutocompleteModule,
-    MdSelectModule
+    MdSelectModule,
+    MdDialogModule
     // MdTabsModule
   ]
 })

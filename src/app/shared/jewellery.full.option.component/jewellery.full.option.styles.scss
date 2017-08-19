@@ -1,0 +1,26 @@
+@import "../../assets/stylesheets/colors-theme";
+
+.jewellery-full-option-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  margin: 0 auto;
+  .products-listing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 75px 0;
+    background-color: $bgcolor;
+      jewellery-thumbnail {
+        margin: 25px auto 0;
+        width: 90%;
+        height: inherit;
+        flex-wrap: wrap;
+      }
+  }
+  ngb-pagination {
+    margin-top: 50px;
+  }
+}

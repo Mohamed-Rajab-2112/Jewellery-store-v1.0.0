@@ -1,8 +1,10 @@
 <div class="product-thumbnail-container" [ngStyle]="applyTranslate()">
   <div *ngFor="let product of products" class="product-thumbnail">
 
-    <i *ngIf="showEditDelBtn" (click)="editProduct(product)">edit</i>
-    <i *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</i>
+    <div class="button-container">
+      <button md-raised-button *ngIf="showEditDelBtn" (click)="editProduct()">edit</button>
+      <button md-raised-button *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</button>
+    </div>
 
     <jewellery-favourite class="fav-btn" *ngIf="showFavouriteBtn(product)" [product]="product"></jewellery-favourite>
 
@@ -13,8 +15,16 @@
       <h3>{{product?.sellerName}}</h3>
     </div>
 
-    <add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product"
-                 *ngIf="showEditForm(product)"></add-product>
+    <!--<add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product"-->
+    <!--*ngIf="showEditForm(product)"></add-product>-->
   </div>
+
+  <div *ngIf="!products?.length" class="alert alert-warning warning empty-store-alert" role="alert">
+    <p class="alert-body">
+      <md-icon svgIcon="info"></md-icon>
+      No products available, please come back later!
+    </p>
+  </div>
+
 </div>
 

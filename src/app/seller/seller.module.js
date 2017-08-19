@@ -28,10 +28,10 @@ SellerModule = __decorate([
         ],
         declarations: [
             index_1.SellersListComponent,
-            index_1.SellerThumbnail,
+            // SellerThumbnail,
             index_1.SellerDetailsComponent,
             index_1.SellerProfileComponent,
-            index_1.SellerProfileEditComponent,
+            index_1.SellerProfileEditComponent
         ]
     })
 ], SellerModule);

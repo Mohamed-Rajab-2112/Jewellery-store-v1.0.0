@@ -1,0 +1,23 @@
+<div class="jewellery-full-option-container">
+
+  <div class="products-listing-container">
+    <products-filter [products]="products" (filterTerms)="applyFilterTerms($event)"
+                     (sortTerm)="sortProducts($event)">
+    </products-filter>
+
+    <ng-content class="ng-content">
+    </ng-content>
+
+    <jewellery-thumbnail [products]="viewList"></jewellery-thumbnail>
+  </div>
+
+  <ngb-pagination *ngIf="productsFiltered?.length"
+                  [collectionSize]="productsFiltered.length"
+                  [(page)]="page"
+                  [pageSize]="pageSize"
+                  [maxSize]="10"
+                  [rotate]="true"
+                  [boundaryLinks]="false" (pageChange)="applyPagination($event)">
+  </ngb-pagination>
+
+</div>

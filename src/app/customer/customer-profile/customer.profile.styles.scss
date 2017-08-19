@@ -1,0 +1,35 @@
+@import "../../assets/stylesheets/colors-theme.scss";
+
+.customer-profile-container {
+  display: flex;
+  flex-direction: column;
+  width: $appWidth;
+  background-color: $bgcolor;
+  margin: 0 auto;
+  h2 {
+    padding-top: 50px;
+    margin-left: 25px;
+  }
+  form {
+    width: 50%;
+    margin: 0 auto 45px;
+    display: flex;
+    flex-direction: column;
+    h3 {
+      border-bottom: 1px solid $dcolor;
+    }
+  }
+  .delete-container {
+    width: 50%;
+    margin: 0 auto 45px;
+    display: flex;
+    flex-direction: column;
+    button {
+      background-color: red;
+    }
+  }
+  .submit-button {
+    @include button-focused;
+  }
+}
+

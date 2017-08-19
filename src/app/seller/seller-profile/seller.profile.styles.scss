@@ -1,0 +1,24 @@
+@import "../../assets/stylesheets/colors-theme.scss";
+
+.seller-profile-container {
+  width: $appWidth;
+  margin: 0 auto;
+  background-color: $bgcolor;
+
+  h2 {
+    padding-top: 50px;
+    margin: 0 0 0 50px;
+  }
+  h3 {
+    padding-left: 50px;
+  }
+  button {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+    @include button-default;
+    &:hover {
+      @include button-focused;
+    }
+  }
+}

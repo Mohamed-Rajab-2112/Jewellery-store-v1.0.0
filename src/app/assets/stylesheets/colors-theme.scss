@@ -23,11 +23,13 @@ $appWidth: 70%;
   color: $dcolor;
   background-color: $lcolor;
   border: none;
+  transition: 0.5s all;
 }
 
 @mixin button-focused {
   color: $lcolor;
   background-color: $dcolor;
+  transition: 0.5s all;
 }
 
 $thumbnailsContainerHeight: 500px;

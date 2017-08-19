@@ -21,9 +21,10 @@ export class SellersListComponent implements OnInit {
   paginationLength: number;
   area: string;
   page: number;
+  pageSize: number;
 
   areas: string[];
-  testForm: FormGroup;
+  filterSellersForm: FormGroup;
   stateCtrl: FormControl;
   filteredAreas: any;
 
@@ -36,7 +37,7 @@ export class SellersListComponent implements OnInit {
 
     this.stateCtrl = new FormControl();
 
-    this.testForm = new FormGroup({
+    this.filterSellersForm = new FormGroup({
       stateCtrl: this.stateCtrl
     });
 
@@ -47,15 +48,10 @@ export class SellersListComponent implements OnInit {
 
     this.sellerList = this.seller.getSeller();
     this.page = 1;
-
-    this.viewList = this.sellerList.slice((this.page - 1) * 10, this.page * 10);
+    this.pageSize = 15;
+    this.viewList = this.sellerList.slice((this.page - 1) * this.pageSize, this.page * this.pageSize);
     this.paginationLength = this.sellerList.length;
 
-    this.sellerList.map((seller) => {
-      this.jewellery.getProductTypes().map((type) => {
-        seller[type + 'Count'] = this.jewellery.getCountJewelleryBySellerIdAndJewelleryType(seller.id, type);
-      });
-    });
   }
 
   filterAreas(val: string) {
@@ -63,7 +59,7 @@ export class SellersListComponent implements OnInit {
     if (val) {
       return this.areas.filter(s => new RegExp(`^${val}`, 'gi').test(s))
     } else {
-      this.viewList = this.sellerList.slice((this.page - 1) * 10, this.page * 10);
+      this.viewList = this.sellerList.slice((this.page - 1) * this.pageSize, this.page * this.pageSize);
       this.paginationLength = this.sellerList.length;
       this.filteredList = [];
       this.page = 1;
@@ -73,9 +69,9 @@ export class SellersListComponent implements OnInit {
 
   applyPagination(pageNumber: number) {
     if (this.filteredList.length) {
-      this.viewList = this.filteredList.slice((this.page - 1) * 10, this.page * 10);
+      this.viewList = this.filteredList.slice((pageNumber - 1) * this.pageSize, pageNumber * this.pageSize);
     } else {
-      this.viewList = this.sellerList.slice((this.page - 1) * 10, this.page * 10);
+      this.viewList = this.sellerList.slice((pageNumber - 1) * this.pageSize, pageNumber * this.pageSize);
     }
 
     console.log(pageNumber)
@@ -87,7 +83,7 @@ export class SellersListComponent implements OnInit {
       return seller.area.includes(area)
     });
     this.paginationLength = this.filteredList.length;
-    this.viewList = this.filteredList.slice((this.page - 1) * 10, this.page * 10);
+    this.viewList = this.filteredList.slice((this.page - 1) * this.pageSize, this.page * this.pageSize);
   }
 
 }

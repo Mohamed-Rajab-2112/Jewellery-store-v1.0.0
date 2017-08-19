@@ -34,36 +34,33 @@ export class JewelleryHomeComponent implements OnInit {
     this.utility.setNavBarBackgroundState(true);
 
     /*============== RXJS course training ===============*/
-    // let numbers = [1, 2, 3];
-    // let source = Observable.create((value: any) => {
-    //   let index = 0;
-    //   let produceValue = () => {
-    //     value.next(numbers[index++]);
-    //     if (index < numbers.length) {
-    //       setTimeout(produceValue, 2000);
-    //     } else {
-    //       value.complete();
-    //     }
-    //   };
-    //
-    //   produceValue();
-    // }).map((n: number) => {
-    //   return n * 2;
-    // }).filter((n: number) => {
-    //   return n > 4
-    // });
-    //
-    // source.subscribe(
-    //   (value: number) => {
-    //     console.log(value);
-    //   },
-    //   (e: any) => {
-    //     console.log(e)
-    //   },
-    //   () => {
-    //     console.log('complete')
-    //   });
-    /*===================================================*/
+
+  //   let numbers = [1, 2, 3];
+  //
+  //   let source = Observable.create((x: any) => {
+  //     x.next(5);
+  //     x.complete()
+  //   });
+  //
+  //   source.flatMap((e: any) => this.sourceFunction()).subscribe(
+  //     (value: number) => {
+  //       console.log(value);
+  //     },
+  //     (e: any) => {
+  //       console.log(e)
+  //     },
+  //     () => {
+  //       console.log('complete')
+  //     });
+  //
+  //   /*===================================================*/
+  // }
+  //
+  // sourceFunction() {
+  //   return Observable.create((x: any) => {
+  //     x.next(10);
+  //     x.complete()
+  //   });
   }
 
   arrow(type: string, direction: string) {

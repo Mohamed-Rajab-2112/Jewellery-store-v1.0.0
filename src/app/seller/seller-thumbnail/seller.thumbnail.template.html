@@ -1,4 +1,4 @@
-<md-card [routerLink]="['/seller/sellers-list', sellerDetails.id]">
+<md-card (click)="routeToSellerDetails(sellerDetails.id)">
   <div class="seller-name-verification-container">
     <h2>{{sellerDetails.name}}</h2>
     <h3 *ngIf="sellerDetails.verified"><img src="app/assets/images/check-circle-icon.svg">Verified</h3>
@@ -26,7 +26,8 @@
 
     <div>
       <h3 *ngIf="sellerDetails.telephone1"><img src="app/assets/images/phone-icon.svg">{{sellerDetails.telephone1}}</h3>
-      <h3 *ngIf="sellerDetails.telephone2"><img src="app/assets/images/phone-icon.svg">{{sellerDetails?.telephone2}}</h3>
+      <h3 *ngIf="sellerDetails.telephone2"><img src="app/assets/images/phone-icon.svg">{{sellerDetails?.telephone2}}
+      </h3>
       <!--<h3>{{sellerDetails?.address}}</h3>-->
       <h3><img src="app/assets/images/location-icon.svg">{{sellerDetails?.area}}</h3>
     </div>

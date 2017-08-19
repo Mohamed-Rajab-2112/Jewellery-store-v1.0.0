@@ -109,12 +109,14 @@
 .log-in-sign-up .typeButtonSelected {
   color: #F5D0CA;
   background-color: #133759;
+  transition: 0.5s all;
 }
 /* line 102, signin.signup.styles.scss */
 .log-in-sign-up .typeButtonNotSelected {
   color: #133759;
   background-color: #F5D0CA;
   border: none;
+  transition: 0.5s all;
 }
 
 /* line 107, signin.signup.styles.scss */

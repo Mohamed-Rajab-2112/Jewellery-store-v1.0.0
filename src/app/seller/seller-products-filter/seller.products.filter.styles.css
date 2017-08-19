@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 /* line 9, seller.products.filter.styles.scss */
 .jewellery-filter-container .button-group {
@@ -15,6 +15,7 @@
   color: #133759;
   background-color: #F5D0CA;
   border: none;
+  transition: 0.5s all;
   width: 100px;
   text-transform: capitalize;
   margin-right: 5px;
@@ -23,4 +24,5 @@
 .jewellery-filter-container .button-group .selected-button {
   color: #F5D0CA;
   background-color: #133759;
+  transition: 0.5s all;
 }

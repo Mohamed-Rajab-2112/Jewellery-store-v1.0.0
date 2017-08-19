@@ -22,7 +22,8 @@ CustomerModule = __decorate([
         imports: [common_1.CommonModule,
             router_1.RouterModule.forChild(index_1.customerRoutes),
             forms_1.FormsModule,
-            index_2.SharedModule
+            index_2.SharedModule,
+            forms_1.ReactiveFormsModule
         ],
         declarations: [
             index_1.CustomerProfile,

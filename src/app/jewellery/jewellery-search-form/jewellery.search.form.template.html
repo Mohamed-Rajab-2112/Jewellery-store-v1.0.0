@@ -1,23 +1,44 @@
 <form #searchProductAndPlaceForm="ngForm" autocomplete="off"
-      (ngSubmit)="searchProductAndPlaceForm.valid && searchProductAndarea(searchProductAndPlaceForm.value)"
-      class="serching-form" novalidate>
+      (ngSubmit)="searchProductAndarea(searchProductAndPlaceForm.value)"
+      class="serching-form" novalidate [formGroup]="searchForm">
 
-  <input [(ngModel)]="productName" name="productName" type="text" placeholder="ring, necklace, etc ...">
+  <md-input-container floatPlaceholder="never">
+    <input mdInput name="productName" type="text" placeholder="ring, necklace, etc ..." [mdAutocomplete]="productNameAuto"
+           formControlName="productName">
+  </md-input-container>
 
-  <!--<label class="control-label">Seller name</label>-->
-  <!--<input [(ngModel)]="sellerName" name="sellerName" type="text" class="form-control">-->
+  <md-autocomplete #productNameAuto="mdAutocomplete">
+    <md-option *ngFor="let type of filteredTypes | async" [value]="type">
+      {{type}}
+    </md-option>
+  </md-autocomplete>
+
 
   <label>In</label>
 
-  <input [(ngModel)]="area" name="area" type="text" dir="rtl" placeholder="مصر الجديده, مدينة نصر, ...">
+  <md-input-container floatPlaceholder="never">
+    <input mdInput name="area" type="text" dir="rtl"  placeholder="مصر الجديده, مدينة نصر, ..." [mdAutocomplete]="areaAuto"
+           formControlName="area" >
+  </md-input-container>
+
+  <md-autocomplete #areaAuto="mdAutocomplete">
+    <md-option *ngFor="let type of filteredAreas | async" [value]="type">
+      {{type}}
+    </md-option>
+  </md-autocomplete>
+
+  <!--<input [(ngModel)]="area" name="area" type="text" dir="rtl" [ngModelOptions]="{standalone: true}"-->
+         <!--placeholder="مصر الجديده, مدينة نصر, ...">-->
 
   <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
   <!--enter product name you are-->
   <!--searching for...</em>-->
 
-  <button [disabled]="!productName && !sellerName && !area" type="submit" class="btn">
+  <button [disabled]="searchForm.controls.productName?.errors?.required && !sellerName && searchForm.controls.area?.errors?.required" type="submit"
+          class="btn">
     <img src="app/assets/images/search-icon.svg">
   </button>
+
   <!--<label><img src="app/assets/images/search-icon.svg"></label>-->
 
 </form>

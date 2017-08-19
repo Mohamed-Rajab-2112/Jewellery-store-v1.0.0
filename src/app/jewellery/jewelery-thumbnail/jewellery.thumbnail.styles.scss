@@ -33,6 +33,18 @@
       box-sizing: border-box;
       border: 1px solid $ldcolor;
     }
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      //border: 1px solid black;
+      button:first-child {
+        background-color: blue;
+      }
+      button:last-child {
+        background-color: red;
+      }
+    }
     img {
       width: 70%;
     }
@@ -50,4 +62,8 @@
   //img {
   //  width: 5%;
   //}
+  .alert-body {
+    display: flex;
+    align-items: center;
+  }
 }

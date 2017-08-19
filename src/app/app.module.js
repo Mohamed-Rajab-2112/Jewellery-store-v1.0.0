@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
+var forms_2 = require("@angular/forms");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var animations_1 = require("@angular/platform-browser/animations");
 var http_1 = require("@angular/http");
@@ -25,6 +26,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(index_1.appRoutes),
             forms_1.FormsModule,
+            forms_2.ReactiveFormsModule,
             index_2.SharedModule,
             ng_bootstrap_1.NgbModule.forRoot(),
             animations_1.BrowserAnimationsModule,

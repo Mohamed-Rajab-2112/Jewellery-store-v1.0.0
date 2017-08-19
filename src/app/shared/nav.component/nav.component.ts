@@ -25,7 +25,6 @@ export class NavComponent implements OnInit {
   tabNum: number;
   currentActiveItem: string;
   activeClass: string[];
-  showBackground: boolean;
 
   constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService, private utility: Utility) {
 
@@ -34,7 +33,6 @@ export class NavComponent implements OnInit {
   ngOnInit() {
 
     this.auth.user.subscribe((value) => {
-      console.log(value);
       this.userName = value.name;
       this.userType = value.userType;
       this.showFavourite = value.userType == 'Customer';
@@ -48,19 +46,9 @@ export class NavComponent implements OnInit {
       this.favouriteCount = value.length;
     });
 
-    this.utility.navBarBackgroundState.subscribe((navBarBackgroundState) => {
-      console.log('will hide');
-      console.log(navBarBackgroundState);
-      this.showBackground = navBarBackgroundState;
-      console.log(this.showBackground)
-    });
-
-    console.log(this.showBackground)
-
   }
 
   setSignInToggle(toggle: boolean) {
-    console.log(toggle);
     this.signInToggle = toggle;
   }
 

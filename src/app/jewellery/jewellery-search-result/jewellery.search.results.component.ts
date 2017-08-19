@@ -5,33 +5,24 @@ import {JewelleryService, JeweleryProduct, SearchForm} from "./../../shared/inde
 
 @Component({
   selector: "jewellery-search-result",
-  templateUrl: "app/jewellery/jewellery-search-result/jewellery.search.results.template..html"
+  templateUrl: "./jewellery.search.results.template.html",
+  styleUrls: ["./jewellery.search.results.styles.css"]
 })
 
 export class JewellerySearchResultsComponent implements OnInit {
   searchResult: JeweleryProduct[];
-  searchResultFiltered: JeweleryProduct[];
   searchTerms: SearchForm;
 
   constructor(private route: ActivatedRoute, private jewellery: JewelleryService) {
-
   }
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
       console.log(params);
       this.searchTerms = JSON.parse(params["terms"]);
+      console.log(this.searchTerms);
       this.jewellery.setSearchTerms(this.searchTerms);
       this.searchResult = this.jewellery.searchJewellery(this.searchTerms);
-      this.searchResultFiltered = this.jewellery.searchJewellery(this.searchTerms);
     });
-  }
-
-  applyFilterTerms(terms: any) {
-    this.searchResultFiltered = this.jewellery.applyFilterTerms(terms, this.searchResult)
-  }
-
-  sortProducts(sortTerm: string) {
-    this.jewellery.sortProducts(sortTerm, this.searchResultFiltered);
   }
 }

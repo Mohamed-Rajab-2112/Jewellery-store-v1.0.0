@@ -1,0 +1,12 @@
+/* line 3, customer-favourite-Jewellery-styles.scss */
+.favourite {
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto;
+}
+/* line 7, customer-favourite-Jewellery-styles.scss */
+.favourite h2 {
+  text-transform: none;
+  padding-top: 50px;
+  margin-left: 25px;
+}

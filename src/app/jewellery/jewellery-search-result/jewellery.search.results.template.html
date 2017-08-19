@@ -1,0 +1,4 @@
+<div class="search-result">
+  <h2>Search Results <span *ngIf="searchTerms.productName">for {{searchTerms?.productName}}</span><span *ngIf="searchTerms.area"> in {{searchTerms?.area}}</span></h2>
+  <jewellery-full-option [products]="searchResult"></jewellery-full-option>
+</div>

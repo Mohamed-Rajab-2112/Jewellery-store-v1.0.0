@@ -1,0 +1,41 @@
+/* line 3, customer.profile.styles.scss */
+.customer-profile-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+/* line 9, customer.profile.styles.scss */
+.customer-profile-container h2 {
+  padding-top: 50px;
+  margin-left: 25px;
+}
+/* line 13, customer.profile.styles.scss */
+.customer-profile-container form {
+  width: 50%;
+  margin: 0 auto 45px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 18, customer.profile.styles.scss */
+.customer-profile-container form h3 {
+  border-bottom: 1px solid #133759;
+}
+/* line 22, customer.profile.styles.scss */
+.customer-profile-container .delete-container {
+  width: 50%;
+  margin: 0 auto 45px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 27, customer.profile.styles.scss */
+.customer-profile-container .delete-container button {
+  background-color: red;
+}
+/* line 31, customer.profile.styles.scss */
+.customer-profile-container .submit-button {
+  color: #F5D0CA;
+  background-color: #133759;
+  transition: 0.5s all;
+}

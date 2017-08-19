@@ -3,10 +3,11 @@ export interface JeweleryProduct {
   sellerId: number;
   productName: string;
   type: string;
-  sellerName: string;
   price: number;
   goldDegree: string;
-  area?: string;
   imageUrl?: any[];
   publishDate: string;
+  description?: string;
+  sellerDetails?:any
+  area: string
 }

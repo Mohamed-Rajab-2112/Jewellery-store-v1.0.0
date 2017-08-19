@@ -1,4 +1,7 @@
 import {Component, OnInit} from "@angular/core";
+import {MdDialog} from '@angular/material';
+import {SellerAddComponent} from '../seller-add-product/seller.add.product.component'
+
 
 import {
   JeweleryProduct,
@@ -9,36 +12,46 @@ import {User} from "../../shared/models/user.model";
 
 @Component({
   selector: 'seller-profile',
-  templateUrl: 'app/seller/seller-profile/seller.profile.template.html'
+  templateUrl: './seller.profile.template.html',
+  styleUrls: ['./seller.profile.styles.css']
 })
 
 export class SellerProfileComponent implements OnInit {
   sellerProducts: JeweleryProduct[];
-  sellerProductsFiltered: JeweleryProduct[];
   user: User;
+  // toggleAddProductForm: boolean;
 
-  constructor(private jewellery: JewelleryService, private auth: AuthService) {
+  constructor(private jewellery: JewelleryService, private auth: AuthService, private dialog: MdDialog) {
   }
 
   ngOnInit() {
     this.auth.user.subscribe((val) => {
       this.user = <User>val;
       this.sellerProducts = this.jewellery.getJewelleryBySellerId(val.id);
-      this.sellerProductsFiltered = this.sellerProducts.slice();
     });
-    this.auth.setNavActive(false);
+    // this.toggleAddProductForm = true;
   }
 
-  addNewProduct(newProduct: any) {
-    console.log(newProduct);
-    this.sellerProducts.push(newProduct);
+  openDialog() {
+    let dialogRef = this.dialog.open(SellerAddComponent, {
+        data: {},
+        width: '500px',
+        height: '500px',
+        disableClose: true,
+      }
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+    });
   }
 
-  applyFilterTerms(terms: any) {
-    this.sellerProductsFiltered = this.jewellery.applyFilterTerms(terms, this.sellerProducts)
-  }
+  // addNewProduct(newProduct: any) {
+  //   console.log(newProduct);
+  //   this.sellerProducts.push(newProduct);
+  // }
 
-  sortProducts(sortTerm: string) {
-    this.jewellery.sortProducts(sortTerm, this.sellerProductsFiltered);
-  }
+  // showAddProductForm() {
+  //   this.toggleAddProductForm = !this.toggleAddProductForm;
+  // }
 }
+

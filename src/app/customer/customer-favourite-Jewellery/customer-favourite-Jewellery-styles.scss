@@ -1,0 +1,14 @@
+@import "../../assets/stylesheets/colors-theme.scss";
+
+.favourite {
+  background-color: $bgcolor;
+  width: $appWidth;
+  margin: 0 auto;
+  h2 {
+    //margin: 0;
+    text-transform: none;
+    //margin: 0 auto;
+    padding-top: 50px;
+    margin-left: 25px;
+  }
+}

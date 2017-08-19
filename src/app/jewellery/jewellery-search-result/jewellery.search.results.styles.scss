@@ -1,0 +1,11 @@
+@import "../../assets/stylesheets/colors-theme.scss";
+
+.search-result {
+  width: $appWidth;
+  background-color: $bgcolor;
+  margin: 0 auto;
+  h2 {
+    padding-top: 50px;
+    margin-left: 25px;
+  }
+}

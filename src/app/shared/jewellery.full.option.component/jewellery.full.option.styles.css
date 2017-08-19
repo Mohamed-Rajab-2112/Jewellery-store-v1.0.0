@@ -1,0 +1,28 @@
+/* line 3, jewellery.full.option.styles.scss */
+.jewellery-full-option-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  margin: 0 auto;
+}
+/* line 9, jewellery.full.option.styles.scss */
+.jewellery-full-option-container .products-listing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 75px 0;
+  background-color: #fff;
+}
+/* line 16, jewellery.full.option.styles.scss */
+.jewellery-full-option-container .products-listing-container jewellery-thumbnail {
+  margin: 25px auto 0;
+  width: 90%;
+  height: inherit;
+  flex-wrap: wrap;
+}
+/* line 23, jewellery.full.option.styles.scss */
+.jewellery-full-option-container ngb-pagination {
+  margin-top: 50px;
+}

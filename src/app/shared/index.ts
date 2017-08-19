@@ -10,7 +10,8 @@ export * from "./services/seller.service";
 export * from "./services/jewellery.details.and.seller.details.activator";
 export * from "./services/default.redirect.activator";
 export * from "./services/jewellery.list.activator";
-export * from "./signin.signup.component/signin.signup.component";
+export {SinginSignUpComponent} from "./signin.signup.component/signin.signup.component";
+export {JewelleryFullOption} from "./jewellery.full.option.component/jewellery.full.option.component";
 
 /*Service exports*/
 export * from "./services/customer.service";
