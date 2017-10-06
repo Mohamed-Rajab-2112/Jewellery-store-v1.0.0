@@ -234,16 +234,24 @@ import {User} from '../../index'
 import {AuthService} from "./auth.service";
 import {JewelleryService} from "./jewellery.service";
 import {Subject} from "rxjs/Subject";
+import {JeweleryProduct} from "../models/jewelleryProduct.model";
+// import {Observable} from "rxjs";
 
 @Injectable()
 
 export class SellerService {
   sellerDetails: User;
+  currentlyEditProduct = new Subject<JeweleryProduct>();
 
   constructor(private auth: AuthService, private jewellery: JewelleryService) {
     this.auth.user.subscribe((user) => {
       this.sellerDetails = <User>user;
     })
+  }
+
+  setCurrentlyEditProduct(product: JeweleryProduct) {
+    console.log('set the currently edit product');
+    this.currentlyEditProduct.next(product)
   }
 
   getSeller(): User[] {
@@ -271,6 +279,14 @@ export class SellerService {
   }
 
   postNewSellerDetails(details: any) {
+    return true;
+  }
+
+  verifyPhone(phones: any) {
+    return true;
+  }
+
+  verifyAddress(adress: string) {
     return true;
   }
 }

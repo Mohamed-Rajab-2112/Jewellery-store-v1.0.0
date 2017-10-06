@@ -14,7 +14,7 @@ import {
   JewellerySearchResultsComponent,
   JewelleryDetailsComponent,
   JewellerySearchForm,
-  appRoutes
+  appRoutes,
 }  from "./jewellery/index";
 
 import {
@@ -34,6 +34,9 @@ import {
   Utility,
 } from "./shared/index";
 
+import {
+  SellersListComponent
+} from './index'
 
 @NgModule({
   imports: [BrowserModule,
@@ -51,6 +54,7 @@ import {
     JewelleryListComponent,
     JewellerySearchResultsComponent,
     JewelleryDetailsComponent,
+    SellersListComponent,
     NavComponent,
     FooterComponent,
     JewellerySearchForm

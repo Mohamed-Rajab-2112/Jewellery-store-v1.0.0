@@ -16,7 +16,7 @@ form .form-field-container > * {
 }
 /* line 15, seller.add.product.styles.scss */
 form button {
-  color: #133759;
+  color: #31004a;
   background-color: #F5D0CA;
   border: none;
   transition: 0.5s all;
@@ -24,14 +24,14 @@ form button {
 /* line 17, seller.add.product.styles.scss */
 form button:hover {
   color: #F5D0CA;
-  background-color: #133759;
+  background-color: #31004a;
   transition: 0.5s all;
 }
 /* line 21, seller.add.product.styles.scss */
 form .upload-btn {
   padding: 5px;
   cursor: pointer;
-  color: #133759;
+  color: #31004a;
   background-color: #F5D0CA;
   border: none;
   transition: 0.5s all;
@@ -39,7 +39,7 @@ form .upload-btn {
 /* line 25, seller.add.product.styles.scss */
 form .upload-btn:hover {
   color: #F5D0CA;
-  background-color: #133759;
+  background-color: #31004a;
   transition: 0.5s all;
 }
 /* line 29, seller.add.product.styles.scss */

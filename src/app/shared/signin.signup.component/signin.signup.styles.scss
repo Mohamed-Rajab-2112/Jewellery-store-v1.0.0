@@ -2,7 +2,7 @@
 
 .log-in-sign-up {
   overflow: hidden;
-  width: 349px;
+  width: 300px;
   margin: 200px auto 0;
   //border: 1px solid black;
   position: relative;
@@ -30,6 +30,7 @@
     transform: rotate(270deg);
   }
   .forms {
+    box-sizing: border-box;
     transition: 0.3s all;
     position: relative;
     z-index: 101;
@@ -94,6 +95,11 @@
     }
     .login-form {
       height: 280px;
+    }
+    signUp {
+      box-sizing: border-box;
+      width: 100%;
+      //padding: inherit;
     }
   }
   .typeButtonSelected {

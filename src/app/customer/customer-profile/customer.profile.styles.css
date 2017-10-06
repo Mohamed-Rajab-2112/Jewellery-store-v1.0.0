@@ -1,41 +1,59 @@
 /* line 3, customer.profile.styles.scss */
 .customer-profile-container {
-  display: flex;
-  flex-direction: column;
   width: 70%;
   background-color: #fff;
   margin: 0 auto;
+  min-height: 500px;
 }
-/* line 9, customer.profile.styles.scss */
+/* line 10, customer.profile.styles.scss */
 .customer-profile-container h2 {
   padding-top: 50px;
   margin-left: 25px;
 }
-/* line 13, customer.profile.styles.scss */
-.customer-profile-container form {
+/* line 14, customer.profile.styles.scss */
+.customer-profile-container .tabs {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 17, customer.profile.styles.scss */
+.customer-profile-container .tabs form {
   width: 50%;
-  margin: 0 auto 45px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-/* line 18, customer.profile.styles.scss */
-.customer-profile-container form h3 {
-  border-bottom: 1px solid #133759;
+/* line 23, customer.profile.styles.scss */
+.customer-profile-container .tabs h3 {
+  margin-top: 50px;
+  border-bottom: 1px solid #31004a;
+  margin-bottom: 15px;
 }
-/* line 22, customer.profile.styles.scss */
+/* line 29, customer.profile.styles.scss */
 .customer-profile-container .delete-container {
   width: 50%;
   margin: 0 auto 45px;
   display: flex;
   flex-direction: column;
 }
-/* line 27, customer.profile.styles.scss */
+/* line 34, customer.profile.styles.scss */
 .customer-profile-container .delete-container button {
+  margin-top: 15px;
   background-color: red;
 }
-/* line 31, customer.profile.styles.scss */
+/* line 39, customer.profile.styles.scss */
+.customer-profile-container .note-for-user {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+/* line 43, customer.profile.styles.scss */
+.customer-profile-container .note-for-user svg {
+  width: 25px;
+  height: 25px;
+}
+/* line 48, customer.profile.styles.scss */
 .customer-profile-container .submit-button {
   color: #F5D0CA;
-  background-color: #133759;
+  background-color: #31004a;
   transition: 0.5s all;
 }

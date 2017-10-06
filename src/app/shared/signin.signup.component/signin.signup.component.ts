@@ -43,25 +43,10 @@ export class SinginSignUpComponent implements OnInit {
     this.auth.signUp(values);
   }
 
-  toggleTypeButton(type: string) {
-    this.choosedUserType = type;
-  }
-
   toggleSignInFlag() {
     this.signInToggle = !this.signInToggleInput;
     console.log(this.signInToggle);
     this.signInToggleOutPut.emit(this.signInToggle)
-  }
-
-  setChoosedTypeButtonClass() {
-    if (this.choosedUserType == 'Vendor') {
-      return ['typeButtonSelected']
-    }
-    else if (this.choosedUserType == 'Customer') {
-      return ['typeButtonSelected']
-    } else {
-      return ['typeButtonNotSelected']
-    }
   }
 
   toggleTab(tabNum: number) {

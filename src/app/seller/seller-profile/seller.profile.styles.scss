@@ -17,8 +17,16 @@
     height: 50px;
     margin: 0 auto;
     @include button-default;
+    svg {
+      fill: #133759;
+      transition: 0.5s all;
+    }
     &:hover {
       @include button-focused;
+      svg {
+        fill: white;
+        transition: 0.5s all;
+      }
     }
   }
 }

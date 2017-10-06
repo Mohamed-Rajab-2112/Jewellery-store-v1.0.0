@@ -1,12 +1,31 @@
 /* line 3, customer-favourite-Jewellery-styles.scss */
-.favourite {
-  background-color: #fff;
+jewellery-full-option {
   width: 70%;
-  margin: 0 auto;
 }
+
 /* line 7, customer-favourite-Jewellery-styles.scss */
-.favourite h2 {
-  text-transform: none;
-  padding-top: 50px;
-  margin-left: 25px;
+h2 {
+  text-transform: capitalize;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 15%;
+}
+
+/*******************/
+/*Responsive styles*/
+/*******************/
+@media screen and (max-width: 425px) {
+  /* line 21, customer-favourite-Jewellery-styles.scss */
+  h2 {
+    margin-top: 35px;
+    margin-left: 0;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  /* line 28, customer-favourite-Jewellery-styles.scss */
+  jewellery-full-option {
+    margin-top: 50px;
+    width: 95%;
+  }
 }

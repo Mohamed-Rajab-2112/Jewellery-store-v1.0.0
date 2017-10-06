@@ -21,6 +21,7 @@ export class SellerDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.route.params.forEach((params: Params) => {
       this.sellingList = this.jewellery.getJewelleryBySellerId(Number(params['id']));
       this.sellerDetails = this.seller.getSellerById(Number(params['id']));

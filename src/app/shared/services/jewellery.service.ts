@@ -500,6 +500,8 @@ export class JewelleryService {
   searchTermsChanged = this.searchTerms.asObservable();
   productsTypes: string[];
 
+
+
   getMostVisitedJewellery() {
     return tempJewellery;
   }

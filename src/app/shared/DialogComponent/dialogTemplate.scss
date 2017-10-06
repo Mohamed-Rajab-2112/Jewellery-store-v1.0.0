@@ -1,0 +1,14 @@
+@import "../../assets/stylesheets/colors-theme.scss";
+
+.buttons-container {
+  //border: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  button {
+    @include button-default;
+    &:hover {
+      @include button-focused;
+    }
+  }
+}

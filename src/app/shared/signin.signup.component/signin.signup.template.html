@@ -30,66 +30,10 @@
         </button>
       </div>
     </form>
-
-    <form name="signUpForm" #signUpForm="ngForm" autocomplete="off"
-          (ngSubmit)="signUpForm.valid && signUpForm.value.password === signUpForm.value.password_2 && signUp(signUpForm.value)"
-          novalidate>
-      <div class="customer-vendor-buttons-container">
-        <h3>I'm a</h3>
-        <button type="button"
-                [ngClass]="choosedUserType === 'Vendor' && setChoosedTypeButtonClass() || ['typeButtonNotSelected']"
-                (click)="toggleTypeButton('Vendor')" md-raised-button>
-          <span>Vendor</span></button>
-        <button type="button"
-                [ngClass]="choosedUserType === 'Customer' && setChoosedTypeButtonClass() || ['typeButtonNotSelected']"
-                (click)="toggleTypeButton('Customer')" md-raised-button><span>Customer</span></button>
-      </div>
-
-      <md-error class="vendors-note"><md-icon svgIcon="info"></md-icon> Vendors can't change their name after sign up</md-error>
-
-      <md-input-container [ngSwitch]="choosedUserType"
-                          [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-        <input type="text" mdInput *ngSwitchCase="'Vendor'" (ngModel)="userName" name="userName"
-               placeholder="Your Vendor Name" required>
-        <input type="text" mdInput *ngSwitchDefault (ngModel)="userName" name="userName" placeholder="Your Name"
-               required>
-        <md-error *ngIf="signUpForm.submitted && signUpForm.controls.userName.invalid">this field required</md-error>
-      </md-input-container>
-
-      <md-input-container [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-        <!--<label>Email</label>-->
-        <input type="email" mdInput (ngModel)="email" name="email" placeholder="Email..." required>
-        <md-error *ngIf="signUpForm.submitted && signUpForm.controls.email.invalid">this field required</md-error>
-      </md-input-container>
-
-      <md-input-container [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-        <!--<label>password</label>-->
-        <input mdInput type="password" (ngModel)="password" name="password" placeholder="Password..." required>
-        <md-error *ngIf="signUpForm.submitted && signUpForm.controls.password.invalid">this field required</md-error>
-      </md-input-container>
-
-      <md-input-container [hidden]="!(choosedUserType == 'Vendor' || choosedUserType =='Customer')">
-        <!--<label>Re-enter Password</label>-->
-        <input mdInput type="password" (ngModel)="password_2" name="password_2" placeholder="Re-Enter password..."
-               required>
-
-        <md-error *ngIf="signUpForm.submitted && signUpForm.controls.password_2?.invalid">this field required</md-error>
-      </md-input-container>
-      <div class="match-msg">
-        <em class="matched"
-            *ngIf="signUpForm.controls.password_2?.valid && signUpForm.value?.password === signUpForm.value?.password_2">Matched</em>
-        <em class="not-matched"
-            *ngIf="signUpForm.controls.password_2?.valid && signUpForm.value?.password !== signUpForm.value?.password_2">Not
-          Matched</em>
-      </div>
-
-      <div class="buttons-container">
-        <button type="button" (click)="toggleSignInFlag()" md-button>Close</button>
-        <button type="submit" md-mini-fab style="width: 55px; height: 55px">
-          <md-icon svgIcon="check" style="width: 55%; height: 55%; "></md-icon>
-        </button>
-      </div>
+    <form>
+      <signUp (signInToggleOutPut)="toggleSignInFlag()" [userType]="'Customer'"></signUp>
     </form>
+
   </div>
 
 </div>

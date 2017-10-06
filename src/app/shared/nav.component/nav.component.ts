@@ -1,20 +1,32 @@
-import {Component, OnInit, ChangeDetectionStrategy, DoCheck} from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  OnDestroy,
+  HostListener,
+  Inject,
+  ViewEncapsulation
+} from "@angular/core";
 import {Router} from "@angular/router";
-
+import {DOCUMENT} from '@angular/platform-browser';
 import {JewelleryService} from "../services/jewellery.service";
 import {AuthService} from "../services/auth.service";
 import {CustomerService} from "../services/customer.service";
-import {Utility} from "../services/utility.service";
+import {MdDialog} from "@angular/material";
+import {SignUpDialog} from "../signup.component/signup.dialog.component";
+
 
 @Component({
   selector: "nav-component",
   templateUrl: "./nav.component.template.html",
   styleUrls: ["./nav.component.styles.css"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 
-export class NavComponent implements OnInit {
-
+export class NavComponent implements OnInit, OnDestroy {
+  userSubscription: any;
+  favouriteSubscription: any;
   signInToggle: boolean;
   toggleLogInBtn: boolean;
   userName: string;
@@ -25,14 +37,18 @@ export class NavComponent implements OnInit {
   tabNum: number;
   currentActiveItem: string;
   activeClass: string[];
+  fixedClass: string[];
+  hideFixedNavPlaceholder: boolean;
+  toggleSmallNavClass: string[];
+  toggleSmallMenuBackground: boolean;
+  dialogRef: any;
 
-  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService, private utility: Utility) {
+  constructor(private router: Router, private jewellery: JewelleryService, private auth: AuthService, private customer: CustomerService, @Inject(DOCUMENT) private document: Document, private dialog: MdDialog) {
 
   }
 
   ngOnInit() {
-
-    this.auth.user.subscribe((value) => {
+    this.userSubscription = this.auth.user.subscribe((value) => {
       this.userName = value.name;
       this.userType = value.userType;
       this.showFavourite = value.userType == 'Customer';
@@ -42,10 +58,20 @@ export class NavComponent implements OnInit {
       this.toggleLogInBtn = !isAuth;
     });
 
-    this.customer.favouriteJewellery.subscribe((value) => {
+    this.favouriteSubscription = this.customer.favouriteJewellery.subscribe((value) => {
       this.favouriteCount = value.length;
     });
 
+    this.hideFixedNavPlaceholder = true;
+
+    this.toggleSmallNavClass = ['translate-menu-close'];
+
+    this.toggleSmallMenuBackground = false;
+  }
+
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
+    this.favouriteSubscription.unsubscribe();
   }
 
   setSignInToggle(toggle: boolean) {
@@ -117,5 +143,32 @@ export class NavComponent implements OnInit {
     if (ownItem == this.currentActiveItem) {
       return this.activeClass;
     }
+  }
+
+  signupVendor() {
+    this.dialogRef = this.dialog.open(SignUpDialog, {
+      width: '500px'
+    })
+  }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    console.log(number);
+    if (number > 35) {
+      this.fixedClass = ['fixed'];
+      this.hideFixedNavPlaceholder = false;
+      // this.navTopOffset = {top: '0'};
+    } else {
+      // this.navTopOffset = {top: '35px'};
+      this.fixedClass = ['relative'];
+      this.hideFixedNavPlaceholder = true;
+    }
+  }
+
+  toggleMenu() {
+    console.log('toggle nav');
+    this.toggleSmallNavClass = String(this.toggleSmallNavClass) === String(['translate-menu-close']) ? ['translate-menu-open'] : ['translate-menu-close'];
+    this.toggleSmallMenuBackground = !this.toggleSmallMenuBackground;
   }
 }

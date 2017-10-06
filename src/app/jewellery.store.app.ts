@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {AuthService} from "./shared/services/auth.service";
 @Component({
   selector: "jewellery-store-app",
   template: `
@@ -8,5 +9,11 @@ import {Component} from "@angular/core";
   `
 })
 
-export class JewelleryStoreAppComponent {
+export class JewelleryStoreAppComponent implements OnInit {
+  constructor(private auth: AuthService) {
+  }
+
+  ngOnInit() {
+    this.auth.setVerifiedVendorsAlertState(true);
+  }
 }

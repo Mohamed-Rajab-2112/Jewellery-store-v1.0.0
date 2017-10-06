@@ -1,14 +1,32 @@
 @import "../../assets/stylesheets/colors-theme.scss";
 
-.favourite {
-  background-color: $bgcolor;
+jewellery-full-option {
   width: $appWidth;
-  margin: 0 auto;
+}
+
+h2 {
+  //margin: 0;
+  text-transform: capitalize;
+  //margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 15%;
+}
+
+/*******************/
+/*Responsive styles*/
+/*******************/
+
+@media screen and (max-width: 425px) {
   h2 {
-    //margin: 0;
-    text-transform: none;
-    //margin: 0 auto;
-    padding-top: 50px;
-    margin-left: 25px;
+    margin-top: 35px;
+    margin-left: 0;
+    font-size: 1.5em;
+    text-align: center;
+    //border: 1px solid black;
+  }
+  jewellery-full-option {
+    margin-top: 50px;
+    width: $smallScreenWidth;
   }
 }

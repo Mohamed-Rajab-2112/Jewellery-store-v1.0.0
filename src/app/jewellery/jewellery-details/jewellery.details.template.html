@@ -1,17 +1,23 @@
 <div class="jewellery-details">
 
-  <div class="title-price-container">
-    <h2>{{jewelleryDetails.productName}}</h2>
-    <h2>{{jewelleryDetails.price}} L.E</h2>
+  <div class="title-id-container">
+    <div class="name-and-price">
+      <div class="name-and-fav">
+        <h2>{{jewelleryDetails.productName}}</h2>
+        <jewellery-favourite-button *ngIf="showFavouriteBtn" [product]="jewelleryDetails"
+                                    [isFavourite]="favouriteBtnStatus(jewelleryDetails)"></jewellery-favourite-button>
+      </div>
+      <h2><strong>{{jewelleryDetails.price}} <span>EGP/gm</span></strong></h2>
+    </div>
+    <p>Jewellery id: {{jewelleryDetails.id}}</p>
   </div>
-
-  <jewellery-favourite *ngIf="showFavouriteBtn(jewelleryDetails)" [product]="jewelleryDetails"></jewellery-favourite>
 
   <div class="images-description-container">
     <div class="all-images-container">
       <img [src]="selectedImage.url">
       <div class="images-list">
-        <img [src]="image.url" *ngFor="let image of jewelleryDetails.imageUrl" [ngClass]="selectedImageClass(image)" (click)="applySelectedImage(image)">
+        <img [src]="image.url" *ngFor="let image of jewelleryDetails.imageUrl" [ngClass]="selectedImageClass(image)"
+             (click)="applySelectedImage(image)">
       </div>
     </div>
     <p>{{jewelleryDetails.description}}</p>

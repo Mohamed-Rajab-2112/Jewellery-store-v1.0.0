@@ -16,10 +16,16 @@
 
   </form>
 
-  <div class="alert alert-warning warning" role="alert"><p><img src="app/assets/images/info-icon.svg"> We highly
-    recommend
-    dealing with <strong>verified vendors</strong>, verified vendor are assured as a real vendor and trusted. please
-    check <img src="app/assets/images/check-circle-icon.svg"> badge for verified vendors.</p>
+  <div class="alert alert-warning warning" role="alert" *ngIf="showVerifiedVendorAlert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+            (click)="dismissVerifiedVendors()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <p><img src="app/assets/images/info-icon.svg">
+      We highly
+      recommend
+      dealing with <strong>verified vendors</strong>, verified vendor are assured as a real vendor and trusted. please
+      check <img src="app/assets/images/check-circle-icon.svg"> badge for verified vendors.</p>
   </div>
 
   <p *ngIf="!viewList?.length">No search result found</p>

@@ -16,6 +16,7 @@ export class JewelleryListComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.route.params.forEach((params: Params) => {
       this.jewelleryListing = this.jewellery.getJewelleryByType(params['type']);
       console.log(this.jewelleryListing);

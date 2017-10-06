@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {MdDialog} from '@angular/material';
 import {SellerAddComponent} from '../seller-add-product/seller.add.product.component'
 
@@ -9,6 +9,7 @@ import {
   AuthService
 } from "../../shared/index";
 import {User} from "../../shared/models/user.model";
+import {SellerService} from "../../shared/services/seller.service";
 
 @Component({
   selector: 'seller-profile',
@@ -16,42 +17,43 @@ import {User} from "../../shared/models/user.model";
   styleUrls: ['./seller.profile.styles.css']
 })
 
-export class SellerProfileComponent implements OnInit {
+export class SellerProfileComponent implements OnInit, OnDestroy {
   sellerProducts: JeweleryProduct[];
   user: User;
   // toggleAddProductForm: boolean;
+  userSubscription: any;
+  editDialogSubscription: any;
 
-  constructor(private jewellery: JewelleryService, private auth: AuthService, private dialog: MdDialog) {
+  constructor(private seller: SellerService, private jewellery: JewelleryService, private auth: AuthService, private dialog: MdDialog) {
   }
 
   ngOnInit() {
-    this.auth.user.subscribe((val) => {
+    window.scrollTo(0, 0);
+    this.userSubscription = this.auth.user.subscribe((val) => {
+      console.log('have user');
       this.user = <User>val;
       this.sellerProducts = this.jewellery.getJewelleryBySellerId(val.id);
+    });
+    this.editDialogSubscription = this.seller.currentlyEditProduct.subscribe((value) => {
+      console.log('will open the dialog');
+      this.openDialog(value)
     });
     // this.toggleAddProductForm = true;
   }
 
-  openDialog() {
-    let dialogRef = this.dialog.open(SellerAddComponent, {
-        data: {},
-        width: '500px',
-        height: '500px',
-        disableClose: true,
-      }
-    );
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
-    });
+  ngOnDestroy() {
+    this.editDialogSubscription.unsubscribe();
+    this.userSubscription.unsubscribe();
   }
 
-  // addNewProduct(newProduct: any) {
-  //   console.log(newProduct);
-  //   this.sellerProducts.push(newProduct);
-  // }
-
-  // showAddProductForm() {
-  //   this.toggleAddProductForm = !this.toggleAddProductForm;
-  // }
+  openDialog(data: any) {
+    let dialogRef = this.dialog.open(SellerAddComponent, {
+        data: data,
+        width: '500px',
+        height: 'auto',
+        disableClose: true
+      }
+    );
+  }
 }
 

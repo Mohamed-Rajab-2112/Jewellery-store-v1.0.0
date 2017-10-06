@@ -15,6 +15,9 @@ var signin_signup_component_1 = require("./signin.signup.component/signin.signup
 exports.SinginSignUpComponent = signin_signup_component_1.SinginSignUpComponent;
 var jewellery_full_option_component_1 = require("./jewellery.full.option.component/jewellery.full.option.component");
 exports.JewelleryFullOption = jewellery_full_option_component_1.JewelleryFullOption;
+__export(require("./DialogComponent/dialog.component"));
+__export(require("./signup.component/signup.component"));
+__export(require("./signup.component/signup.dialog.component"));
 /*Service exports*/
 __export(require("./services/customer.service"));
 __export(require("./services/customer.auth.activator.service"));

@@ -17,6 +17,7 @@ export class JewellerySearchResultsComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.route.params.forEach((params: Params) => {
       console.log(params);
       this.searchTerms = JSON.parse(params["terms"]);

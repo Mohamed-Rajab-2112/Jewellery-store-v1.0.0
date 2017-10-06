@@ -16,6 +16,7 @@ export class JewelleryFavouriteComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.favouriteJewelleryList = this.customer.favouriteJewellery.value;
     this.userName = this.auth.user.value.name;
   }

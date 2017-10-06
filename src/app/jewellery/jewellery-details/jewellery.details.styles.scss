@@ -6,11 +6,28 @@
   width: $appWidth;
   margin: 0 auto;
   background-color: $bgcolor;
-  .title-price-container {
+  padding-bottom: 25px;
+  //border: 1px solid black;
+  .title-id-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 80%;
     margin: 100px auto 50px;
+    span {
+      font-size: 0.6em;
+      text-transform: none;
+    }
+    .name-and-price {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $dcolor;
+      //flex-direction: column;
+      .name-and-fav {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
   .images-description-container {
     display: flex;
@@ -20,18 +37,13 @@
     justify-content: space-between;
     .all-images-container {
       display: block;
-      //border: 1px solid black;
-      //width: 65%;
       img {
         width: 75%;
         display: block;
         margin: 0 auto;
       }
-      //flex-direction: column;
       .images-list {
         text-align: center;
-        //border: 1px solid black;
-        //background-color: rgba(0, 0, 0, 0.5);
         img {
           display: inline-block;
           width: 25%;
@@ -53,5 +65,34 @@
   }
   .selectedimage {
     opacity: 0.5;
+  }
+  seller-thumbnail {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+/*******************/
+/*Responsive styles*/
+/*******************/
+
+@media screen and (max-width: 1024px) {
+  .jewellery-details {
+    margin-top: 25px;
+    border: 1px solid $borderColor;
+    .title-id-container {
+      margin-top: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .jewellery-details {
+    width: $smallScreenWidth;
+    .title-id-container {
+      .name-and-price {
+        flex-wrap: wrap;
+      }
+    }
   }
 }

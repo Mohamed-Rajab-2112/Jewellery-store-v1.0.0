@@ -1,47 +1,69 @@
-<div class="background">
-
-  <h1>Search further!</h1>
-  <h2>Start now</h2>
-
-  <jewellery-search-form></jewellery-search-form>
-
-</div>
-
 <div class="home">
 
-  <h2>How it works</h2>
-  <div class="how-it-works-details-container">
-    <div>
-      <img src="app/assets/images/ic_search_white.svg">
-      <h3>Search for the suitable gold product</h3>
+  <div class="slide-how-it-works">
+    <div class="slideShow-container">
+        <ngb-carousel>
+        <ng-template ngbSlide>
+          <img src="app/images/slide01.jpg" alt="slide 01">
+          <div class="carousel-caption">
+            <!--<h3>First slide label</h3>-->
+            <!--<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>-->
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="app/images/slide02.jpg" alt="slide 02">
+          <div class="carousel-caption">
+            <!--<h3>Second slide label</h3>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="app/images/slide03.jpg" alt="slide 03">
+          <div class="carousel-caption">
+            <!--<h3>Third slide label</h3>-->
+            <!--<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>-->
+          </div>
+        </ng-template>
+      </ngb-carousel>
     </div>
-    <div>
-      <img src="app/assets/images/phone.svg">
-      <h3>Call the vendor to get more details about the product</h3>
-    </div>
-    <div>
-      <img src="app/assets/images/businessman-with-dollar-money-sign-icon.svg">
-      <h3>Visit the vendor to buy the product</h3>
+    <div class="how-it-works-details-container">
+      <!--<div class="how-it-works-header">-->
+        <!--<h2>How it works</h2>-->
+      <!--</div>-->
+      <div class="how-it-works-item">
+        <img src="app/assets/images/ic_search_white.svg">
+        <h3>Search for the suitable Jewellery!</h3>
+      </div>
+      <div class="how-it-works-item">
+        <img src="app/assets/images/phone.svg">
+        <h3>Call the vendor to get more details about it</h3>
+      </div>
+      <div class="how-it-works-item">
+        <img src="app/assets/images/businessman-with-dollar-money-sign-icon.svg">
+        <h3>Visit the vendor to buy the Jewellery!</h3>
+      </div>
     </div>
   </div>
 
-  <h2>Latest Offers</h2>
+  <h3 class="jewellery-sliding-header">Latest Offers</h3>
   <div class="offers-container">
     <button [disabled]="translateValueLatestOffers == 0" (click)="arrow('latestOffers', 'left')">
-      <img src="app/assets/images/arrow-left.svg"  [ngStyle]="translateValueLatestOffers == 0 ? {'opacity': '0.7'}: ''">
+      <img src="app/assets/images/arrow-left.svg" [ngStyle]="translateValueLatestOffers == 0 ? {'opacity': '0.7'}: ''">
     </button>
     <div class="overFlow-container">
       <jewellery-thumbnail [products]="deals" [translate]="translateValueLatestOffers"></jewellery-thumbnail>
     </div>
     <button [disabled]="translateValueLatestOffers <= -83" (click)="arrow('latestOffers', 'right')">
-      <img src="app/assets/images/arrow-right.svg" [ngStyle]="translateValueLatestOffers <= -83 ? {'opacity': '0.7'}: ''">
+      <img src="app/assets/images/arrow-right.svg"
+           [ngStyle]="translateValueLatestOffers <= -83 ? {'opacity': '0.7'}: ''">
     </button>
   </div>
 
-  <h2>Most Visited</h2>
+  <h3 class="jewellery-sliding-header">Most Visited</h3>
   <div class="offers-container">
     <!--<div>-->
-    <button [disabled]="translateValueMostVisited == 0" (click)="arrow('mostVisited', 'left')" [ngStyle]="translateValueMostVisited == 0 ? {'opacity': '0.7'}: ''">
+    <button [disabled]="translateValueMostVisited == 0" (click)="arrow('mostVisited', 'left')"
+            [ngStyle]="translateValueMostVisited == 0 ? {'opacity': '0.7'}: ''">
       <img src="app/assets/images/arrow-left.svg">
     </button>
     <!--</div>-->
@@ -50,7 +72,8 @@
     </div>
     <!--<div>-->
     <button [disabled]="translateValueMostVisited <= -83" (click)="arrow('mostVisited', 'right')">
-      <img src="app/assets/images/arrow-right.svg" [ngStyle]="translateValueMostVisited <= -83 ? {'opacity': '0.7'}: ''">
+      <img src="app/assets/images/arrow-right.svg"
+           [ngStyle]="translateValueMostVisited <= -83 ? {'opacity': '0.7'}: ''">
     </button>
     <!--</div>-->
   </div>

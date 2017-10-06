@@ -27,8 +27,6 @@ SellerModule = __decorate([
             forms_1.ReactiveFormsModule
         ],
         declarations: [
-            index_1.SellersListComponent,
-            // SellerThumbnail,
             index_1.SellerDetailsComponent,
             index_1.SellerProfileComponent,
             index_1.SellerProfileEditComponent

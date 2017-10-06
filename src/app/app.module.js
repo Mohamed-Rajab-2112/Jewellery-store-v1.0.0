@@ -16,6 +16,7 @@ var animations_1 = require("@angular/platform-browser/animations");
 var http_1 = require("@angular/http");
 var index_1 = require("./jewellery/index");
 var index_2 = require("./shared/index");
+var index_3 = require("./index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,6 +39,7 @@ AppModule = __decorate([
             index_1.JewelleryListComponent,
             index_1.JewellerySearchResultsComponent,
             index_1.JewelleryDetailsComponent,
+            index_3.SellersListComponent,
             index_2.NavComponent,
             index_2.FooterComponent,
             index_1.JewellerySearchForm

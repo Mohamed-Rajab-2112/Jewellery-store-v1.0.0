@@ -1,9 +1,22 @@
+<div class="small-screen-search-backdrop" [hidden]="toggleBackdrop" (click)="toggleSearchForm()">
+
+</div>
+
+<button class="small-width-search-btn" (click)="toggleSearchForm()">
+  <img src="app/assets/images/search-icon.svg">
+</button>
+
+<md-icon svgIcon="arrow" class="arrow-icon" [hidden]="toggleBackdrop"></md-icon>
+
 <form #searchProductAndPlaceForm="ngForm" autocomplete="off"
       (ngSubmit)="searchProductAndarea(searchProductAndPlaceForm.value)"
-      class="serching-form" novalidate [formGroup]="searchForm">
+      class="serching-form" novalidate [formGroup]="searchForm" [ngClass]="toggleSearchFormClass">
+
+  <label>Find</label>
 
   <md-input-container floatPlaceholder="never">
-    <input mdInput name="productName" type="text" placeholder="ring, necklace, etc ..." [mdAutocomplete]="productNameAuto"
+    <input mdInput name="productName" type="text" placeholder="ring, necklace, etc ..."
+           [mdAutocomplete]="productNameAuto"
            formControlName="productName">
   </md-input-container>
 
@@ -13,12 +26,12 @@
     </md-option>
   </md-autocomplete>
 
-
-  <label>In</label>
+  <label>at</label>
 
   <md-input-container floatPlaceholder="never">
-    <input mdInput name="area" type="text" dir="rtl"  placeholder="مصر الجديده, مدينة نصر, ..." [mdAutocomplete]="areaAuto"
-           formControlName="area" >
+    <input mdInput name="area" type="text" dir="rtl" placeholder="مصر الجديده, مدينة نصر, ..."
+           [mdAutocomplete]="areaAuto"
+           formControlName="area">
   </md-input-container>
 
   <md-autocomplete #areaAuto="mdAutocomplete">
@@ -27,19 +40,12 @@
     </md-option>
   </md-autocomplete>
 
-  <!--<input [(ngModel)]="area" name="area" type="text" dir="rtl" [ngModelOptions]="{standalone: true}"-->
-         <!--placeholder="مصر الجديده, مدينة نصر, ...">-->
-
-  <!--<em *ngIf="searchProductAndPlaceForm.dirty && searchProductAndPlaceForm.invalid" style="display: block">Please-->
-  <!--enter product name you are-->
-  <!--searching for...</em>-->
-
-  <button [disabled]="searchForm.controls.productName?.errors?.required && !sellerName && searchForm.controls.area?.errors?.required" type="submit"
-          class="btn">
+  <button
+    [disabled]="searchForm.controls.productName?.errors?.required && !sellerName && searchForm.controls.area?.errors?.required"
+    type="submit"
+    class="btn">
     <img src="app/assets/images/search-icon.svg">
   </button>
-
-  <!--<label><img src="app/assets/images/search-icon.svg"></label>-->
 
 </form>
 

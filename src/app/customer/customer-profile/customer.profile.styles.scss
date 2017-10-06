@@ -1,22 +1,29 @@
 @import "../../assets/stylesheets/colors-theme.scss";
 
 .customer-profile-container {
-  display: flex;
-  flex-direction: column;
+  //display: flex;
+  //flex-direction: column;
   width: $appWidth;
   background-color: $bgcolor;
   margin: 0 auto;
+  min-height: 500px;
   h2 {
     padding-top: 50px;
     margin-left: 25px;
   }
-  form {
-    width: 50%;
-    margin: 0 auto 45px;
-    display: flex;
-    flex-direction: column;
+  .tabs {
+    width: 80%;
+    margin: 0 auto;
+    form {
+      width: 50%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
     h3 {
+      margin-top: 50px;
       border-bottom: 1px solid $dcolor;
+      margin-bottom: 15px;
     }
   }
   .delete-container {
@@ -25,7 +32,17 @@
     display: flex;
     flex-direction: column;
     button {
+      margin-top: 15px;
       background-color: red;
+    }
+  }
+  .note-for-user {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    svg {
+      width: 25px;
+      height: 25px;
     }
   }
   .submit-button {

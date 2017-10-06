@@ -1,7 +1,7 @@
 /* line 3, signin.signup.styles.scss */
 .log-in-sign-up {
   overflow: hidden;
-  width: 349px;
+  width: 300px;
   margin: 200px auto 0;
   position: relative;
   z-index: 101;
@@ -31,6 +31,7 @@
 }
 /* line 32, signin.signup.styles.scss */
 .log-in-sign-up .forms {
+  box-sizing: border-box;
   transition: 0.3s all;
   position: relative;
   z-index: 101;
@@ -39,7 +40,7 @@
   display: flex;
   justify-content: center;
 }
-/* line 42, signin.signup.styles.scss */
+/* line 43, signin.signup.styles.scss */
 .log-in-sign-up .forms form {
   display: flex;
   flex-direction: column;
@@ -51,20 +52,20 @@
   padding: 25px;
   border-radius: 3px;
 }
-/* line 52, signin.signup.styles.scss */
+/* line 53, signin.signup.styles.scss */
 .log-in-sign-up .forms form .vendors-note {
   text-align: center;
 }
-/* line 54, signin.signup.styles.scss */
+/* line 55, signin.signup.styles.scss */
 .log-in-sign-up .forms form .vendors-note md-icon {
   position: relative;
   top: 5px;
 }
-/* line 59, signin.signup.styles.scss */
+/* line 60, signin.signup.styles.scss */
 .log-in-sign-up .forms form md-input-container {
   width: 100%;
 }
-/* line 62, signin.signup.styles.scss */
+/* line 63, signin.signup.styles.scss */
 .log-in-sign-up .forms form .customer-vendor-buttons-container {
   width: 100%;
   display: flex;
@@ -72,54 +73,59 @@
   align-items: center;
   text-align: center;
 }
-/* line 70, signin.signup.styles.scss */
+/* line 71, signin.signup.styles.scss */
 .log-in-sign-up .forms form .buttons-container {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-/* line 74, signin.signup.styles.scss */
+/* line 75, signin.signup.styles.scss */
 .log-in-sign-up .forms form .buttons-container button:last-child {
   background-color: #586D8C;
 }
-/* line 78, signin.signup.styles.scss */
+/* line 79, signin.signup.styles.scss */
 .log-in-sign-up .forms form .match-msg {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 }
-/* line 83, signin.signup.styles.scss */
+/* line 84, signin.signup.styles.scss */
 .log-in-sign-up .forms form .match-msg em {
   font-size: 0.9em;
   font-weight: bold;
 }
-/* line 87, signin.signup.styles.scss */
+/* line 88, signin.signup.styles.scss */
 .log-in-sign-up .forms form .match-msg .matched {
-  color: #133759;
+  color: #31004a;
 }
-/* line 90, signin.signup.styles.scss */
+/* line 91, signin.signup.styles.scss */
 .log-in-sign-up .forms form .match-msg .not-matched {
   color: red;
 }
-/* line 95, signin.signup.styles.scss */
+/* line 96, signin.signup.styles.scss */
 .log-in-sign-up .forms .login-form {
   height: 280px;
 }
 /* line 99, signin.signup.styles.scss */
+.log-in-sign-up .forms signUp {
+  box-sizing: border-box;
+  width: 100%;
+}
+/* line 105, signin.signup.styles.scss */
 .log-in-sign-up .typeButtonSelected {
   color: #F5D0CA;
-  background-color: #133759;
+  background-color: #31004a;
   transition: 0.5s all;
 }
-/* line 102, signin.signup.styles.scss */
+/* line 108, signin.signup.styles.scss */
 .log-in-sign-up .typeButtonNotSelected {
-  color: #133759;
+  color: #31004a;
   background-color: #F5D0CA;
   border: none;
   transition: 0.5s all;
 }
 
-/* line 107, signin.signup.styles.scss */
+/* line 113, signin.signup.styles.scss */
 .sign-in-background {
   position: fixed;
   top: 0;

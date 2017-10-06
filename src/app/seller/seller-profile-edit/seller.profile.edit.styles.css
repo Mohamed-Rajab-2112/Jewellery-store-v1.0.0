@@ -1,0 +1,106 @@
+/* line 3, seller.profile.edit.styles.scss */
+.seller-profile-edit-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+/* line 8, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .form-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+/* line 15, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .form-section button {
+  width: 200px;
+  margin: 25px auto 0;
+  color: #31004a;
+  background-color: #F5D0CA;
+  border: none;
+  transition: 0.5s all;
+}
+/* line 19, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .form-section button:hover {
+  color: #F5D0CA;
+  background-color: #31004a;
+  transition: 0.5s all;
+}
+/* line 23, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .form-section .logo-image-container {
+  margin-bottom: 35px;
+}
+/* line 25, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .form-section .logo-image-container img {
+  display: inline;
+  width: 50%;
+}
+/* line 29, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .form-section .logo-image-container button {
+  display: inline;
+}
+/* line 34, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .upload-logo-btn {
+  text-align: center;
+  cursor: pointer;
+  padding: 7px;
+  width: 200px;
+  box-sizing: border-box;
+  transition: 0.25s all;
+  color: #31004a;
+  background-color: #F5D0CA;
+  border: none;
+  transition: 0.5s all;
+}
+/* line 42, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .upload-logo-btn:hover {
+  transition: 0.25s all;
+  color: #F5D0CA;
+  background-color: #31004a;
+  transition: 0.5s all;
+}
+/* line 47, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .alert {
+  margin-top: 25px;
+}
+/* line 51, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .note-for-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 55, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .note-for-user svg {
+  width: 25px;
+}
+/* line 57, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .note-for-user svg .a {
+  fill: white;
+}
+/* line 60, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .note-for-user svg .b {
+  fill: red;
+}
+/* line 64, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .note-for-user p {
+  margin-bottom: 0;
+}
+/* line 69, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .deactivate-tab {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 76, seller.profile.edit.styles.scss */
+.seller-profile-edit-container .deactivate-tab button {
+  color: white;
+  width: 300px;
+  height: 50px;
+  margin-top: 15px;
+  background-color: red;
+}

@@ -26,41 +26,13 @@ export class JewelleryHomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.mostVisited = this.Jewellery.getMostVisitedJewellery();
     this.deals = this.Jewellery.getHotDeals();
     this.translateValueLatestOffers = 0;
     this.translateValueMostVisited = 0;
     this.auth.setNavActive(false);
     this.utility.setNavBarBackgroundState(true);
-
-    /*============== RXJS course training ===============*/
-
-  //   let numbers = [1, 2, 3];
-  //
-  //   let source = Observable.create((x: any) => {
-  //     x.next(5);
-  //     x.complete()
-  //   });
-  //
-  //   source.flatMap((e: any) => this.sourceFunction()).subscribe(
-  //     (value: number) => {
-  //       console.log(value);
-  //     },
-  //     (e: any) => {
-  //       console.log(e)
-  //     },
-  //     () => {
-  //       console.log('complete')
-  //     });
-  //
-  //   /*===================================================*/
-  // }
-  //
-  // sourceFunction() {
-  //   return Observable.create((x: any) => {
-  //     x.next(10);
-  //     x.complete()
-  //   });
   }
 
   arrow(type: string, direction: string) {

@@ -1,0 +1,61 @@
+/* line 3, signup.styles.scss */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 3px;
+}
+/* line 13, signup.styles.scss */
+form .vendors-note {
+  text-align: center;
+}
+/* line 15, signup.styles.scss */
+form .vendors-note md-icon {
+  position: relative;
+  top: 5px;
+}
+/* line 20, signup.styles.scss */
+form md-input-container {
+  width: 100%;
+}
+/* line 23, signup.styles.scss */
+form .customer-vendor-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+/* line 31, signup.styles.scss */
+form .buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+/* line 35, signup.styles.scss */
+form .buttons-container button:last-child {
+  background-color: #586D8C;
+}
+/* line 39, signup.styles.scss */
+form .match-msg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 44, signup.styles.scss */
+form .match-msg em {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+/* line 48, signup.styles.scss */
+form .match-msg .matched {
+  color: #31004a;
+}
+/* line 51, signup.styles.scss */
+form .match-msg .not-matched {
+  color: red;
+}

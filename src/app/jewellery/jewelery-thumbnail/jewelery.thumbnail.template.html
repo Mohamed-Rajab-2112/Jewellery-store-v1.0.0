@@ -1,23 +1,21 @@
 <div class="product-thumbnail-container" [ngStyle]="applyTranslate()">
-  <div *ngFor="let product of products" class="product-thumbnail">
+  <md-card *ngFor="let product of products" class="product-thumbnail">
 
-    <div class="button-container">
-      <button md-raised-button *ngIf="showEditDelBtn" (click)="editProduct()">edit</button>
-      <button md-raised-button *ngIf="showEditDelBtn" (click)="deleteProduct(product)">delete</button>
+    <div *ngIf="showEditDelBtn" class="button-container">
+      <button (click)="editProduct(product)"><img src="app/assets/images/edit-icon.svg">edit</button>
+      <button (click)="deleteProduct(product)"><img src="app/assets/images/cross-icon.svg">delete</button>
     </div>
 
-    <jewellery-favourite class="fav-btn" *ngIf="showFavouriteBtn(product)" [product]="product"></jewellery-favourite>
+    <jewellery-favourite-button class="fav-btn" [product]="product" *ngIf="showFavouriteBtn"
+                                [isFavourite]="favouriteBtnStatus(product)"></jewellery-favourite-button>
 
-    <div (click)="routingToJewelleryDetails(product?.type, product?.id)">
+    <div (click)="routingToJewelleryDetails(product?.type, product?.id)" class="card-details">
       <img [src]="product?.imageUrl[0].url">
-      <h3>{{product?.price}}</h3>
       <h3>{{product?.productName}}</h3>
       <h3>{{product?.sellerName}}</h3>
+      <h3><strong>{{product?.price}} <span>EGP/gm</span></strong></h3>
     </div>
-
-    <!--<add-product (newPrice)="applyNewPricesForVendor($event)" (publishDone)="closeEditMode($event)" [product]="product"-->
-    <!--*ngIf="showEditForm(product)"></add-product>-->
-  </div>
+  </md-card>
 
   <div *ngIf="!products?.length" class="alert alert-warning warning empty-store-alert" role="alert">
     <p class="alert-body">

@@ -1,21 +1,23 @@
 $lcolor: #F5D0CA;
-$mcolor: #F0C7C5;
-$dcolor: #133759;
+$mcolor: #75FF75;
+$dcolor: #31004a;
 $ldcolor: #586D8C;
 $bgcolor: #fff;
+$borderColor: lightgrey;
 
-$grey: #DFDFDF;
+$grey: #eee;
 
 $mmcolor: #8A6D67;
 $darkBlue: #455C7E;
 
 $appWidth: 70%;
+$smallScreenWidth: 95%;
 
 @mixin icon {
   background-color: $mmcolor;
   border-radius: 20px;
   padding: 3px;
-  height: 25px;
+  width: 25px;
   margin-right: 5px;
 }
 

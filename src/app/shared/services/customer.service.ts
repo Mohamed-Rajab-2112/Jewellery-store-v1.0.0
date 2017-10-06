@@ -37,4 +37,10 @@ export class CustomerService {
     this.favouriteJewellery.next(this.favouriteJewellery.value);
     console.log(this.favouriteJewellery);
   }
+
+  removeProductToFavourite(product: JeweleryProduct) {
+    this.checkItemAlreadyInFavourite(product) && this.favouriteJewellery.value.splice(this.favouriteJewellery.value.indexOf(product), 1);
+    this.favouriteJewellery.next(this.favouriteJewellery.value);
+    console.log(this.favouriteJewellery);
+  }
 }

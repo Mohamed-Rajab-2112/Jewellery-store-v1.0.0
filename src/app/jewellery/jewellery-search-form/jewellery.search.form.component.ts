@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {JewelleryService} from "../../shared/services/jewellery.service";
@@ -10,18 +10,21 @@ import {Observable} from "rxjs";
   styleUrls: ['./jewellery.search.form.styles.css']
 })
 
-export class JewellerySearchForm implements OnInit {
+export class JewellerySearchForm implements OnInit, OnDestroy {
 
   productName: string;
   sellerName: string;
   area: string;
   areas: string[];
   types: string[];
+  searchTermsSubscription: any;
   filteredTypes: Observable<string[]>;
   filteredAreas: Observable<string[]>;
   searchForm: FormGroup;
   productNameControl: FormControl;
   areaControl: FormControl;
+  toggleSearchFormClass: string[];
+  toggleBackdrop: boolean;
 
   constructor(private router: Router, private jewellery: JewelleryService) {
   }
@@ -41,12 +44,18 @@ export class JewellerySearchForm implements OnInit {
     this.filteredTypes = this.productNameControl.valueChanges.startWith(null).map((val: string) => val ? this.filter(val, this.types) : this.types.slice());
     this.filteredAreas = this.areaControl.valueChanges.startWith(null).map((val: string) => val ? this.filter(val, this.areas) : this.areas.slice());
 
-    this.jewellery.searchTermsChanged.subscribe(value => {
+    this.searchTermsSubscription = this.jewellery.searchTermsChanged.subscribe(value => {
       this.productName = value["productName"] === "undefined" ? "" : value["productName"];
       this.sellerName = value["sellerName"] === "undefined" ? "" : value["sellerName"];
       this.area = value["area"] === "undefined" ? "" : value["area"];
     });
 
+    this.toggleSearchFormClass = ['hidden-form'];
+    this.toggleBackdrop = true;
+  }
+
+  ngOnDestroy() {
+    this.searchTermsSubscription.unsubscribe();
   }
 
   filter(val: string, data: string[]): string[] {
@@ -57,13 +66,19 @@ export class JewellerySearchForm implements OnInit {
     console.log(values);
 
     for (let property in values) {
-      console.log(values[`${property}`])
+      console.log(values[`${property}`]);
       if (values.hasOwnProperty(property) && values[`${property}`] == null) {
         delete values[`${property}`];
       }
     }
 
     this.router.navigate([`/search/${JSON.stringify(values)}`]);
+    this.toggleSearchForm();
   }
 
+  toggleSearchForm() {
+    this.toggleSearchFormClass = String(this.toggleSearchFormClass) === String(['hidden-form']) ? ['shown-form'] : ['hidden-form'];
+
+    this.toggleBackdrop = !this.toggleBackdrop;
+  }
 }

@@ -5,7 +5,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 import {
-  SellersListComponent,
   sellerRoutes,
   SellerDetailsComponent,
   SellerProfileComponent,
@@ -25,8 +24,6 @@ import {
     ReactiveFormsModule
   ],
   declarations: [
-    SellersListComponent,
-    // SellerThumbnail,
     SellerDetailsComponent,
     SellerProfileComponent,
     SellerProfileEditComponent

@@ -12,6 +12,11 @@ exports.customerRoutes = [
         path: 'customer-favourite-jewellery',
         component: index_1.JewelleryFavouriteComponent,
         canActivate: [customer_auth_activator_service_1.CustomerProfileActivator]
+    },
+    {
+        path: '',
+        redirectTo: "/home",
+        pathMatch: "prefix"
     }
 ];
 //# sourceMappingURL=customer.routes.js.map

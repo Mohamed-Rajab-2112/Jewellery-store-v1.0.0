@@ -1,97 +1,113 @@
 <div class="customer-profile-container">
   <h2>Profile settings</h2>
-  <form #personalDataForm="ngForm" name="personalData"
-        (ngSubmit)="profileForm.valid && updateProfileData(profileForm.value)" novalidate [formGroup]="profileForm">
+  <md-tab-group class="tabs">
+    <md-tab label="Basic">
+      <form #personalDataForm="ngForm" name="personalData"
+            (ngSubmit)="profileForm.valid && updateProfileData(profileForm.value)" novalidate [formGroup]="profileForm">
 
-    <md-input-container>
-      <input type="text" name="name" mdInput formControlName="name" placeholder="Name">
-    </md-input-container>
+        <h3>Basic info</h3>
 
-
-    <md-input-container>
-      <input mdInput name="area" type="text" placeholder="Area/City" [mdAutocomplete]="areaAuto" formControlName="area">
-    </md-input-container>
-
-    <md-autocomplete #areaAuto="mdAutocomplete">
-      <md-option *ngFor="let type of filteredAreas | async" [value]="type">
-        {{type}}
-      </md-option>
-    </md-autocomplete>
+        <md-input-container>
+          <input type="text" name="name" mdInput formControlName="name" placeholder="Name">
+        </md-input-container>
 
 
-    <button md-button class="submit-button" type="submit">Submit</button>
-  </form>
+        <md-input-container>
+          <input mdInput name="area" type="text" placeholder="Area/City" [mdAutocomplete]="areaAuto"
+                 formControlName="area">
+        </md-input-container>
 
-  <form #phoneNumberForm="ngForm" name="phoneNumberForm"
-        (ngSubmit)="phoneNumberForm.valid && updateProfileData(phoneNumberForm.value)">
+        <md-autocomplete #areaAuto="mdAutocomplete">
+          <md-option *ngFor="let area of filteredAreas | async" [value]="area">
+            {{area}}
+          </md-option>
+        </md-autocomplete>
 
-    <h3>Phone number</h3>
 
-    <md-input-container>
-      <input type="text" mdInput placeholder="Primary Phone number" name="phoneNumber"
-             [(ngModel)]="currentCustomer.telephone1">
-    </md-input-container>
+        <button md-button class="submit-button" type="submit">Submit</button>
+      </form>
+    </md-tab>
+    <md-tab label="Contact">
+      <form #phoneNumberForm="ngForm" name="phoneNumberForm"
+            (ngSubmit)="phoneNumberForm.valid && updateProfileData(phoneNumberForm.value)">
 
-    <md-input-container>
-      <input placeholder="Secondary phone number (optional)" mdInput type="text" name="phoneNumber2"
-             [(ngModel)]="currentCustomer.telephone2">
-    </md-input-container>
+        <h3>Phone number</h3>
 
-    <md-input-container>
-      <input type="text" placeholder="Secondary phone number (optional)" mdInput name="phoneNumber3"
-             [(ngModel)]="currentCustomer.telephone3">
-    </md-input-container>
+        <md-input-container>
+          <input type="text" mdInput placeholder="Primary Phone number" name="phoneNumber"
+                 [(ngModel)]="currentCustomer.telephone1">
+        </md-input-container>
 
-    <button md-button class="submit-button" type="submit">Submit</button>
-  </form>
+        <md-input-container>
+          <input placeholder="Secondary phone number (optional)" mdInput type="text" name="phoneNumber2"
+                 [(ngModel)]="currentCustomer.telephone2">
+        </md-input-container>
 
-  <form #passwordForm="ngForm" name="passwordForm"
-        (ngSubmit)="passwordForm.valid && saveNewPassword(passwordForm.value.newPasword)">
-    <h3>Change password</h3>
+        <md-input-container>
+          <input type="text" placeholder="Secondary phone number (optional)" mdInput name="phoneNumber3"
+                 [(ngModel)]="currentCustomer.telephone3">
+        </md-input-container>
 
-    <md-input-container>
-      <input placeholder="Old password" mdInput type="password" name="password" [(ngModel)]="password" required>
-    </md-input-container>
+        <button md-button class="submit-button" type="submit">Submit</button>
+      </form>
+    </md-tab>
+    <md-tab label="Password">
+      <form #passwordForm="ngForm" name="passwordForm"
+            (ngSubmit)="passwordForm.valid && saveNewPassword(passwordForm.value.newPasword)">
+        <h3>Change password</h3>
 
-    <md-input-container>
-      <input placeholder="New password" mdInput type="password" name="newPasword" [(ngModel)]="newPasword" required>
-    </md-input-container>
+        <md-input-container>
+          <input placeholder="Old password" mdInput type="password" name="password" [(ngModel)]="password" required>
+        </md-input-container>
 
-    <md-input-container>
-      <input placeholder="Re-type new password" mdInput type="password" name="renewPasword" [(ngModel)]="renewPasword"
-             required>
-    </md-input-container>
+        <md-input-container>
+          <input placeholder="New password" mdInput type="password" name="newPasword" [(ngModel)]="newPasword" required>
+        </md-input-container>
 
-    <em
-      *ngIf="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword === passwordForm.value.renewPasword">Matched</em>
-    <em
-      *ngIf="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword !== passwordForm.value.renewPasword">Not
-      Matched</em>
-    <em *ngIf="passwordForm.submitted && passwordForm.controls.newPasword?.invalid">this field required</em>
+        <md-input-container>
+          <input placeholder="Re-type new password" mdInput type="password" name="renewPasword"
+                 [(ngModel)]="renewPasword"
+                 required>
+        </md-input-container>
 
-    <button
-      [disabled]="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword !== passwordForm.value.renewPasword"
-      md-button class="submit-button"
-      type="submit">Submit
-    </button>
-  </form>
+        <em
+          *ngIf="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword === passwordForm.value.renewPasword">Matched</em>
+        <em
+          *ngIf="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword !== passwordForm.value.renewPasword">Not
+          Matched</em>
+        <em *ngIf="passwordForm.submitted && passwordForm.controls.newPasword?.invalid">this field required</em>
 
-  <form #emailForm="ngForm" name="emailForm" (ngSubmit)="emailForm.valid && updateProfileData(email)">
+        <button
+          [disabled]="passwordForm.controls.newPasword?.valid && passwordForm.value.newPasword !== passwordForm.value.renewPasword"
+          md-button class="submit-button"
+          type="submit">Submit
+        </button>
+      </form>
+    </md-tab>
+    <md-tab label="Email">
+      <form #emailForm="ngForm" name="emailForm" (ngSubmit)="emailForm.valid && updateProfileData(email)">
 
-    <h3>Change email</h3>
+        <h3>Change email</h3>
 
-    <md-input-container>
-      <input placeholder="Email" mdInput type="email" name="email" [(ngModel)]="currentCustomer.email" required>
-      <em *ngIf="emailForm.submitted && emailForm.controls?.email.invalid">this field required</em>
-    </md-input-container>
+        <md-input-container>
+          <input placeholder="Email" mdInput type="email" name="email" [(ngModel)]="currentCustomer.email" required>
+          <em *ngIf="emailForm.submitted && emailForm.controls?.email.invalid">this field required</em>
+        </md-input-container>
 
-    <button md-button class="submit-button" type="submit">Submit</button>
-  </form>
-
-  <div class="delete-container">
-    <h3>Delete account</h3>
-    <button md-button class="submit-button" type="button" (click)="deleteAccount()">Delete Account</button>
-    <em>Account cannot be retrieved after being deleted</em>
-  </div>
-
+        <button md-button class="submit-button" type="submit">Submit</button>
+      </form>
+    </md-tab>
+    <md-tab label="Deactivate">
+      <div class="delete-container">
+        <h3>Delete account</h3>
+        <button md-button class="submit-button" type="button" (click)="deleteAccount()">Delete Account</button>
+      </div>
+      <div class="note-for-user">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-61 285 24 24"><defs><style>.a{fill:none;}.b{fill:red;}</style></defs><g transform="translate(-61 285)"><path class="a" d="M0,0H24V24H0Z"/><path class="b" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm1,15H11V11h2Zm0-8H11V7h2Z"/></g></svg>
+        <p>
+          Account cannot be retrieved after being deleted
+        </p>
+      </div>
+    </md-tab>
+  </md-tab-group>
 </div>

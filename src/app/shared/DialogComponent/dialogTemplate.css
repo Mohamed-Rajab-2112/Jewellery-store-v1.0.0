@@ -1,0 +1,19 @@
+/* line 3, dialogTemplate.scss */
+.buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+/* line 8, dialogTemplate.scss */
+.buttons-container button {
+  color: #31004a;
+  background-color: #F5D0CA;
+  border: none;
+  transition: 0.5s all;
+}
+/* line 10, dialogTemplate.scss */
+.buttons-container button:hover {
+  color: #F5D0CA;
+  background-color: #31004a;
+  transition: 0.5s all;
+}

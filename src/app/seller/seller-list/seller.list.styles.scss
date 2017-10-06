@@ -13,7 +13,7 @@
     margin-bottom: 15px;
     position: relative;
     padding-bottom: 0;
-    background-color: $mcolor;
+    background-color: $grey;
     z-index: 1;
     width: 100%;
     height: 100px;
@@ -22,7 +22,7 @@
     align-items: center;
     //border: 1px solid black;
     .field {
-      width: 90%;
+      width: 100%;
       padding-left: 10px;
       padding-right: 10px;
       padding-top: 10px;
@@ -42,6 +42,12 @@
     width: 100%;
   }
   ngb-pagination {
-  margin-top: 35px;
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .sellers-list-container {
+    width: $smallScreenWidth;
   }
 }

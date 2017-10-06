@@ -1,0 +1,8 @@
+<h3 md-dialog-title>{{dialogContent.title}}</h3>
+<md-dialog-content>
+  <p>{{dialogContent.body}}</p>
+</md-dialog-content>
+<md-dialog-actions class="buttons-container">
+  <button md-raised-button (click)="closeDialog(false)">No!</button>
+  <button md-raised-button (click)="closeDialog(true)">Okay!</button>
+</md-dialog-actions>

@@ -27,8 +27,8 @@
 
   <div class="prod-img-thumbnail-container">
     <div *ngFor="let image of imagesFilesList">
-      <h5>{{image.name}}</h5>
-      <img [src]="image.url">
+      <h5>{{image?.name}}</h5>
+      <img [src]="image?.url">
       <button (click)="deleteImage(image)" md-raised-button>Delete image</button>
     </div>
   </div>
@@ -73,8 +73,8 @@
   <!--</fieldset>-->
 
   <div class="dialog-buttons">
-    <button md-raised-button type="submit">Submit</button>
     <button md-raised-button [md-dialog-close]="true">Close</button>
+    <button md-raised-button type="submit">Submit</button>
   </div>
 </form>
 <!--</div>-->

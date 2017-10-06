@@ -1,0 +1,66 @@
+<h3 *ngIf="userType === 'Vendor'">Welcome, Signup as a Vendor</h3>
+<form name="signUpForm" [formGroup]="signupForm" autocomplete="off"
+      (ngSubmit)="signupForm.valid && signupForm.value.password === signupForm.value.password2 && signUp(signupForm.value)"
+      novalidate>
+  <md-input-container>
+    <input type="text" mdInput formControlName="userName" name="userName" placeholder="Your Name"
+           required>
+    <md-error>this field required</md-error>
+  </md-input-container>
+
+  <md-input-container>
+    <input type="email" mdInput formControlName="email" name="email" placeholder="Email..." required>
+    <md-error>this field required</md-error>
+  </md-input-container>
+
+  <!--/******************Fields for vendor sign up only*******************/-->
+  <div *ngIf="userType === 'Vendor'">
+    <md-input-container>
+      <input type="text" mdInput formControlName="area" name="area" placeholder="Area..." [mdAutocomplete]="auto"
+             [formControl]="area" required>
+      <md-error>this field required</md-error>
+    </md-input-container>
+
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let area of filteredAreas | async" [value]="area">
+        {{area}}
+      </md-option>
+      <md-option *ngIf="showNoAreaFound" [disabled]="true"><em>(This area not exist)</em></md-option>
+    </md-autocomplete>
+
+    <md-input-container>
+      <input type="number" mdInput formControlName="phoneNumber" name="phoneNumber" placeholder="Phone Number..."
+             required>
+      <md-error>this field required</md-error>
+    </md-input-container>
+  </div>
+  <!--/******************************************************************/-->
+
+  <md-input-container>
+    <input mdInput type="password" formControlName="password" name="password" placeholder="Password..." required>
+    <md-error>this field required</md-error>
+  </md-input-container>
+
+  <md-input-container>
+    <input mdInput type="password" formControlName="password2" name="password_2" placeholder="Re-Enter password..."
+           required>
+
+    <md-error>this field required</md-error>
+  </md-input-container>
+  <div class="match-msg">
+    <em class="matched"
+        *ngIf="password2.valid && signupForm.value?.password === signupForm.value?.password2">Password matched</em>
+    <em class="not-matched"
+        *ngIf="password2.valid && signupForm.value?.password !== signupForm.value?.password2">Password Not
+      matched</em>
+  </div>
+
+  <div class="buttons-container">
+    <button type="button" (click)="toggleSignInFlag()" md-button *ngIf="userType === 'Customer'">Close</button>
+    <button type="button" (click)="closeInDialogCase()" md-button *ngIf="userType === 'Vendor'">Close</button>
+    <button type="submit" md-mini-fab style="width: 55px; height: 55px">
+      <md-icon svgIcon="check" style="width: 55%; height: 55%; "></md-icon>
+    </button>
+  </div>
+
+</form>

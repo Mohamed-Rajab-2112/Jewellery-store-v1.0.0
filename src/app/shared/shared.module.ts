@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {
   JewelleryThumbnailComponent,
@@ -8,7 +8,10 @@ import {
   SinginSignUpComponent,
   JewelleryFavouriteBtn,
   SellerThumbnail,
-  JewelleryFullOption
+  JewelleryFullOption,
+  DialogComponent,
+  SignUpComponent,
+  SignUpDialog
 } from '../index'
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
@@ -22,14 +25,16 @@ import {
   MdCardModule,
   MdAutocompleteModule,
   MdSelectModule,
-  MdDialogModule
-  // MdTabsModule
+  MdDialogModule,
+  MdTabsModule,
+  MdMenuModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     MdButtonModule,
     MdCheckboxModule,
@@ -40,7 +45,8 @@ import {
     MdAutocompleteModule,
     MdSelectModule,
     MdDialogModule,
-    // MdTabsModule
+    MdTabsModule,
+    MdMenuModule
   ],
   declarations: [
     JewelleryThumbnailComponent,
@@ -49,11 +55,15 @@ import {
     SinginSignUpComponent,
     JewelleryFavouriteBtn,
     SellerThumbnail,
-    SellerAddComponent
-
+    SellerAddComponent,
+    DialogComponent,
+    SignUpComponent,
+    SignUpDialog
   ],
   entryComponents: [
-    SellerAddComponent
+    SellerAddComponent,
+    DialogComponent,
+    SignUpDialog
   ],
   exports: [
     JewelleryThumbnailComponent,
@@ -62,6 +72,8 @@ import {
     JewelleryFavouriteBtn,
     SellerThumbnail,
     SellerAddComponent,
+    DialogComponent,
+    SignUpComponent,
     NgbModule,
     MdButtonModule,
     MdCheckboxModule,
@@ -71,8 +83,9 @@ import {
     MdCardModule,
     MdAutocompleteModule,
     MdSelectModule,
-    MdDialogModule
-    // MdTabsModule
+    MdDialogModule,
+    MdTabsModule,
+    MdMenuModule
   ]
 })
 

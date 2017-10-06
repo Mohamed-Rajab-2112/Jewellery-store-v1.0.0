@@ -13,5 +13,10 @@ export const customerRoutes: Routes = [
     path: 'customer-favourite-jewellery',
     component: JewelleryFavouriteComponent,
     canActivate: [CustomerProfileActivator]
+  },
+  {
+    path: '',
+    redirectTo: "/home",
+    pathMatch: "prefix"
   }
 ];

@@ -12,19 +12,17 @@
 /* line 14, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail {
   box-sizing: border-box;
-  position: relative;
   text-align: center;
   margin: 5px 3px;
   width: 19%;
-  height: 240px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 10px;
+  justify-content: space-around;
   cursor: pointer;
-  background-color: #DFDFDF;
-  border: 1px solid #DFDFDF;
+  background-color: #fff;
+  border: 1px solid lightgrey;
   transition: 0.3s all;
 }
 /* line 31, jewellery.thumbnail.styles.scss */
@@ -33,38 +31,92 @@
   box-sizing: border-box;
   border: 1px solid #586D8C;
 }
-/* line 36, jewellery.thumbnail.styles.scss */
+/* line 37, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .card-details h3:last-child {
+  margin-top: 20px;
+}
+/* line 39, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .card-details h3:last-child span {
+  font-size: 0.6em;
+}
+/* line 44, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail .button-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-/* line 41, jewellery.thumbnail.styles.scss */
-.product-thumbnail-container .product-thumbnail .button-container button:first-child {
-  background-color: blue;
-}
-/* line 44, jewellery.thumbnail.styles.scss */
-.product-thumbnail-container .product-thumbnail .button-container button:last-child {
-  background-color: red;
-}
 /* line 48, jewellery.thumbnail.styles.scss */
-.product-thumbnail-container .product-thumbnail img {
-  width: 70%;
+.product-thumbnail-container .product-thumbnail .button-container button {
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
 }
-/* line 51, jewellery.thumbnail.styles.scss */
+/* line 53, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button img {
+  height: 25px;
+  width: 25px;
+}
+/* line 58, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button:first-child {
+  color: #31004a;
+  transition: 0.5s all;
+}
+/* line 61, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button:first-child:hover {
+  border-bottom: 1px solid #31004a;
+  transition: 0.5s all;
+}
+/* line 66, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button:last-child {
+  color: red;
+  transition: 0.5s all;
+}
+/* line 69, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail .button-container button:last-child:hover {
+  border-bottom: 1px solid red;
+  transition: 0.5s all;
+}
+/* line 75, jewellery.thumbnail.styles.scss */
+.product-thumbnail-container .product-thumbnail img {
+  width: 100px;
+}
+/* line 78, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail h3 {
   word-wrap: break-word;
   width: 80%;
   margin: 5px auto;
 }
-/* line 56, jewellery.thumbnail.styles.scss */
+/* line 83, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .product-thumbnail .fav-btn {
   position: absolute;
   top: 5px;
   left: 5px;
 }
-/* line 65, jewellery.thumbnail.styles.scss */
+/* line 89, jewellery.thumbnail.styles.scss */
 .product-thumbnail-container .alert-body {
   display: flex;
   align-items: center;
+}
+
+/*******************/
+/*Responsive styles*/
+/*******************/
+@media screen and (max-width: 1024px) {
+  /* line 101, jewellery.thumbnail.styles.scss */
+  .product-thumbnail-container .product-thumbnail {
+    min-width: 175px;
+  }
+}
+@media screen and (max-width: 425px) {
+  /* line 110, jewellery.thumbnail.styles.scss */
+  .product-thumbnail-container .product-thumbnail {
+    min-width: 125px;
+  }
+}
+@media screen and (max-width: 328px) {
+  /* line 119, jewellery.thumbnail.styles.scss */
+  .product-thumbnail-container .product-thumbnail {
+    min-width: 100px;
+  }
 }

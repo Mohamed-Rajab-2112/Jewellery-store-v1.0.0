@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Compiler, Output, EventEmitter, Inject} from "@angular/core";
+import {Component, OnInit, Output, EventEmitter, Inject} from "@angular/core";
 
 import {JewelleryService} from "../../shared/index";
 import {SellerService} from "../../shared/services/seller.service";
@@ -15,10 +15,7 @@ import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 })
 
 export class SellerAddComponent implements OnInit {
-  // @Input() product: any;
-  @Output() newProduct = new EventEmitter();
   @Output() newPrice = new EventEmitter();
-  @Output() publishDone = new EventEmitter();
   productTypes: string[];
   goldDegrees: string[];
   imageUrlValid: boolean;
@@ -58,7 +55,7 @@ export class SellerAddComponent implements OnInit {
   }
 
   publishProduct(productDetails: any) {
-    if (productDetails.price != this.oldPrice && confirm('Do you want to change all other products prices by the same amount ?')) {
+    if ((this.oldPrice && productDetails.price != this.oldPrice) && confirm('Do you want to change all other products prices by the same amount ?')) {
       this.newPrice.emit(productDetails.price - this.oldPrice);
     }
     productDetails.imageUrl = this.imagesFilesList;
@@ -67,8 +64,7 @@ export class SellerAddComponent implements OnInit {
     if (this.imageUrlValid) {
       productDetails.id = productDetails.id || this.seller.sellerDetails.id + Date.now();
       this.seller.postNewProduct(productDetails);
-      this.newProduct.emit(productDetails);
-      this.publishDone.emit(true);
+      this.dialogRef.close();
     }
     console.log(productDetails);
   }

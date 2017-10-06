@@ -10,19 +10,37 @@
 .jewellery-full-option-container .products-listing-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding: 75px 0;
   background-color: #fff;
+  border: 1px solid lightgrey;
+  min-height: 784.688px;
 }
-/* line 16, jewellery.full.option.styles.scss */
+/* line 19, jewellery.full.option.styles.scss */
 .jewellery-full-option-container .products-listing-container jewellery-thumbnail {
   margin: 25px auto 0;
   width: 90%;
   height: inherit;
   flex-wrap: wrap;
 }
-/* line 23, jewellery.full.option.styles.scss */
+/* line 26, jewellery.full.option.styles.scss */
 .jewellery-full-option-container ngb-pagination {
   margin-top: 50px;
+}
+
+/*******************/
+/*Responsive styles*/
+/*******************/
+@media screen and (max-width: 1024px) {
+  /* line 36, jewellery.full.option.styles.scss */
+  .jewellery-full-option-container {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 425px) {
+  /* line 44, jewellery.full.option.styles.scss */
+  .jewellery-full-option-container {
+    width: 90%;
+  }
 }

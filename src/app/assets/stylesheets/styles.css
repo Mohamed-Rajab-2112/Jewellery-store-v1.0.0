@@ -1,13 +1,13 @@
 /* line 4, styles.scss */
 html {
   font-family: Helvetica, sans-serif;
-  background-color: #DFDFDF;
-  color: #F0C7C5;
+  background-color: #eee;
+  color: #75FF75;
   height: 100% !important;
 }
 /* line 9, styles.scss */
 html body {
-  background-color: #DFDFDF;
+  background-color: #eee;
   margin: 0 auto 0;
   display: flex;
   flex-direction: column;
@@ -35,34 +35,38 @@ html body jewellery-store-app jewellery-list {
 html body jewellery-store-app jewellery-favourite {
   flex: 1;
 }
-/* line 32, styles.scss */
+/* line 31, styles.scss */
+html body jewellery-store-app customer-profile {
+  flex: 1;
+}
+/* line 35, styles.scss */
 html body h1 {
   margin-top: 0;
   text-transform: capitalize;
 }
-/* line 36, styles.scss */
+/* line 39, styles.scss */
 html body h2 {
   color: #455C7E;
   text-transform: capitalize;
   font-weight: 400;
 }
-/* line 41, styles.scss */
+/* line 44, styles.scss */
 html body h3 {
   font-size: 1.2em;
   font-weight: 400;
   color: #586D8C;
 }
-/* line 47, styles.scss */
+/* line 50, styles.scss */
 html body h4 {
   font-size: 1em;
   color: #586D8C;
   font-weight: 400;
 }
-/* line 52, styles.scss */
+/* line 55, styles.scss */
 html body button {
   border: none;
 }
-/* line 55, styles.scss */
+/* line 58, styles.scss */
 html body a:focus, html body button:focus {
   outline: none !important;
 }

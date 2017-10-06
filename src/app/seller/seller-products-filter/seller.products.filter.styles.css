@@ -12,7 +12,7 @@
 }
 /* line 14, seller.products.filter.styles.scss */
 .jewellery-filter-container .button-group button {
-  color: #133759;
+  color: #31004a;
   background-color: #F5D0CA;
   border: none;
   transition: 0.5s all;
@@ -23,6 +23,36 @@
 /* line 20, seller.products.filter.styles.scss */
 .jewellery-filter-container .button-group .selected-button {
   color: #F5D0CA;
-  background-color: #133759;
+  background-color: #31004a;
   transition: 0.5s all;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 28, seller.products.filter.styles.scss */
+  .jewellery-filter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* line 31, seller.products.filter.styles.scss */
+  .jewellery-filter-container .button-group {
+    justify-content: center;
+  }
+  /* line 34, seller.products.filter.styles.scss */
+  .jewellery-filter-container div:last-child {
+    margin-top: 35px;
+  }
+}
+@media screen and (max-width: 425px) {
+  /* line 43, seller.products.filter.styles.scss */
+  .jewellery-filter-container .button-group {
+    flex-wrap: wrap;
+  }
+  /* line 45, seller.products.filter.styles.scss */
+  .jewellery-filter-container .button-group button {
+    margin: 5px;
+  }
+  /* line 51, seller.products.filter.styles.scss */
+  .jewellery-filter-container div:last-child md-select {
+    margin-top: 25px;
+  }
 }

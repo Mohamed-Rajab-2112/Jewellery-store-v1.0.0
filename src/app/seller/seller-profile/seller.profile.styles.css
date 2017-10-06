@@ -18,14 +18,24 @@
   width: 250px;
   height: 50px;
   margin: 0 auto;
-  color: #133759;
+  color: #31004a;
   background-color: #F5D0CA;
   border: none;
   transition: 0.5s all;
 }
 /* line 20, seller.profile.styles.scss */
+.seller-profile-container button svg {
+  fill: #133759;
+  transition: 0.5s all;
+}
+/* line 24, seller.profile.styles.scss */
 .seller-profile-container button:hover {
   color: #F5D0CA;
-  background-color: #133759;
+  background-color: #31004a;
+  transition: 0.5s all;
+}
+/* line 26, seller.profile.styles.scss */
+.seller-profile-container button:hover svg {
+  fill: white;
   transition: 0.5s all;
 }

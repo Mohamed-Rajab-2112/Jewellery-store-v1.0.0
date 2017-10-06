@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {AuthService, CustomerService, User} from "../../shared/index";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
@@ -10,8 +10,9 @@ import {JewelleryService} from "../../shared/services/jewellery.service";
   styleUrls: ['./customer.profile.styles.css']
 })
 
-export class CustomerProfile implements OnInit {
+export class CustomerProfile implements OnInit, OnDestroy {
   currentCustomer: User;
+  userSubscription: any;
   areas: string[];
   profileForm: FormGroup;
   areaControl: FormControl;
@@ -22,8 +23,9 @@ export class CustomerProfile implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.areas = this.jewellery.getAreas();
-    this.auth.user.subscribe((val) => {
+    this.userSubscription = this.auth.user.subscribe((val) => {
       console.log(val);
       this.currentCustomer = <User>val;
     });
@@ -39,6 +41,10 @@ export class CustomerProfile implements OnInit {
     );
 
     this.filteredAreas = this.areaControl.valueChanges.startWith(null).map((val: string) => val ? this.filter(val, this.areas) : this.areas.slice());
+  }
+
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
   }
 
   filter(val: string, data: string[]): string[] {

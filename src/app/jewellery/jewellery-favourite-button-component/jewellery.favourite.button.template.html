@@ -1,3 +1,4 @@
 <!--<div>-->
-<button (click)="addProductToFavourite(product)"><img src="app/assets/images/favourite-empty.svg"></button>
+<button (click)="addProductToFavourite(product)" *ngIf="!isFavourite"><img src="app/assets/images/favourite-empty.svg"></button>
+<button (click)="removeProductToFavourite(product)" *ngIf="isFavourite"><img src="app/assets/images/favourite-fill.svg"></button>
 <!--</div>-->
