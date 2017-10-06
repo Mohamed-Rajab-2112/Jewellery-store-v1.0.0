@@ -5,55 +5,76 @@
   margin: 0 auto;
   min-height: 500px;
 }
-/* line 10, customer.profile.styles.scss */
+/* line 8, customer.profile.styles.scss */
 .customer-profile-container h2 {
   padding-top: 50px;
   margin-left: 25px;
 }
-/* line 14, customer.profile.styles.scss */
+/* line 12, customer.profile.styles.scss */
 .customer-profile-container .tabs {
   width: 80%;
   margin: 0 auto;
 }
-/* line 17, customer.profile.styles.scss */
+/* line 15, customer.profile.styles.scss */
 .customer-profile-container .tabs form {
   width: 50%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-/* line 23, customer.profile.styles.scss */
+/* line 21, customer.profile.styles.scss */
 .customer-profile-container .tabs h3 {
   margin-top: 50px;
   border-bottom: 1px solid #31004a;
   margin-bottom: 15px;
 }
-/* line 29, customer.profile.styles.scss */
+/* line 27, customer.profile.styles.scss */
 .customer-profile-container .delete-container {
   width: 50%;
   margin: 0 auto 45px;
   display: flex;
   flex-direction: column;
 }
-/* line 34, customer.profile.styles.scss */
+/* line 32, customer.profile.styles.scss */
 .customer-profile-container .delete-container button {
   margin-top: 15px;
   background-color: red;
 }
-/* line 39, customer.profile.styles.scss */
+/* line 37, customer.profile.styles.scss */
 .customer-profile-container .note-for-user {
   margin-top: 15px;
   display: flex;
   justify-content: center;
 }
-/* line 43, customer.profile.styles.scss */
+/* line 41, customer.profile.styles.scss */
 .customer-profile-container .note-for-user svg {
   width: 25px;
   height: 25px;
 }
-/* line 48, customer.profile.styles.scss */
+/* line 46, customer.profile.styles.scss */
 .customer-profile-container .submit-button {
   color: #F5D0CA;
   background-color: #31004a;
   transition: 0.5s all;
+}
+
+/*******************/
+/*Responsive styles*/
+/*******************/
+@media screen and (max-width: 1024px) {
+  /* line 56, customer.profile.styles.scss */
+  .customer-profile-container {
+    margin-top: 25px;
+    border: 1px solid lightgrey;
+  }
+}
+@media screen and (max-width: 425px) {
+  /* line 63, customer.profile.styles.scss */
+  .customer-profile-container {
+    width: 95%;
+  }
+  /* line 66, customer.profile.styles.scss */
+  .customer-profile-container .tabs form {
+    width: 85%;
+  }
 }

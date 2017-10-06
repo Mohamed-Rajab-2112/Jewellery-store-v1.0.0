@@ -1,8 +1,6 @@
 @import "../../assets/stylesheets/colors-theme.scss";
 
 .customer-profile-container {
-  //display: flex;
-  //flex-direction: column;
   width: $appWidth;
   background-color: $bgcolor;
   margin: 0 auto;
@@ -50,3 +48,24 @@
   }
 }
 
+/*******************/
+/*Responsive styles*/
+/*******************/
+
+@media screen and (max-width: 1024px) {
+  .customer-profile-container {
+    margin-top: 25px;
+    border: 1px solid $borderColor;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .customer-profile-container {
+    width: $smallScreenWidth;
+    .tabs {
+      form {
+        width: 85%;
+      }
+    }
+  }
+}

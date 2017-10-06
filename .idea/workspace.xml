@@ -5,114 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="879bb1f6-aa3e-491c-acae-bf587c712217" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile-edit/seller.profile.edit.styles.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/DialogComponent/dialog.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/DialogComponent/dialogTemplate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/DialogComponent/dialogTemplate.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/signup.component/signup.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/signup.component/signup.dialog.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/signup.component/signup.dialog.template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/signup.component/signup.styles.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/shared/signup.component/signup.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/1131b6f8c6bccfd2b54b86ffd365e9395987b698/customer.profile.styles.scssc" afterPath="$PROJECT_DIR$/.sass-cache/1131b6f8c6bccfd2b54b86ffd365e9395987b698/customer.profile.styles.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js" afterPath="$PROJECT_DIR$/src/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js.map" afterPath="$PROJECT_DIR$/src/app/app.module.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assets/stylesheets/colors-theme.scss" afterPath="$PROJECT_DIR$/src/app/assets/stylesheets/colors-theme.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assets/stylesheets/styles.css" afterPath="$PROJECT_DIR$/src/app/assets/stylesheets/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assets/stylesheets/styles.scss" afterPath="$PROJECT_DIR$/src/app/assets/stylesheets/styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-component.ts" afterPath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.css" afterPath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.scss" afterPath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-template.html" afterPath="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.component.ts" afterPath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.css" afterPath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.scss" afterPath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.template.html" afterPath="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer.routes.js" afterPath="$PROJECT_DIR$/src/app/customer/customer.routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer.routes.js.map" afterPath="$PROJECT_DIR$/src/app/customer/customer.routes.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/customer/customer.routes.ts" afterPath="$PROJECT_DIR$/src/app/customer/customer.routes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery.store.app.js" afterPath="$PROJECT_DIR$/src/app/jewellery.store.app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery.store.app.js.map" afterPath="$PROJECT_DIR$/src/app/jewellery.store.app.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery.store.app.ts" afterPath="$PROJECT_DIR$/src/app/jewellery.store.app.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.template.html" afterPath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewellery.thumbnail.styles.css" afterPath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewellery.thumbnail.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewellery.thumbnail.styles.scss" afterPath="$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewellery.thumbnail.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.css" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.scss" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.template.html" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-favourite-button-component/jewellery.favourite.button.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-favourite-button-component/jewellery.favourite.button.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-favourite-button-component/jewellery.favourite.button.template.html" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-favourite-button-component/jewellery.favourite.button.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.css" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.html" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.scss" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.css" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.scss" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.styles.css" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.styles.scss" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.template.html" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-form/jewellery.search.form.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-result/jewellery.search.results.component.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/jewellery-search-result/jewellery.search.results.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/routes.js" afterPath="$PROJECT_DIR$/src/app/jewellery/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/routes.js.map" afterPath="$PROJECT_DIR$/src/app/jewellery/routes.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/jewellery/routes.ts" afterPath="$PROJECT_DIR$/src/app/jewellery/routes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-add-product/seller.add.product.component.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller-add-product/seller.add.product.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-add-product/seller.add.product.styles.css" afterPath="$PROJECT_DIR$/src/app/seller/seller-add-product/seller.add.product.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-add-product/seller.add.product.template.html" afterPath="$PROJECT_DIR$/src/app/seller/seller-add-product/seller.add.product.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-details/seller.details.component.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller-details/seller.details.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-details/seller.details.styles.css" afterPath="$PROJECT_DIR$/src/app/seller/seller-details/seller.details.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-list/seller.list.styles.css" afterPath="$PROJECT_DIR$/src/app/seller/seller-list/seller.list.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-list/seller.list.styles.scss" afterPath="$PROJECT_DIR$/src/app/seller/seller-list/seller.list.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-list/seller.list.template.html" afterPath="$PROJECT_DIR$/src/app/seller/seller-list/seller.list.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-list/sellers.list.component.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller-list/sellers.list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-products-filter/seller.products.filter.styles.css" afterPath="$PROJECT_DIR$/src/app/seller/seller-products-filter/seller.products.filter.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-products-filter/seller.products.filter.styles.scss" afterPath="$PROJECT_DIR$/src/app/seller/seller-products-filter/seller.products.filter.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-profile-edit/seller.profile.edit.component.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile-edit/seller.profile.edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-profile-edit/seller.profile.edit.template.html" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile-edit/seller.profile.edit.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.component.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.styles.css" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.styles.scss" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.template.html" afterPath="$PROJECT_DIR$/src/app/seller/seller-profile/seller.profile.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.styles.css" afterPath="$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.styles.scss" afterPath="$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.template.html" afterPath="$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller.module.js" afterPath="$PROJECT_DIR$/src/app/seller/seller.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller.module.js.map" afterPath="$PROJECT_DIR$/src/app/seller/seller.module.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller.module.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller.routes.js" afterPath="$PROJECT_DIR$/src/app/seller/seller.routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller.routes.js.map" afterPath="$PROJECT_DIR$/src/app/seller/seller.routes.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/seller/seller.routes.ts" afterPath="$PROJECT_DIR$/src/app/seller/seller.routes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.js" afterPath="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.js.map" afterPath="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.ts" afterPath="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/footer.component/footer.styles.css" afterPath="$PROJECT_DIR$/src/app/shared/footer.component/footer.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/footer.component/footer.styles.scss" afterPath="$PROJECT_DIR$/src/app/shared/footer.component/footer.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/footer.component/footer.template.html" afterPath="$PROJECT_DIR$/src/app/shared/footer.component/footer.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/index.js" afterPath="$PROJECT_DIR$/src/app/shared/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/index.js.map" afterPath="$PROJECT_DIR$/src/app/shared/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/index.ts" afterPath="$PROJECT_DIR$/src/app/shared/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/jewellery.full.option.component/jewellery.full.option.styles.css" afterPath="$PROJECT_DIR$/src/app/shared/jewellery.full.option.component/jewellery.full.option.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/jewellery.full.option.component/jewellery.full.option.styles.scss" afterPath="$PROJECT_DIR$/src/app/shared/jewellery.full.option.component/jewellery.full.option.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.js" afterPath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.js.map" afterPath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.styles.css" afterPath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.styles.scss" afterPath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.template.html" afterPath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.ts" afterPath="$PROJECT_DIR$/src/app/shared/nav.component/nav.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/services/auth.service.ts" afterPath="$PROJECT_DIR$/src/app/shared/services/auth.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/services/customer.service.ts" afterPath="$PROJECT_DIR$/src/app/shared/services/customer.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/services/jewellery.service.ts" afterPath="$PROJECT_DIR$/src/app/shared/services/jewellery.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/services/seller.service.ts" afterPath="$PROJECT_DIR$/src/app/shared/services/seller.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.component.ts" afterPath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.styles.css" afterPath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.styles.scss" afterPath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.template.html" afterPath="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -201,11 +97,11 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="false">
+              <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/app/shared/services/auth.service.ts">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="93">
-                      <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                    <state relative-caret-position="651">
+                      <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
                       <folding />
                     </state>
                   </provider>
@@ -221,7 +117,7 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="jewelery.thumbnail.component.ts" pinned="false" current-in-tab="true">
+              <file leaf-file-name="jewelery.thumbnail.component.ts" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.component.ts">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="1151">
@@ -248,7 +144,7 @@
               <file leaf-file-name="nav.component.template.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app/shared/nav.component/nav.component.template.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="310">
+                    <state relative-caret-position="-31">
                       <caret line="312" column="61" lean-forward="false" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="61" />
                       <folding>
                         <element signature="n#div#0;n#div#2;n#!!top" expanded="false" />
@@ -272,16 +168,6 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="footer.template.html" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/app/shared/footer.component/footer.template.html">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="310">
-                      <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
               <file leaf-file-name="jewelery.thumbnail.template.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.template.html">
                   <provider selected="true" editor-type-id="text-editor">
@@ -296,7 +182,7 @@
                 <entry file="file://$PROJECT_DIR$/src/app/seller/seller-list/seller.list.template.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="62">
-                      <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+                      <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
                       <folding />
                     </state>
                   </provider>
@@ -325,18 +211,28 @@
               <file leaf-file-name="jewellery.details.template.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.template.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="248">
+                    <state relative-caret-position="217">
                       <caret line="7" column="62" lean-forward="false" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="customer-favourite-Jewellery-template.html" pinned="false" current-in-tab="true">
+              <file leaf-file-name="customer-favourite-Jewellery-template.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-template.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
                       <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="customer.profile.template.html" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.template.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="62">
+                      <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -368,16 +264,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="jewellery.thumbnail.styles.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewellery.thumbnail.styles.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="703">
-                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="seller.thumbnail.styles.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/app/seller/seller-thumbnail/seller.thumbnail.styles.scss">
               <provider selected="true" editor-type-id="text-editor">
@@ -392,7 +278,7 @@
             <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="155">
-                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -401,8 +287,8 @@
           <file leaf-file-name="jewellery.details.styles.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1621">
-                  <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+                <state relative-caret-position="1218">
+                  <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -438,11 +324,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="customer-favourite-Jewellery-styles.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="customer-favourite-Jewellery-styles.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="806">
-                  <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+                  <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="customer.profile.styles.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1466">
+                  <caret line="66" column="18" lean-forward="false" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -546,7 +442,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/shared/signup.component/signup.dialog.template.html" />
         <option value="$PROJECT_DIR$/src/app/shared/signup.component/signup.dialog.component.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/footer.component/footer.component.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.template.html" />
@@ -564,7 +459,6 @@
         <option value="$PROJECT_DIR$/src/app/customer/customer.routes.ts" />
         <option value="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.template.html" />
         <option value="$PROJECT_DIR$/src/app/jewellery/jewellery-home/jewellery.home.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/shared/services/auth.service.ts" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/signin.signup.component/signin.signup.styles.scss" />
@@ -597,6 +491,8 @@
         <option value="$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.scss" />
         <option value="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.scss" />
         <option value="$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-template.html" />
+        <option value="$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.scss" />
+        <option value="$PROJECT_DIR$/src/app/shared/services/auth.service.ts" />
       </list>
     </option>
   </component>
@@ -832,12 +728,12 @@
       <workItem from="1507117137002" duration="3000" />
       <workItem from="1507117240298" duration="19000" />
       <workItem from="1507139070177" duration="1234000" />
-      <workItem from="1507203799076" duration="27939000" />
+      <workItem from="1507203799076" duration="29203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1021976000" />
+    <option name="totallyTimeSpent" value="1023240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -850,7 +746,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3866" height="2106" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -977,20 +873,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/material/typings/autocomplete/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/material/typings/autocomplete/autocomplete.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@angular/material/material.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -1142,14 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/services/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/signup.component/signup.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -1173,14 +1047,6 @@
           <folding>
             <element signature="e#0#141#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1151">
-          <caret line="51" column="76" lean-forward="false" selection-start-line="51" selection-start-column="76" selection-end-line="51" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1266,7 +1132,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/nav.component/nav.component.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="-31">
           <caret line="312" column="61" lean-forward="false" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="61" />
           <folding>
             <element signature="n#div#0;n#div#2;n#!!top" expanded="false" />
@@ -1327,17 +1193,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1621">
-          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="217">
           <caret line="7" column="62" lean-forward="false" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
           <folding />
         </state>
@@ -1346,7 +1204,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/seller/seller-list/seller.list.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1362,15 +1220,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-list/jewellery.list.styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1379,6 +1229,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/customer/customer-favourite-Jewellery/customer-favourite-Jewellery-styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewellery-details/jewellery.details.styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1218">
+          <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/jewellery/jewelery-thumbnail/jewelery.thumbnail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1151">
+          <caret line="51" column="76" lean-forward="false" selection-start-line="51" selection-start-column="76" selection-end-line="51" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/customer/customer-profile/customer.profile.styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1466">
+          <caret line="66" column="18" lean-forward="false" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
           <folding />
         </state>
       </provider>
