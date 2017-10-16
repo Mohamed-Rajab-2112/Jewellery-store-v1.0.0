@@ -23,7 +23,7 @@ export class AuthService {
     let user: User = {
       id: 22222,
       name: values.userName,
-      userType: 'Customer',
+      userType: 'Vendor',
       verified: true,
       telephone1: 1232135,
       telephone2: 5841354,
